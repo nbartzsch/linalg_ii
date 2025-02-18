@@ -1,14 +1,14 @@
 \setcounter{section}{-1}
 \section{Wiederholung: Vektorräume und Basis}
 
-Bevor wir uns mit dem neuen Stoff beschäftigen, blicken wir zunächst zurück in die Lineare Algebra I. (Für eine komplette Wiederholung siehe Lineare Algebra I, Woche 10). 
+Bevor wir uns mit dem neuen Stoff beschäftigen, blicken wir zunächst zurück in die Lineare Algebra I. (Für eine komplette Wiederholung siehe \href{https://n.ethz.ch/~nbartzsch/notizen/notizen_lin_alg_I/Uebung_10_Repetition.pdf}{Lineare Algebra I, Woche 10}). 
 
 \subsection{Vektorräume}
 
 Wir wollen unsere Vorstellung von Vektoraddition und Multiplikation, von den uns bekannten Vektorpfeilen im Raum und Ebene, auf alle möglichen Vektoren abstrahieren (verallgemeinern). Damit können wir später die Eigenschaften von Vektoren auf z.B. Funktionen (welche sich als Vektoren darstellen lassen) anwenden. Formell können wir Vektorräume wie folgt definieren:
 
 \begin{tcolorbox}[colback=gray!30, colframe=gray!80, title=Vektorräume]
-Sei \( V \) eine Menge von Objekten. \( V \) heisst Vektorraum, wenn eine \textbf{innere Operation} (Kombination von zwei Objekten) und eine \textbf{äussere Operation} (Kombination eines Objekts mit einem Skalar) definiert sind, und folgende Axiome gelten:
+Sei \( V \) eine Menge von Objekten. \( V \) heisst Vektorraum, wenn eine \textbf{innere Operation} (Kombination von zwei Objekten) und eine \textbf{äussere Operation} (Kombination eines Objekts mit einem Skalar) definiert sind:
 
 \vspace{1\baselineskip}
 
@@ -48,7 +48,7 @@ Hier nimmt \( \oplus \) zwei Vektoren \( a, b \) aus einer Menge \( V \) und ord
     (a, b) \mapsto a \oplus b
 \end{equation*}
 
-Zeigt uns dann genau wie diese Operation definiert ist.
+zeigt uns dann genau wie diese Operation definiert ist.
 
 \vspace{1\baselineskip}
 
@@ -64,7 +64,7 @@ Hier nimmt \( \odot \) einen Vektor \( a \) aus einer Menge \( V \) und einen Sk
     (\alpha, a) \mapsto \alpha \odot a
 \end{equation*}
 
-Zeigt uns dann genau wie diese Operation definiert ist.
+zeigt uns dann genau wie diese Operation definiert ist.
 
 \vspace{1\baselineskip}
 
@@ -86,7 +86,7 @@ Basierend auf diesen Operationen müssen nun folgende Axiome gelten:
 
 \vspace{1\baselineskip}
 
-Nun kennen wir alle Regeln und können überprüfen ob eine Menge ein Vektorraum beschreibt. Dafür müssen wir \textbf{alle} Axiome überprüfen. Ausschalggebend sind hier die Operationen nicht dir Objekte.
+Nun kennen wir alle Regeln und können überprüfen ob eine Menge ein Vektorraum beschreibt. Dafür müssen wir \textbf{alle} Axiome überprüfen. Ausschalggebend sind hier die Operationen nicht die Objekte.
 
 \subsection{Unterräume}
 
@@ -157,7 +157,7 @@ In 2-D wird oft die Standardbasis verwendet. Diese besteht aus den Vektoren
 Jeder 2-D Vektor kann eindeutig als Linearkombination dieser beiden Basisvektoren dargestellt werden. Wir können jedoch auch zwei andere, linear unabhängige, Vektoren als Basisvektoren verwenden. Seien beispielsweise
 
 \begin{equation*}
-    \vec{e}_\eta = \begin{pmatrix} 2 \\ 1 \end{pmatrix} \text{und} \ \vec{e}_\zeta\begin{pmatrix} 1 \\ 2 \end{pmatrix},
+    \vec{e}_\eta = \begin{pmatrix} 2 \\ 1 \end{pmatrix} \text{und} \ \vec{e}_\zeta = \begin{pmatrix} 1 \\ 2 \end{pmatrix},
 \end{equation*}
 
 auch hier können wir jeden 2-D Vektor eindeutig als Linearkombination dieser beiden Vektoren darstellen. Beide Basen beschreiben hier also den selben Vektorraum. Wir sehen das die Anzahl von Basisvektoren erhalten bleibt. Die Anzahl an Basisvektoren nennt man Dimension. In unserem Fall mit \( V = \text{span}(\vec{e}_x, \vec{e}_y) = \text{span}(\vec{e}_\eta, \vec{e}_\zeta) \) hat der Vektorraum \( V \) die Dimension 2. Es ist also möglich mehrere Basen für einen endlichdimensionalen Vektorraum zu finden.
@@ -230,13 +230,13 @@ wir erkennen sofort, dass \( x_1 = x_2 = 3 \) sein muss. Somit ist der Koordiant
     \begin{pmatrix} 3 \\ 3 \end{pmatrix}_{x,y}. 
 \end{equation*}
 
-In der Basis \( \vec{e}_\eta, \vec{e}_\zeta \) suchen wir also \( x_1, x_2 \) sodass
+In der Basis \( \vec{e}_\eta, \vec{e}_\zeta \) suchen wir nun \( x_1, x_2 \) sodass
 
 \begin{equation*}
     \begin{pmatrix} 3 \\ 3 \end{pmatrix} = x_1 \begin{pmatrix} 2 \\ 1 \end{pmatrix} + x_2 \begin{pmatrix} 1 \\ 2 \end{pmatrix}.
 \end{equation*}
 
-hier erkennen wir sofort, dass \( x_1 = 1, x_2 = 1 \) sein muss. Somit ist der Koordiantenvektor bezüglich der Basis \( \vec{e}_\eta, \vec{e}_\zeta \):
+hier erkennen wir sofort, dass \( x_1 = x_2 = 1 \) sein muss. Somit ist der Koordiantenvektor bezüglich der Basis \( \vec{e}_\eta, \vec{e}_\zeta \):
 
 \begin{equation*}
     \begin{pmatrix} 1 \\ 1 \end{pmatrix}_{\eta, \zeta}.
@@ -253,7 +253,9 @@ Seien \( V, W \) reelle Vektorräume. Dann heisst
     \mathcal{F}: V \rightarrow W, \quad x \mapsto \mathcal{F}(x)
 \end{equation*}
 
-lineare Abbildung falls \( \forall x, y \in V, \ \forall \alpha \in \mathbb{R} \) und es gilt:
+\vspace{0.5\baselineskip}
+
+lineare Abbildung falls \( \forall x, y \in V, \ \forall \alpha \in \mathbb{R} \) gilt:
 
 \begin{equation*}
     \begin{aligned}
@@ -262,11 +264,15 @@ lineare Abbildung falls \( \forall x, y \in V, \ \forall \alpha \in \mathbb{R} \
     \end{aligned}
 \end{equation*}
 
+\vspace{0.5\baselineskip}
+
 Wenn wir nun prüfen wollen ob eine Abbildung linear ist, dann müssen wir prüfen ob i.\ und ii.\ erfüllt sind. Als Beispiel betrachten wir die Abbildung
 
 \begin{equation*}
     \mathcal{F}: \mathbb{R} \rightarrow \mathbb{R}, \quad x \mapsto 3x. 
 \end{equation*}
+
+\vspace{0.5\baselineskip}
 
 Wir prüfen nun i.\ und ii.\ für diese Abbildung:
 
@@ -277,23 +283,29 @@ Wir prüfen nun i.\ und ii.\ für diese Abbildung:
     \end{aligned}
 \end{equation*}
 
+\vspace{0.5\baselineskip}
+
 In diesem Fall ist die Abbildung \( \mathcal{F} \) linear. 
 
 \vspace{1\baselineskip}
 
-Aus den Bedingungen i.\ und ii.\ foglen bestimmte Eigenschaften. So wird z.B. der Nullvektor immer auf den Nullvektor abgebildet. Wenn ausserdem \( V, W \) eindlichdimensionale Vektorräume sind, z.B. \( V = \mathbb{R}^n, W = \mathbb{R}^m \), dann kann jede lineare Abbildung \( \mathcal{F}: V \rightarrow W \)  durch eine \( m \times n \)-Matrix \( A \in \mathbb{R}^{m \times n} \) dargestellt werden. Dies lässt sich dann als 
+Aus den Bedingungen i.\ und ii.\ foglen bestimmte Eigenschaften die jede lineare Abbildung besitzt. So wird z.B. der Nullvektor immer auf den Nullvektor abgebildet. Wenn ausserdem \( V, W \) eindlichdimensionale Vektorräume sind, z.B. \( V = \mathbb{R}^n, W = \mathbb{R}^m \), dann kann jede lineare Abbildung \( \mathcal{F}: V \rightarrow W \)  durch eine Matrix \( A \in \mathbb{R}^{m \times n} \) dargestellt werden. Allgemein kann man eine lineare Abbildung in der Form
 
 \begin{equation*}
     \mathcal{F}: \mathbb{R}^n \rightarrow \mathbb{R}^m, \quad x \mapsto Ax
 \end{equation*}
 
-beschreiben, wobei \( A \) die Abbildungsmatrix von \( \mathcal{F} \) ist. Sei beispielsweise die Abbildung \( \mathcal{F} \) gegeben durch
+\vspace{0.5\baselineskip}
+
+schreiben, wobei \( A \in \mathbb{R}^{m \times n} \) die Abbildungsmatrix von \( \mathcal{F} \) ist. Als Beispiel betrachten wir die Abbildung \( \mathcal{F} \) gegeben durch
 
 \begin{equation*}
     \mathcal{F}: \mathbb{R}^2 \rightarrow \mathbb{R}^3, \quad \begin{pmatrix} x \\ y \end{pmatrix} \mapsto \begin{pmatrix} x + y \\ x - 2y \\ 3x \end{pmatrix}.
 \end{equation*}
 
-Dann können wir die Abbildung in die Form \( x \mapsto Ax \) bringen indem wir die Abbildungsmatrix \( A \) bestimmen. In diesem Fall ist
+\vspace{0.5\baselineskip}
+
+Wir können die Abbildung in die Form \( x \mapsto Ax \) bringen indem wir die Abbildungsmatrix \( A \) bestimmen. In diesem Fall ist
 
 \begin{equation*}
     \begin{pmatrix} x \\ y \end{pmatrix} \mapsto \begin{pmatrix} x + y \\ x - 2y \\ 3x \end{pmatrix} = \underbrace{\begin{pmatrix} 1 & 1 \\ 1 & -2 \\ 3 & 0 \end{pmatrix}}_{:=A} \begin{pmatrix} x \\ y \end{pmatrix}.
