@@ -1,0 +1,29 @@
+\documentclass[11pt, a4paper]{article}
+\usepackage{script}
+
+\setboolean{includingsolutions}{false} % true: includes solutions, % false, no solutions
+
+\begin{document}
+
+    % Title page
+    \pagenumbering{gobble}
+    \maketitle
+    \newpage
+    
+    %Vorwort
+    \pagenumbering{roman}
+    \include{chapters/preface}
+    \newpage
+    
+    %Table of Contents
+    \setcounter{tocdepth}{3}
+    \tableofcontents
+    \newpage
+    
+    %Inhalt
+    \pagenumbering{arabic}
+     
+    \include{chapters/introduction}
+
+
+\end{document}

@@ -1,0 +1,36 @@
+\ProvidesPackage{script}
+
+\usepackage{pdfpages}
+\usepackage{graphicx}
+\usepackage[]{geometry} 
+\usepackage{hyperref}
+\usepackage{url}
+\usepackage{tocloft}
+\usepackage{csquotes}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{tikz}
+\usepackage{multicol}
+\usepackage{tcolorbox}
+\usepackage{caption}
+\usepackage{ifthen}
+\usepackage{cancel}
+
+\setlength{\parindent}{0pt}
+\captionsetup{width=0.85\textwidth}
+\newboolean{includingsolutions}
+
+\newenvironment{solution}
+{\ifthenelse{\boolean{includingsolutions}}{\par\textbf{Solution:}}{\vspace{5\baselineskip}\expandafter\comment}}
+{\ifthenelse{\boolean{includingsolutions}}{\vspace{1\baselineskip}}{\expandafter\endcomment}}
+
+\titleformat{\subsubsection}[runin]
+  {\normalfont\normalsize\bfseries}{\thesubsubsection}{1em}{}
+
+\title{Linear Algebra II}
+\author{Nicolas Bartzsch\\ \textit{nbartzsch@ethz.ch}}
+\date{Spring 2025}
+
+\endinput
