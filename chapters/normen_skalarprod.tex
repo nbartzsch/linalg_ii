@@ -3,7 +3,7 @@
 
 \subsection{Normen}
 
-Bisher haben wir mit den Vektorräumen die Vektoroperationen veralgemeinert. Wir wissen also wie wir, unabhäning von den Objekten in einem Vektorraum rechnen können. Nun wollen wir einen weiteren Schritt machen und die Grösse von Vektoren aus einem Vektorraum vergleichen. Dafür ordnen wir jedem Verktor \( v \), in einem Vektorraum, eine reelle positive Zahl zu, da wir deren grösse gut vergleichen können, z.B. können wir gnaz klar sagen das die Zahl 6 grösser als die Zahl 3 ist. 
+Bisher haben wir mit den Vektorräumen die Vektoroperationen verallgemeinert. Wir wissen also wie wir, unabhängig von den Objekten in einem Vektorraum rechnen können. Nun wollen wir einen weiteren Schritt machen und die Grösse von Vektoren aus einem Vektorraum vergleichen. Dafür ordnen wir jedem Vektor \( v \), in einem Vektorraum, eine reelle positive Zahl zu, da wir deren Grösse gut vergleichen können, z.B. können wir ganz klar sagen, dass die Zahl 6 grösser als die Zahl 3 ist. 
 
 \vspace{1\baselineskip}
 
@@ -52,10 +52,10 @@ Wie sieht es jedoch mit Vektoren aus? Hier ist die Antwort nicht so offensichtli
         \draw    (270,130) -- (270,43) ;
         \draw [shift={(270,40)}, rotate = 90] [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.08]  [draw opacity=0] (5.36,-2.57) -- (0,0) -- (5.36,2.57) -- (3.56,0) -- cycle    ;
         %Straight Lines [id:da9389986271719671] 
-        \draw [color={rgb, 255:red, 74; green, 144; blue, 226 }  ,draw opacity=1 ]   (270,120) -- (347.09,100.73) ;
+        \draw [color={rgb, 255:red, 74; green, 144; blue, 226 }  ,draw opacity=1 ] [line width=1.5]  (270,120) -- (347.09,100.73) ;
         \draw [shift={(350,100)}, rotate = 165.96] [fill={rgb, 255:red, 74; green, 144; blue, 226 }  ,fill opacity=1 ][line width=0.08]  [draw opacity=0] (5.36,-2.57) -- (0,0) -- (5.36,2.57) -- (3.56,0) -- cycle    ;
         %Straight Lines [id:da4329019838984933] 
-        \draw [color={rgb, 255:red, 245; green, 166; blue, 35 }  ,draw opacity=1 ]   (270,120) -- (327.88,62.12) ;
+        \draw [color={rgb, 255:red, 245; green, 166; blue, 35 }  ,draw opacity=1 ] [line width=1.5]  (270,120) -- (327.88,62.12) ;
         \draw [shift={(330,60)}, rotate = 135] [fill={rgb, 255:red, 245; green, 166; blue, 35 }  ,fill opacity=1 ][line width=0.08]  [draw opacity=0] (5.36,-2.57) -- (0,0) -- (5.36,2.57) -- (3.56,0) -- cycle    ;
         % Text Node
         \draw (333,43) node [anchor=north west][inner sep=0.75pt]  [color={rgb, 255:red, 245; green, 166; blue, 35 }  ,opacity=1 ] [align=left] {$\displaystyle v$};
@@ -70,14 +70,14 @@ Wie sieht es jedoch mit Vektoren aus? Hier ist die Antwort nicht so offensichtli
 
 \vspace{0.25\baselineskip}
 
-Nun kommt es drauf an was grösser in diesem Kontext bedeutet z.B.\ könnte man argumentieren, dass:
+Nun kommt es darauf an was grösser in diesem Kontext bedeutet z.B.\ könnte man argumentieren, dass:
 
 \begin{itemize}
     \item \( v \) ist grösser, da die geometrische Länge grösser ist.
     \item \( w \) ist grösser, da der Vektor eine grössere Zahl enthält.
 \end{itemize}
 
-Normen werden uns nun helfen diese Frage eindeutig zu beantworten. Denn eine Norm ist eine fixe Regel mit welcher man jedem Vektor eine reelle positive Zahl zuordnen kann. Dadurch kann man Sie dann vergleichen. Mathematisch lässt sich das durch eine Abbildung ausdrücken:
+Normen werden uns nun helfen diese Frage eindeutig zu beantworten. Denn eine Norm ist eine fixe Regel, mit welcher man jedem Vektor eine reelle positive Zahl zuordnen kann. Dadurch kann man Sie dann vergleichen. Mathematisch lässt sich das durch eine Abbildung ausdrücken:
 
 \begin{equation*}
     \| {\cdot} \| : V \rightarrow \mathbb{R}, \quad v \mapsto \| v \|.
@@ -88,14 +88,14 @@ Normen werden uns nun helfen diese Frage eindeutig zu beantworten. Denn eine Nor
 Wie im Beispiel von oben, gibt es viele Möglichkeiten diese Zuordnung zu machen. 
 
 \begin{itemize}
-    \item geometrische Länge (Euklidische Norm)
+    \item Geometrische Länge (Euklidische Norm)
         \begin{equation*}
             \begin{aligned}
                 \| x \|_2 = \sqrt{x_1^2 + x_2^2} \quad \to \quad \| v \|_2 &= \sqrt{18} \\
                 \| w \|_2 &= \sqrt{17}
             \end{aligned}        
         \end{equation*}
-    \item gröster Eintrag (Maximumsnorm)
+    \item grösster Eintrag (Maximumsnorm)
         \begin{equation*}
             \begin{aligned}
                 \| x \|_\infty = \max \{ |x_1|, |x_2| \} \quad \to \quad \| v \|_\infty &= 3 \\
@@ -107,7 +107,7 @@ Wie im Beispiel von oben, gibt es viele Möglichkeiten diese Zuordnung zu machen
 Achtung! Nicht alles ist eine Norm, es müssen bestimmte Bedingungen erfüllt sein damit eine Norm vorhanden ist.
 
 \begin{tcolorbox}[colback=gray!30, colframe=gray!80, title=Vektornormen]
-    Eine Norm ordnet jedem Vektor eine reele Zahl zu und kann so als eine Art Mass verstanden werden.\ \( \forall v, w \in V, \alpha \in \mathbb{R} \) muss gelten:
+    Eine Norm ordnet jedem Vektor eine reelle Zahl zu und kann so als eine Art Mass verstanden werden.\ \( \forall v, w \in V, \alpha \in \mathbb{R} \) muss gelten:
     \begin{equation*}
         \begin{aligned}
             & \| v \| \geq 0 \ \text{und} \ \| v \| = 0 \Leftrightarrow v = 0 \\[0.5em]
@@ -145,7 +145,7 @@ Beispiele solcher Normen sind:
 
 \subsection{Skalarprodukte}
 
-Wir haben nun einen Weg um die Grösse von Vektoren in einem Vektorraum zu vergleichen. Im nächsten Schritt wollen wir die Beziheung zwischen zwei Vektoren mit einer reellen Zahl beschriben. Wieder lässt isch dies durch eine Abbildung beschreiben. 
+Wir haben nun einen Weg um die Grösse von Vektoren in einem Vektorraum zu vergleichen. Im nächsten Schritt wollen wir die Beziehung zwischen zwei Vektoren mit einer reellen Zahl beschrieben. Wieder lässt sich dies durch eine Abbildung beschreiben. 
 
 \begin{equation*}
     \langle \cdot, \cdot \rangle : V \times V \rightarrow \mathbb{R}, \quad (x, y) \mapsto \langle x, y \rangle.
@@ -153,10 +153,10 @@ Wir haben nun einen Weg um die Grösse von Vektoren in einem Vektorraum zu vergl
 
 \vspace{0.5\baselineskip}
 
-Auch hier müssen bestimmte Bedinungen erfüllt sein.
+Auch hier müssen bestimmte Bedingungen erfüllt sein.
 
 \begin{tcolorbox}[colback=gray!30, colframe=gray!80, title=Skalarprodukte]
-    Ein Skalarprodukt ordnet jedem Vektorpaar eine reele Zahl zu, diese beschreibt die Beziheung der beiden Vektoren zueinander.\ \( \forall x, y, z \in V, \alpha \in \mathbb{R} \) muss gelten:
+    Ein Skalarprodukt ordnet jedem Vektorpaar eine reelle Zahl zu, diese beschreibt die Beziehung der beiden Vektoren zueinander.\ \( \forall x, y, z \in V, \alpha \in \mathbb{R} \) muss gelten:
     \begin{equation*}
         \begin{aligned}
             & \langle x, y + z \rangle = \langle x, y \rangle + \langle x, z \rangle \\[0.5em]
@@ -169,14 +169,14 @@ Auch hier müssen bestimmte Bedinungen erfüllt sein.
 
 \vspace{0.5\baselineskip}
 
-Wenn \( \langle x, y \rangle = 0 \) dann sind \( x, y \) orthogonal zueinander \( (x \perp y) \). 
+Wenn \( \langle x, y \rangle = 0 \), dann sind \( x, y \) orthogonal zueinander \( (x \perp y) \). 
 
 \vspace{1\baselineskip}
 
-Das Skalarprodukt kann auch benutzt werden um eine Norm zu induzieren. Wenn auf einem Vektorraum ein Skalarprodukt gegeben ist, kann daraus dirket eine Norm der Form
+Das Skalarprodukt kann auch benutzt werden, um eine Norm zu induzieren. Wenn auf einem Vektorraum ein Skalarprodukt gegeben ist, kann daraus direkt eine Norm der Form
 
 \begin{equation*}
     \| x \| := \sqrt{\langle x, x \rangle}
 \end{equation*}
 
-abgeleitet werden. Diese Norm erfüllt automatisch alle Bedingunen einer Norm, egal welches Skalarprodukt benutzt wird. 
+abgeleitet werden. Diese Norm erfüllt automatisch alle Bedingungen einer Norm, egal welches Skalarprodukt benutzt wird. 

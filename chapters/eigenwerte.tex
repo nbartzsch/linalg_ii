@@ -1,7 +1,7 @@
 \setcounter{section}{1}
 \section{Eigenwertproblem}
 
-Betrachten wir zunächst eine lineare Abbildung gegeben durch \( x \mapsto Ax \) mit \( A \in \mathbb{C}^{n \times n} \). Wie wir bereits in der Linearen Algebra I sahen, kann diese Abbildung analog zu einer Funktion interpretiert werden. Die Abbildung nimmt einen Vektor \( x \) und bildet Ihn auf den Vektor \( x' = Ax \) ab. 
+Betrachten wir zunächst eine lineare Abbildung gegeben durch \( x \mapsto Ax \) mit \( A \in \mathbb{C}^{n \times n} \). Wie wir bereits in der Linearen Algebra I sahen, kann diese Abbildung analog zu einer Funktion interpretiert werden. Die Abbildung nimmt einen Vektor \( x \) und bildet ihn auf den Vektor \( x' = Ax \) ab. 
 
 \begin{figure*}[h!]
     \centering
@@ -21,13 +21,13 @@ Betrachten wir zunächst eine lineare Abbildung gegeben durch \( x \mapsto Ax \)
         \draw    (380,130) -- (380,63) ;
         \draw [shift={(380,60)}, rotate = 90] [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.08]  [draw opacity=0] (5.36,-2.57) -- (0,0) -- (5.36,2.57) -- (3.56,0) -- cycle    ;
         %Straight Lines [id:da5667352567230661] 
-        \draw [color={rgb, 255:red, 74; green, 144; blue, 226 }  ,draw opacity=1 ]   (190,120) -- (247.15,100.95) ;
+        \draw [color={rgb, 255:red, 74; green, 144; blue, 226 }  ,draw opacity=1 ] [line width=1.5]  (190,120) -- (247.15,100.95) ;
         \draw [shift={(250,100)}, rotate = 161.57] [fill={rgb, 255:red, 74; green, 144; blue, 226 }  ,fill opacity=1 ][line width=0.08]  [draw opacity=0] (5.36,-2.57) -- (0,0) -- (5.36,2.57) -- (3.56,0) -- cycle    ;
         %Straight Lines [id:da4153575187828108] 
         \draw    (320,100) -- (337,100) ;
         \draw [shift={(340,100)}, rotate = 180] [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.08]  [draw opacity=0] (5.36,-2.57) -- (0,0) -- (5.36,2.57) -- (3.56,0) -- cycle    ;
         %Straight Lines [id:da8411456264053829] 
-        \draw [color={rgb, 255:red, 126; green, 211; blue, 33 }  ,draw opacity=1 ]   (380,120) -- (437.88,62.12) ;
+        \draw [color={rgb, 255:red, 126; green, 211; blue, 33 }  ,draw opacity=1 ] [line width=1.5]  (380,120) -- (437.88,62.12) ;
         \draw [shift={(440,60)}, rotate = 135] [fill={rgb, 255:red, 126; green, 211; blue, 33 }  ,fill opacity=1 ][line width=0.08]  [draw opacity=0] (5.36,-2.57) -- (0,0) -- (5.36,2.57) -- (3.56,0) -- cycle    ;
 
         % Text Node
@@ -60,13 +60,13 @@ Wir fragen uns nun, ob es bestimmte Eingabevektoren \( x \) gibt, welche durch d
         \draw    (380,130) -- (380,63) ;
         \draw [shift={(380,60)}, rotate = 90] [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.08]  [draw opacity=0] (5.36,-2.57) -- (0,0) -- (5.36,2.57) -- (3.56,0) -- cycle    ;
         %Straight Lines [id:da5667352567230661] 
-        \draw [color={rgb, 255:red, 74; green, 144; blue, 226 }  ,draw opacity=1 ]   (190,120) -- (247.15,100.95) ;
+        \draw [color={rgb, 255:red, 74; green, 144; blue, 226 }  ,draw opacity=1 ] [line width=1.5]  (190,120) -- (247.15,100.95) ;
         \draw [shift={(250,100)}, rotate = 161.57] [fill={rgb, 255:red, 74; green, 144; blue, 226 }  ,fill opacity=1 ][line width=0.08]  [draw opacity=0] (5.36,-2.57) -- (0,0) -- (5.36,2.57) -- (3.56,0) -- cycle    ;
         %Straight Lines [id:da4153575187828108] 
         \draw    (320,100) -- (337,100) ;
         \draw [shift={(340,100)}, rotate = 180] [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.08]  [draw opacity=0] (5.36,-2.57) -- (0,0) -- (5.36,2.57) -- (3.56,0) -- cycle    ;
         %Straight Lines [id:da06992950235433282] 
-        \draw [color={rgb, 255:red, 126; green, 211; blue, 33 }  ,draw opacity=1 ]   (380,120) -- (467.15,90.95) ;
+        \draw [color={rgb, 255:red, 126; green, 211; blue, 33 }  ,draw opacity=1 ]  [line width=1.5] (380,120) -- (467.15,90.95) ;
         \draw [shift={(470,90)}, rotate = 161.57] [fill={rgb, 255:red, 126; green, 211; blue, 33 }  ,fill opacity=1 ][line width=0.08]  [draw opacity=0] (5.36,-2.57) -- (0,0) -- (5.36,2.57) -- (3.56,0) -- cycle    ;
 
         % Text Node
@@ -89,7 +89,7 @@ Der Vektor \(x \) welcher durch die Abbildung nur gestreckt bzw.\ gestaucht wird
 
 \subsection{Eigenwerte}
 
-Wir suchen nun ein \( \lambda \) sodass \( Ax = \lambda x \) gilt. (Wir suchen nur nichttriviale Lösungen \(x \neq 0\)). Durch umstellen von (\ref{eq:eigenwertgleichung})  erhalten wir ein homogenes lineares Gleichungssystem der Form
+Wir suchen nun ein \( \lambda \), sodass \( Ax = \lambda x \) gilt. (Wir suchen nur nichttriviale Lösungen \(x \neq 0\)). Durch Umstellen von (\ref{eq:eigenwertgleichung})  erhalten wir ein homogenes lineares Gleichungssystem der Form
 
 \begin{equation}
     (A - \lambda I) x = 0.
@@ -131,7 +131,7 @@ Sei \( A = \begin{pmatrix} 3 & 0 & 0 \\ 5 & -6 & 0 \\ 0 & 1 & 3 \end{pmatrix} \)
     \end{aligned}
 \end{equation*}
 
-Das Polynom \( p_A := \text{det}(A - \lambda I) \) heisst charakteristisches Polynom. Wenn \( A \in \mathbb{C}^{n \times n} \) dann ist \( p_A(\lambda) \) ein Polynom vom Grad \( n \). In unserem Beispiel ist der Eigenwert 3 eine doppelte Nullstelle des charakteristischen Polynoms. Wir sagen dann, dass die algebraische Vielfachheit des Eigenwertes 3 gleich 2 ist. Für die Matrix von oben bedeutet das
+Das Polynom \( p_A := \text{det}(A - \lambda I) \) heisst charakteristisches Polynom. Wenn \( A \in \mathbb{C}^{n \times n} \), dann ist \( p_A(\lambda) \) ein Polynom vom Grad \( n \). In unserem Beispiel ist der Eigenwert 3 eine doppelte Nullstelle des charakteristischen Polynoms. Wir sagen dann, dass die algebraische Vielfachheit des Eigenwertes 3 gleich 2 ist. Für die Matrix von oben bedeutet das
 
 \begin{equation*}
     \begin{aligned}
@@ -148,8 +148,8 @@ Merkmale und Definitionen von Eigenvektoren einer Matrix \( A \in \mathbb{C}^{n 
     \item \( A \) hat mindestens einen Eigenwert \( \lambda \in \mathbb{C} \)
     \item \( A \) hat höchstens \( n \) Eigenwerte \( \lambda \in \mathbb{C} \)
     \item \( A \) hat genau \( n \) Eingenwerte \( \lambda \in \mathbb{C} \), wenn man die Vielfachheit zählt
-    \item Die Menge aller Eigenwerte von \( A \) heisst Spektrum von \( A \) 
-    \item Zwei Matrizen \( A, B \in \mathbb{C}^{n \times n} \) heissen ähnlich, wenn für eine reguläre Matrix \( T \in \mathbb{C}^{n \times n} \) gilt: \( B = T^{-1} A T \). Ferner haben haben \( A \) und \( B \) dann:
+    \item die Menge aller Eigenwerte von \( A \) heisst Spektrum von \( A \) 
+    \item Zwei Matrizen \( A, B \in \mathbb{C}^{n \times n} \) heissen ähnlich, wenn für eine reguläre Matrix \( T \in \mathbb{C}^{n \times n} \) gilt: \( B = T^{-1} A T \). Ferner haben \( A \) und \( B \) dann:
     \begin{itemize}
         \item dasselbe charakteristische Polynom
         \item dieselben Eigenwerte mit denselben algebraischen Vielfachheiten
@@ -221,7 +221,7 @@ besitzt und somit in den folgenden Eigenvektor resultiert:
         v_{\lambda_3} = \begin{pmatrix} 0 \\ -9 \\ 1 \end{pmatrix}.
 \end{equation*}
 
-Da wir bei der Berechnung für Eigenvektoren ein HLGS mit det \(= 0 \) lösen, wird es immer unendlich viele Lösungen für \( (A-\lambda I) x = 0 \) geben. D.h.\ jede mögliche Linearkombination von Eigenvektoren von einem Eigenwert ist auch wieder ein Eigenvektor zum gleichen Eigenwert. Der dadruch aufgespannte Vektorraum ist dann ein Unterraum von \( \mathbb{C}^n \) und nennt sich Eigenraum. Eigenräume werden mit \( E_{\lambda_i} \) bezeichnet.
+Da wir bei der Berechnung für Eigenvektoren ein HLGS mit det \(= 0 \) lösen, wird es immer unendlich viele Lösungen für \( (A-\lambda I) x = 0 \) geben. D.h.\ jede mögliche Linearkombination von Eigenvektoren von einem Eigenwert ist auch wieder ein Eigenvektor zum gleichen Eigenwert. Der dadurch aufgespannte Vektorraum ist dann ein Unterraum von \( \mathbb{C}^n \) und nennt sich Eigenraum. Eigenräume werden mit \( E_{\lambda_i} \) bezeichnet.
 
 \subsubsection*{Beispiel}
 
@@ -257,7 +257,7 @@ Der resultierende Eigenraum zum Eigenwert 1 ist somit
 
 \vspace{\baselineskip}
 
-In diesem Beispiel ist also der Eigenraum \( E_1 \) zum Eigenwert 1 ein zweidimensionaler Unterraum. Die Dimension des Eigenraums dim\( (E_{\lambda_i}) \) heisst geometrische Vielfachheit des Eigenwertes \( \lambda_i \). In unserem Beispiel ist also die geometrische Vielfachheit von \( \lambda_1 =  2 \). Die geometrische Vielfachheit ist immer gleich der Anzhal freier Parameter des HLGS \( (A - \lambda I)x = 0 \). Allgemein ist immer zu beachten, dass für einen Eigenwert \( \lambda \) der Matrix \( A \in \mathbb{C}^{n \times n} \) gelten muss:
+In diesem Beispiel ist also der Eigenraum \( E_1 \) zum Eigenwert 1 ein zweidimensionaler Unterraum. Die Dimension des Eigenraums dim\( (E_{\lambda_i}) \) heisst geometrische Vielfachheit des Eigenwertes \( \lambda_i \). In unserem Beispiel ist also die geometrische Vielfachheit von \( \lambda_1 =  2 \). Die geometrische Vielfachheit ist immer gleich der Anzahl freier Parameter des HLGS \( (A - \lambda I)x = 0 \). Allgemein ist immer zu beachten, dass für einen Eigenwert \( \lambda \) der Matrix \( A \in \mathbb{C}^{n \times n} \) gelten muss:
 
 \begin{equation*}
     1 \leq \text{geom. Vielfachheit}(\lambda) \leq \text{alg. Vielfachheit}(\lambda) \leq n.
