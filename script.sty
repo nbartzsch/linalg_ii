@@ -20,10 +20,18 @@
 \usepackage[ngerman]{babel}
 \usepackage{fancyhdr}
 \usepackage[most]{tcolorbox}
+\usepackage{cancel}
 
 \setlength{\parindent}{0pt}
 \captionsetup{width=0.85\textwidth}
 \newboolean{includingsolutions}
+
+\definecolor{customorange}{rgb}{0.9608, 0.6510, 0.1372}
+\definecolor{customlila}{rgb}{0.5647, 0.0745, 0.9960}
+\definecolor{customred}{rgb}{0.8157, 0.0078, 0.1059} 
+\definecolor{customblue}{rgb}{0.2902, 0.5647, 0.8863} 
+\definecolor{customgreen}{rgb}{0.4941, 0.8275, 0.1294} 
+\definecolor{custombrown}{rgb}{0.5451, 0.3412, 0.1647} 
 
 \newenvironment{solution}
 {\ifthenelse{\boolean{includingsolutions}}{\par\textbf{Solution:}}{\vspace{5\baselineskip}\expandafter\comment}}
