@@ -43,7 +43,7 @@ Das heisst, dass alle möglichen Ergebnisse einer Matrix-Vektor-Multiplikation \
 
 \vspace{0.25\baselineskip}
 
-definiert. Bildlich können wir uns das Bild gut im zweidimensionalen Raum vorstellen. Seien beispielsweise die Matrizen
+definiert. Grafisch können wir uns das Bild gut im zweidimensionalen Raum vorstellen. Seien beispielsweise die Matrizen
 
 \begin{equation*}
     A = \begin{pmatrix}
@@ -206,7 +206,7 @@ Oft muss ein Erzeugendensystem oder Basis des Bildes einer Matrix gefunden werde
 
     \vspace{0.25\baselineskip}
 
-    (Falls man direkt erkennt wie viele linear unabhängige Spalten eine Matrix hat, kann man direkt die entsprechende Anzahl an Spaltenvektoren nehmen. Bei grossen Matrizen kann es aber schwierig sein, lineare Abhängigkeit zwischen Spalten zu erkennen.)
+    (Falls man direkt erkennt wie viele linear unabhängige Spalten eine Matrix hat, kann man ohne Rechnung die entsprechende Anzahl an Spaltenvektoren nehmen. Bei grossen Matrizen kann es aber schwierig sein, lineare Abhängigkeit zwischen Spalten zu erkennen.)
 
 \end{itemize}
 
@@ -221,7 +221,7 @@ Um eine Intuition für den Kern zu bekommen, blicken wir nochmals auf das Bild e
     \end{pmatrix},
 \end{equation*}
 
-können wir uns das Bild grafisch als eine Linie vorstellen da \( A \) zwei linear abhängige Spalten hat. Betrachten wir nun was passiert, wenn einige Vektoren \( \textcolor{customlila}{v} \) durch \( A \) abgebildet werden, \( A \textcolor{customlila}{v} = \textcolor{customred}{u} \)
+können wir uns das Bild grafisch als eine Linie vorstellen da \( A \) zwei linear abhängige Spalten hat. Betrachten wir nun was passiert, wenn einige Vektoren \( \textcolor{customlila}{v} \) durch \( A \) abgebildet werden, d.h.\ \( A \textcolor{customlila}{v} = \textcolor{customred}{u} \)
 
 \begin{equation*}
     \begin{pmatrix}
@@ -310,7 +310,7 @@ können wir uns das Bild grafisch als eine Linie vorstellen da \( A \) zwei line
     \end{tikzpicture}
 \end{figure*}
 
-Man erkennt, dass alle Vektoren nach der Multiplikation mit \( A \) wie erwartet im Bild liegen (in diesem fall auf der orangen Linie). Wir können uns nun fragen welche Vektoren \( \textcolor{customblue}{x} \) durch \( A \) auf null abgebildet werden. D.h.\ wir suchen all \( \textcolor{customblue}{x} \), sodass \( A \textcolor{customblue}{x} = \textcolor{customred}{0} \).
+Man erkennt, dass alle Vektoren nach der Multiplikation mit \( A \) wie erwartet im \textcolor{customorange}{Bild} liegen (in diesem fall auf der orangen Linie). Wir können uns nun fragen welche Vektoren \( \textcolor{customblue}{x} \) durch \( A \) auf null abgebildet werden. D.h.\ wir suchen all \( \textcolor{customblue}{x} \), sodass \( A \textcolor{customblue}{x} = \textcolor{customred}{0} \). Zum Beispiel erfüllen diese Vektoren die Bedingung:
 
 \begin{equation*}
     \begin{pmatrix}
@@ -402,11 +402,33 @@ Man erkennt, dass alle Vektoren nach der Multiplikation mit \( A \) wie erwartet
 
 \vspace{0.5\baselineskip}
 
-Wir sehen das alle Vektoren auf der blauen Linie diese Bedingung erfüllen. Diese resultierende Menge, aller Vektoren, die auf null abgebildet werden, wird Kern genannt. Mathematisch ausgedrückt ist der Kern einer Matrix \( A \) definiert durch
+Wir erkennen, dass alle Vektoren auf der blauen Linie diese Bedingung erfüllen. Diese resultierende Menge, aller Vektoren, die auf null abgebildet werden, wird Kern genannt. Diese Menge ist äquivalent zur Lösung des HLGS \( Ax = 0 \). Mathematisch ausgedrückt ist der Kern einer Matrix \( A \) definiert durch
 
 \begin{equation*}
     \text{Kern}(A) = \{ x \in \mathbb{R}^n \mid Ax = 0 \}.
 \end{equation*}
+
+Mit der Definition von Kern können wir auch die im ersten Abschnitt eringeführte Zusammenhangsliste ergänzen. 
+
+\begin{tcolorbox}[colback=gray!30, colframe=gray!80, title=Wichtige Zusammenhänge]
+    Folgende Aussagen sind für \( A \in \mathbb{R}^{n \times n} \) äquivalent:
+    \begin{itemize}
+        \item \(rang (A) = n \)
+        \item Das LGS \( Ax=b \) ist für beliebiges \( b \) lösbar
+        \item Das LGS \( Ax=b \) hat genau eine Lösung
+        \item Das homogene LGS \( Ax=0 \) hat nur die triviale Lösung \( x = 0 \)
+        \item Die Zeilen und Spalten von \( A \) sind linear unabhängig
+        \item \( A \) ist invertierbar (regulär, nicht singulär)
+        \item \( det(A) \neq 0 \)
+        \item Die Spalten von \( A \) bilden eine Basis von \( \mathbb{R}^n \)
+        \item \textcolor{red}{Der Kern besteht nur aus dem Nullvektor}
+        \item \textcolor{red}{Kein Eigenwert von \( A \) ist Null}
+    \end{itemize}
+\end{tcolorbox}
+
+\vspace{0.5\baselineskip}
+
+Um den Zusammenhang mit Eigenwerten zu verstehen, erinnern wir uns nochmals was Eigenwerte und Eigenvektoren sind. Ein Eigenvektor ist ein Vektor, der durch eine Multipikation mit einer Matrix nur um einen Faktor \( \lambda \), dem Eigenwert, skaliert wird. Wenn nun ein Eigenwert Null ist, dann gibt es Vekotoren (die nicht der Nullvektor sind) welche auf Null abgebildet werden. D.h.\ das HLGS \( Ax = 0 \) hat nicht triviale Lösungen \( x \neq 0 \) und dadurch ist der Rang der Matrix nocht voll.
 
 \subsubsection*{Beispiel}
 
@@ -440,7 +462,7 @@ Wir sehen das alle Vektoren auf der blauen Linie diese Bedingung erfüllen. Dies
 Im Folgenden wollen wir Zusammenhänge zwischen Kern und Bild genauer betrachten. Spezifischer wollen wir zwei wichtige Eigenschaften beweisen. Die erste Eigenschaft 
 
 \begin{equation*}
-    \text{dim}(\text{Kern}) + \text{dim}(\text{Bild}) = n,
+    i. \quad \text{dim}(\text{Kern}) + \text{dim}(\text{Bild}) = n,
         % ii. & \quad \text{Kern}(A^\top) \perp \text{Bild}(A).
 \end{equation*}
 
@@ -462,7 +484,7 @@ Beginnen wir mit dem grafischen Beweis in 2 Dimensionen. Sei \( A \in \mathbb{R}
 Dadurch ist:
 
 \begin{equation*}
-    A = \textcolor{customlila}{v} = A ( \textcolor{customred}{\hat{v}} + \textcolor{customred}{\bar{v}} ) = \cancelto{0}{A \textcolor{customred}{\hat{v}}} + A \textcolor{customred}{\bar{v}} = A \textcolor{customred}{\bar{v}} = \textcolor{customgreen}{w}.
+    A \textcolor{customlila}{v} = A ( \textcolor{customred}{\hat{v}} + \textcolor{customred}{\bar{v}} ) = \cancelto{0}{A \textcolor{customred}{\hat{v}}} + A \textcolor{customred}{\bar{v}} = A \textcolor{customred}{\bar{v}} = \textcolor{customgreen}{w}.
 \end{equation*}
 
 Der Term \( A \textcolor{customred}{\hat{v}} \) ist Null, da \( \textcolor{customred}{\hat{v}} \) im Kern von \( A \) liegt. Letztlich definieren wir noch einen zum Kern orthogonalen Unterraum \( \textcolor{custombrown}{U} \). Per Definition ist dadurch \( \textcolor{customred}{\bar{v}} \in \textcolor{custombrown}{U} \). Zusammengefasst können wir das ganze grafisch darstellen:
@@ -514,6 +536,8 @@ Der Term \( A \textcolor{customred}{\hat{v}} \) ist Null, da \( \textcolor{custo
         \draw (218,113) node [anchor=north west][inner sep=0.75pt]  [color={rgb, 255:red, 208; green, 2; blue, 27 }  ,opacity=1 ] [align=left] {\( \textcolor{customred}{\bar{v}} \)};
         % Text Node
         \draw (337,74) node [anchor=north west][inner sep=0.75pt]  [color={rgb, 255:red, 144; green, 19; blue, 254 }  ,opacity=1 ] [align=left] {$\displaystyle v$};
+          % Text Node
+          \draw (270,60) node [anchor=north west][inner sep=0.75pt]  [color={rgb, 255:red, 208; green, 2; blue, 27 }  ,opacity=1 ] [align=left] {\( \textcolor{customgreen}{w} \)};
     \end{tikzpicture}
 \end{figure*}
 
@@ -521,7 +545,16 @@ Folgende Beobachtungen können nun gemacht werden:
 
 \begin{itemize}
     \item Der \textcolor{customblue}{\text{Kern}} und der zum Kern orthogonale Unterraum \( \textcolor{custombrown}{U} \) haben zusammen die Dimension \( n \), da wir durch die Summe \( \textcolor{customlila}{v} = \textcolor{customred}{\hat{v}} + \textcolor{customred}{\bar{v}} \) alle Vektoren \( \textcolor{customlila}{v} \) erzeugen können.
-    \item Jeder Vektor \( \textcolor{customred}{\bar{v}} \) in \( \textcolor{custombrown}{U} \) korrespondiert einem Vektor in \( \textcolor{customorange}{\text{Bild}} \) und umgekehrt, da \( A \textcolor{customred}{\bar{v}} = \textcolor{customgreen}{w} \). Die Dimension von \( \textcolor{custombrown}{U} \) ist also gleich der Dimension des \( \textcolor{customorange}{\text{Bildes}} \).
+    
+    \begin{equation*}
+        \text{dim}(\textcolor{customblue}{\text{Kern}}) + \text{dim}(\textcolor{custombrown}{U}) = n.
+    \end{equation*}
+
+    \item Jeder Vektor \( \textcolor{customred}{\bar{v}} \) in \( \textcolor{custombrown}{U} \) korrespondiert zu einem Vektor in \( \textcolor{customorange}{\text{Bild}} \) und umgekehrt, da \( A \textcolor{customred}{\bar{v}} = \textcolor{customgreen}{w} \). Die Dimension von \( \textcolor{custombrown}{U} \) ist also gleich der Dimension des \( \textcolor{customorange}{\text{Bildes}} \).
+    
+    \begin{equation*}
+        \text{dim}(\textcolor{custombrown}{U}) = \text{dim}(\textcolor{customorange}{\text{Bild}}).
+    \end{equation*}
 \end{itemize}
 
 Zusammen gilt also 
@@ -606,7 +639,7 @@ und somit
 Die zweite Eigenschaft, die wir beweisen wollen ist, gegeben durch:
 
 \begin{equation*}
-    \text{Kern}(A^\top) \perp \text{Bild}(A).
+    ii. \quad \text{Kern}(A^\top) \perp \text{Bild}(A).
 \end{equation*}
 
 Den Beweis dazu können wir durch folgende Überlegung erlangen. Sei \( A \) definiert durch:

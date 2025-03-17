@@ -436,3 +436,29 @@ Die Orthonormalbasis ist gegeben durch
 \begin{equation*}
     \mathcal{E} = \left\{ 1, \frac{15}{4}x^4 - \frac{3}{4} \right\}.
 \end{equation*}
+
+Zusammengefasst kann das Gram-Schmidt-Verfahren in einem Kochrezept zusammengefasst werden.
+
+\begin{tcolorbox}[colback=gray!30, colframe=gray!80, title=Gram-Schmidt-Verfahren]
+    Für das Gram-Schmidt-Verfahren benötigt man eine beliebige Basis \( \mathcal{B} = \{ b_1, \ldots, b_k \} \), sowie ein beliebeiges Skalarprodukt. Daraus lässt sich dann eine Orthonormalbasis \( \mathcal{E} = \{ e_1, \ldots, e_k \} \) erstellen.
+    \begin{enumerate}
+        \item Wähle einen beliebeigen Basisvektor \( b_1 \) und normiere ihn mit der vom Skalarprodukt induzierten Norm.
+        \begin{equation*}
+            e_1 = \frac{b_1}{\| b_1 \|} = \frac{b_1}{\sqrt{\langle b_1, b_1 \rangle}}
+        \end{equation*}
+        \item Wähle einen zwieten Basisvektor \( b_2 \), ziehe den zu \( b_1 \) parallelen Teil ab un normiere ihn.
+        \begin{equation*}
+            \begin{aligned}
+                e_2' &= b_2 - \langle b_2, e_1 \rangle e_1 \\[1em]
+                e_2 &= \frac{e_2'}{\| e_2' \|} = \frac{e_2'}{\sqrt{\langle e_2', e_2' \rangle}}
+            \end{aligned}
+        \end{equation*}
+        \item Wiederhole für jeden Basisvektor \( b_i \)
+        \begin{equation*}
+            \begin{aligned}
+                e_i' &= b_i - \langle b_i, e_1 \rangle e_1 - \langle b_i, e_2 \rangle e_2 - \ldots - \langle b_i, e_{i-1} \rangle e_{i-1} \\[1em]
+                e_i &= \frac{e_i'}{\| e_i' \|} = \frac{e_i'}{\sqrt{\langle e_i', e_i' \rangle}}
+            \end{aligned}
+        \end{equation*}
+    \end{enumerate}
+\end{tcolorbox}
