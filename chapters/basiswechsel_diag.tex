@@ -69,6 +69,9 @@ Wir können aber auch eine andere Basis wählen, z.B.\ gegeben durch die Vektore
     \begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
         %uncomment if require: \path (0,300); %set diagram left start at 0, and has height of 300
         
+        %Straight Lines [id:da01758312990137323] 
+        \draw [color={rgb, 255:red, 245; green, 166; blue, 35 }  ,draw opacity=0.3 ][line width=1.5]    (390,160) -- (233.88,120.97) ;
+        \draw [shift={(230,120)}, rotate = 14.04] [fill={rgb, 255:red, 245; green, 166; blue, 35 }  ,fill opacity=0.3 ][line width=0.08]  [draw opacity=0] (6.43,-3.09) -- (0,0) -- (6.43,3.09) -- (4.27,0) -- cycle    ;
         %Straight Lines [id:da4582485034206436] 
         \draw [color={rgb, 255:red, 255; green, 255; blue, 255 }  ,draw opacity=1 ]   (290,190) -- (567.01,170.21) ;
         \draw [shift={(570,170)}, rotate = 175.91] [fill={rgb, 255:red, 255; green, 255; blue, 255 }  ,fill opacity=1 ][line width=0.08]  [draw opacity=0] (5.36,-2.57) -- (0,0) -- (5.36,2.57) -- (3.56,0) -- cycle    ;
@@ -194,7 +197,8 @@ Dies können wir in ein LGS in Matrixschreibweise umformen:
     \underbrace{\begin{pmatrix} 2 & -1 \\ 1 & 1 \end{pmatrix}}_{:= \ T_{\textcolor{customorange}{\mathcal{B}'} \mapsto \textcolor{customlila}{\mathcal{B}}}} \begin{bmatrix} \textcolor{customorange}{x_1} \\ \textcolor{customorange}{x_2} \end{bmatrix}_{\textcolor{customorange}{\mathcal{B}'}} = \begin{bmatrix} -4 \\ 1 \end{bmatrix}_{\textcolor{customlila}{\mathcal{B}}} \quad \Leftrightarrow \quad T_{\textcolor{customorange}{\mathcal{B}'} \mapsto \textcolor{customlila}{\mathcal{B}}} \begin{bmatrix} \textcolor{customorange}{x_1} \\ \textcolor{customorange}{x_2} \end{bmatrix}_{\textcolor{customorange}{\mathcal{B}'}} = \begin{bmatrix} -4 \\ 1 \end{bmatrix}_{\textcolor{customlila}{\mathcal{B}}}.
 \end{equation*}
 
-Die Matrix \( T_{\textcolor{customorange}{\mathcal{B}'} \mapsto \textcolor{customlila}{\mathcal{B}}}\) transformiert durch eine Multiplikation einen Vektor aus der Basis \textcolor{customorange}{\(\mathcal{B}'\)} in die Basis \textcolor{customlila}{\(\mathcal{B}\)}. Wir suchen jedoch eine Matrix die einen Vektor aus der Basis \textcolor{customlila}{\(\mathcal{B}\)} in die Basis \textcolor{customorange}{\(\mathcal{B}'\)} transformiert. Dafür können wir einfach die Inverse nehmen:
+
+Wir erkennen hier, dass wenn wir einen Vektor in der Basis \( \textcolor{customorange}{\mathcal{B'}} \) mit der Matrix \( T_{\textcolor{customorange}{\mathcal{B}'} \mapsto \textcolor{customlila}{\mathcal{B}}}\) multiplizieren bekommen wir denselben Vektor in der Basis \( \textcolor{customlila}{\mathcal{B}} \). Wir können also sagen, dass die Matrix \( T_{\textcolor{customorange}{\mathcal{B}'} \mapsto \textcolor{customlila}{\mathcal{B}}}\) einen Vektor aus der Basis \textcolor{customorange}{\(\mathcal{B}'\)} in die Basis \textcolor{customlila}{\(\mathcal{B}\)} transformiert. Wir suchen jedoch eine Matrix die einen Vektor aus der Basis \textcolor{customlila}{\(\mathcal{B}\)} in die Basis \textcolor{customorange}{\(\mathcal{B}'\)} transformiert. Dafür können wir einfach die Inverse nehmen:
 
 \begin{equation*}
     \begin{bmatrix} \textcolor{customorange}{x_1} \\ \textcolor{customorange}{x_2} \end{bmatrix}_{\textcolor{customorange}{\mathcal{B}'}} = T_{\textcolor{customorange}{\mathcal{B}'} \mapsto \textcolor{customlila}{\mathcal{B}}}^{-1} \begin{bmatrix} -4 \\ 1 \end{bmatrix}_{\textcolor{customlila}{\mathcal{B}}} = \begin{bmatrix} \textcolor{customorange}{-1} \\ \textcolor{customorange}{2} \end{bmatrix}_{\textcolor{customorange}{\mathcal{B}'}}.
@@ -326,15 +330,15 @@ Wir benutzten hier die oben eingeführte Transformationsmatrix in diesem Fall be
 
 \subsection{Diagonalisierung}
 
-Wir wissen nun wie wir von einer Basis zur anderen wechseln können, indem wir Vektoren und Matrizen transformieren. Für lineare Abbildungen ist es vorteilhaft, wenn die dazugehörige Abbildungsmatrix diagonal ist. Diagonalmatrizen sind leicht invertierbar und Matrixmultiplikation ist bedeutend unkomplizierter. Beim sogenannten Diagonalisieren wollen wir einen Basiswechsel durchführen, sodass eine gewünschte Matrix in der neuen Basis diagonal ist. Konkreter wollen wir für eine quadratische Matrix \( A \in \mathbb{C}^{n \times n} \) eine Matrix \( T \in \mathbb{C}^{n \times n} \) finden, sodass
+Wir wissen nun wie wir von einer Basis zur anderen wechseln können, indem wir Vektoren und Matrizen transformieren. Da lineare Abbildungen durch Matrizen beschrieben werden können, sind wir auch in der Lage lineare Abbildungen von einer Basis in die andere zu transformieren. Für solche Abbildungen ist es vorteilhaft, wenn die dazugehörige Abbildungsmatrix diagonal ist. Denn Diagonalmatrizen sind leicht invertierbar und Matrixmultiplikation ist bedeutend unkomplizierter. Beim sogenannten Diagonalisieren wollen wir einen Basiswechsel durchführen, sodass eine gewünschte Matrix in der neuen Basis diagonal ist. Konkreter wollen wir für eine quadratische Matrix \( A \in \mathbb{C}^{n \times n} \) eine Matrix \( T \in \mathbb{C}^{n \times n} \) finden, sodass
 
 \begin{equation*}
     T^{-1} A \ T = D = \text{diag}(d_1, d_2, \dots, d_n),
 \end{equation*}
 
-wobei \( D \) die Matrix in der neuen Basis ist. Um die Diagonalisierung durchzuführen, müssen wir demnach die Basis finden in der \( A \) diagonal ist. Dafür nehmen wir nochmals einen Schritt zurück und überlegen uns was der Effekt von diagonalen Matrizen im zweidimensionalen Raum ist. Im folgenden Besipiel betrachten wie eine Diagonalmatrix verschiedene Vektoren im Raum abbildet.
+wobei \( D \) die Matrix in der neuen Basis ist. Um die Diagonalisierung durchzuführen, müssen wir demnach die Basis finden in der \( A \) diagonal ist. Dafür nehmen wir nochmals einen Schritt zurück und überlegen uns was der Effekt von diagonalen Matrizen und deren assoziierter Abbildung im zweidimensionalen Raum ist. Im folgenden Beispiel betrachten wie eine Diagonalmatrix verschiedene Vektoren im Raum abbildet.
 
-\vspace{0.25\baselineskip}
+\newpage
 
 \begin{figure}[h]
     \centering
@@ -382,13 +386,13 @@ wobei \( D \) die Matrix in der neuen Basis ist. Um die Diagonalisierung durchzu
     \end{tikzpicture}
 \end{figure}
 
-Wir erkennen, dass die Basisvektoren (hier die Standardbasis in blau und rot) nur skaliert werden, aber nicht Ihre Richtung ändern. Das ist genau wie bei Eigenvektoren. In anderen Worten sind bei Diagonalmatrizen die Basisvektoren auch Eigenvektoren. 
-
 \begin{equation*}
     \begin{pmatrix} 2 & 0 \\ 0 & \frac{1}{2} \end{pmatrix} \begin{bmatrix} 1 \\ 0 \end{bmatrix} = \begin{bmatrix} 2 \\ 0 \end{bmatrix}, \quad \begin{pmatrix} 2 & 0 \\ 0 & \frac{1}{2} \end{pmatrix} \begin{bmatrix} 0 \\ 1 \end{bmatrix} = \begin{bmatrix} 0 \\ \frac{1}{2} \end{bmatrix}
 \end{equation*}
 
-Indem wir also die Eigenvektoren der ursprünglichen Matrix als neue Basisvektoren wählen, garantieren wir, dass die Matrix in der neuen Basis diagonal ist. Weiterhin sehen wir, dass die Diagonaleinträge der Matrix genau die Faktoren sind mit denen die Basisvektoren skaliert werden. D.h.\ die Diagonaleinträge der diagonalisierten Matrix sind auch die Eigenwerte der ursprünglichen Matrix.
+\vspace{0.25\baselineskip}
+
+Wir erkennen, dass die Basisvektoren (hier die Standardbasis in Blau und Rot) nur skaliert werden, aber nicht Ihre Richtung ändern. Das ist genau wie bei Eigenvektoren. In anderen Worten sind bei Diagonalmatrizen die Eigenvektoren auch die Basisvektoren. Indem wir also die Eigenvektoren der ursprünglichen Matrix als neue Basisvektoren wählen, garantieren wir, dass die Matrix in der neuen Basis diagonal ist. Weiterhin sehen wir, dass die Diagonaleinträge der Matrix genau die Faktoren sind mit denen die Basisvektoren skaliert werden. D.h.\ die Diagonaleinträge der diagonalisierten Matrix sind auch die Eigenwerte der ursprünglichen Matrix.
 
 \vspace{1\baselineskip}
 
@@ -398,7 +402,7 @@ Sei zum Beispiel eine Matrix A in der Standardbasis \( \mathcal{S} \) gegeben du
     \lambda_1 = 2, \quad v_1 = \begin{bmatrix} 1 \\ 0 \end{bmatrix}, \quad \lambda_2 = 1, \quad v_2 = \begin{bmatrix} 1 \\ 1 \end{bmatrix}.
 \end{equation*}
 
-Um \( A \) zu diagonalisieren suchen wir eine Basis \( \mathcal{B} \) inder die Basisvektoren durch die Eigenvektoren \( v_1, v_2 \) gegeben sind. Demanch könnenm wir die Übergangsmatrix \( T_{\mathcal{B} \mapsto \mathcal{S} } \) bestimmen indem wir die Eigenvektoren als Spalten nehmen:
+Um \( A \) zu diagonalisieren suchen wir eine Basis \( \mathcal{B} \), in der die Basisvektoren durch die Eigenvektoren \( v_1, v_2 \) gegeben sind. Anschliessend benötigen wir nur noch eine Transformationsmatrix, um in die entsprechende Basis zu wechseln. Mit den gegebenen Eigenvektoren können wir bereits die Übergangsmatrix \( T_{\mathcal{B} \mapsto \mathcal{S} } \) bestimmen, indem wir die Eigenvektoren als Spalten nehmen:
 
 \begin{equation*}
     T_{\mathcal{B} \mapsto \mathcal{S} } = \begin{pmatrix} 1 & 1 \\ 0 & 1 \end{pmatrix}.
@@ -418,12 +422,12 @@ Die Eigenwerte der Matrix \( A \) sind nun auch die Diagonaleinträge der Matrix
 
 Zusammengefasst können wir dies in einem ``Kochrezept'' aufschreiben.
 
-\begin{tcolorbox}[colback=gray!30, colframe=gray!80, title=Diagonalisierung]
-    Um eine Matrix \( A \in \mathbb{C}^{n \times n} \) zu diagonalisieren ( \( D = T^{-1}AT \) ), gehe wie folgt vor:
+\begin{tcolorbox}[colback=gray!30, colframe=gray!80, title=Diagonalisieren]
+    Um eine Matrix \( A \in \mathbb{C}^{n \times n} \) zu diagonalisieren (\( D = T^{-1}AT \)), gehe wie folgt vor:
     \begin{enumerate}
         \item Bestimme die Eigenwerte \( \lambda_i \) und Eigenvektoren \( v_i \) von \( A \).
         \item Die Matrix \( D = \text{diag}(\lambda_1, \dots , \lambda_n) \) ist die diagonalisierte Matrix.
-        \item Setze die Eigenvektoren als Spalten in die Matrix \( T \) ein (Gleiche Reihenfolge wie bei \( D \)!).
-        \item Bestimme \( T^{-1} \). Falls Eigenvektoren orthonormal sind gilt: \( T^{-1} = T^\top \).
+        \item Setze die Eigenvektoren als Spalten in die Matrix \( T \) ein (\textbf{Gleiche Reihenfolge wie bei \( \mathbf{D} \)!}).
+        \item Bestimme \( T^{-1} \). Falls Eigenvektoren orthonormal sind, gilt: \( T^{-1} = T^\top \).
     \end{enumerate}
 \end{tcolorbox}
