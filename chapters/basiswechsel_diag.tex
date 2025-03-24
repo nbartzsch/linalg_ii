@@ -464,7 +464,7 @@ Somit können wir das Kriterium für die Diagonalisierbarkeit einer Matrix zusam
 
 \subsubsection*{Beispiel} \( \ \)
 
-Halbeinfache Martix: \( A = \begin{pmatrix} 2 & -1 \\ 0 & 1 \end{pmatrix} \). Mit den Eigenwerten und Eigenvektoren
+Halbeinfache Matrix: \( A = \begin{pmatrix} 2 & -1 \\ 0 & 1 \end{pmatrix} \). Mit den Eigenwerten und Eigenvektoren
 
 \vspace{1\baselineskip}
 
@@ -476,7 +476,7 @@ In diesem Fall sind alle geometrischen und algebraischen Vielfachheiten gleich 1
 
 \vspace{1\baselineskip}
 
-Nicht halbeinfache Martix: \( A = \begin{pmatrix} 1 & 1 \\ -1 & 3 \end{pmatrix} \). Mit den Eigenwerten und Eigenvektoren
+Nicht halbeinfache Matrix: \( A = \begin{pmatrix} 1 & 1 \\ -1 & 3 \end{pmatrix} \). Mit den Eigenwerten und Eigenvektoren
 
 \vspace{1\baselineskip}
 
@@ -484,18 +484,18 @@ Nicht halbeinfache Martix: \( A = \begin{pmatrix} 1 & 1 \\ -1 & 3 \end{pmatrix} 
     \lambda_{1,2} = 2, \quad v_1 = \begin{bmatrix} 1 \\ 1 \end{bmatrix}.
 \end{equation*}
 
-Hier ist die algebraische Vielfachheit des Eigenwertes 2 gleich 2, aber die geometrische Vielfachheit nur gliech 1 damit bilden die Eigenvektoren keine Basis. Dmenach ist die Matrix nicht halbeinfach und damit auch nicht diagonalisierbar.
+Hier ist die algebraische Vielfachheit des Eigenwertes 2 gleich 2, aber die geometrische Vielfachheit nur gleich 1 damit bilden die Eigenvektoren keine Basis. Demnach ist die Matrix nicht halbeinfach und damit auch nicht diagonalisierbar.
 
 \subsubsection{Spezialfall: Symmetrische Matrizen} \( \ \)
 
 \vspace{0.5\baselineskip}
 
-Wenn \( A \in \mathbb{R}^{n \times n} \)  symmetrisch ist das gilt:
+Wenn \( A \in \mathbb{R}^{n \times n} \)  symmetrisch ist, gilt:
 
 \begin{itemize}
     \item A ist halbeinfach, also auch diagonalisierbar.
-    \item A besitzt eine orthnormale Eigenbasis.
-    \item Es exsistiert eine orthogonale Matrix \( T \), sodass \( T^{-1} A T = T^\top A T \) diagonal ist.
+    \item A besitzt eine orthonormale Eigenbasis.
+    \item Es existiert eine orthogonale Matrix \( T \), sodass \( T^{-1} A T = T^\top A T \) diagonal ist.
 \end{itemize}
 
 \subsubsection{Anwendung: Potenzen von Matrizen} \( \ \)
@@ -506,7 +506,7 @@ Sei \( A \in \mathbb{C}^{n \times n} \) diagonalisierbar. Berechne \( A^3 \).
 
 \vspace{1\baselineskip}
 
-Da \( A \) diagonalisierbar ist gilt \( A = T D T^{-1} \). Damit gilt für \( A^3 \):
+Da \( A \) diagonalisierbar ist, gilt \( A = T D T^{-1} \). Damit gilt für \( A^3 \):
 
 \begin{equation*}
     \begin{aligned}
@@ -526,7 +526,7 @@ Allgemein gilt für jede diagonalisierbare Matrix \( A \)
     A^k = T \ \text{diag}(\lambda_1^k, \lambda_2^k, \dots, \lambda_n^k) \ T^{-1}.
 \end{equation*}
 
-Insbesondre vereinfacht sich dadurch auch das Matrixpotential
+Insbesondere vereinfacht sich dadurch auch das Matrixexponential
 
 \begin{equation*}
     e^{At} \underset{\substack{\color{black}\uparrow \\

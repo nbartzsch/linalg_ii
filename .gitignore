@@ -290,3 +290,9 @@ TSWLatexianTemp*
 
 # Exclude the .vscode folder
 .vscode/
+
+# Ignore all files in the tikz folder
+tikz/*
+
+# But do not ignore init.txt
+!tikz/init.txt

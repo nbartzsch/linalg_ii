@@ -1,6 +1,8 @@
 \documentclass[12pt, a4paper]{article}
 \usepackage{script}
 \usepackage[ngerman]{babel}
+\usetikzlibrary{external}
+\tikzexternalize[prefix=tikz/] % when active use pdflatex -shell-escape theory_sheet.tex
 
 \setlength{\headheight}{14.49998pt}
 \addtolength{\topmargin}{-2.49998pt}
@@ -22,6 +24,8 @@
     % \include{chapters/eigenwerte}
     % \include{chapters/normen_skalarprod}
     % \include{chapters/orthonormalbasis}
-    \include{chapters/kern_bild}
+    % \include{chapters/kern_bild}
+    % \include{chapters/basiswechsel_diag}
+    \include{chapters/quadratische_formen}
 
 \end{document}
