@@ -179,13 +179,13 @@ Mit den neuen Basisvektoren wären die richtigen Koordinaten für denselben Vekt
     \end{tikzpicture}
 \end{figure}
 
-In der neuen Basis wird derselbe Vektor durch die Koordinaten \( \begin{bmatrix} -1 & 2 \end{bmatrix}^\top \) beschrieben. D.h.\ die Koordinaten hängen immer von den Basisvektoren ab. Wenn wir von einer Basis in eine andere wechseln, müssen wir demnach auch die Koordinaten ändern. Dafür führen wir die Übergangsmatrix bzw.\ Transformationsmatrix ein. Um dieses Konzept besser verstehen zu können betrachten wir zunächst das Beispiel von oben. Seien die zwei Basen gegeben durch:
+In der neuen Basis wird derselbe Vektor durch die Koordinaten \( \begin{bmatrix} -1 & 2 \end{bmatrix}^\top \) beschrieben. D.h.\ die Koordinaten hängen immer von den Basisvektoren ab. Wenn wir von einer Basis in eine andere wechseln, müssen demnach auch die Koordinaten geändert werden. Dafür führen wir die Übergangsmatrix bzw.\ Transformationsmatrix ein. Um dieses Konzept besser verstehen zu können betrachten wir zunächst das Beispiel von oben. Seien die zwei Basen gegeben durch:
 
 \begin{equation*}
     \textcolor{customlila}{\mathcal{B}} = \left\{ \begin{bmatrix} 1 \\ 0 \end{bmatrix}, \begin{bmatrix} 0 \\ 1 \end{bmatrix} \right\}, \quad \textcolor{customorange}{\mathcal{B}'} = \left\{ \begin{bmatrix} 2 \\ 1 \end{bmatrix}, \begin{bmatrix} -1 \\ 1 \end{bmatrix} \right\}.
 \end{equation*}
 
-Wir wollen nun von der Basis \textcolor{customlila}{\(\mathcal{B}\)} in die Basis \textcolor{customorange}{\(\mathcal{B}'\)} transformieren. Wir suchen also die Koordinaten eines Vektors gegeben in \textcolor{customlila}{\(\mathcal{B}\)} in der neuen Basis \textcolor{customorange}{\(\mathcal{B}'\)}. Mathematisch können wir das so ausdrücken:
+Wir wollen nun von der Basis \textcolor{customlila}{\(\mathcal{B}\)} in die Basis \textcolor{customorange}{\(\mathcal{B}'\)} transformieren. Gesucht sind also die Koordinaten eines Vektors \( [v]_{\textcolor{customlila}{\mathcal{B}}} \) in der neuen Basis \textcolor{customorange}{\(\mathcal{B}'\)}. Mathematisch können wir das so ausdrücken:
 
 \begin{equation*}
     \textcolor{customorange}{x_1} \begin{bmatrix} 2 \\ 1 \end{bmatrix}_{\textcolor{customlila}{\mathcal{B}}} + \textcolor{customorange}{x_2} \begin{bmatrix} -1 \\ 1 \end{bmatrix}_{\textcolor{customlila}{\mathcal{B}}} = \underbrace{\begin{bmatrix} -4 \\ 1 \end{bmatrix}_{\textcolor{customlila}{\mathcal{B}}} \Leftrightarrow \begin{bmatrix} \textcolor{customorange}{x_1} \\ \textcolor{customorange}{x_2} \end{bmatrix}_{\textcolor{customorange}{\mathcal{B}'}}}_{\text{Beschreiben denselben Vektor}}.
@@ -198,7 +198,7 @@ Dies können wir in ein LGS in Matrixschreibweise umformen:
 \end{equation*}
 
 
-Wir erkennen hier, dass wenn wir einen Vektor in der Basis \( \textcolor{customorange}{\mathcal{B'}} \) mit der Matrix \( T_{\textcolor{customorange}{\mathcal{B}'} \mapsto \textcolor{customlila}{\mathcal{B}}}\) multiplizieren bekommen wir denselben Vektor in der Basis \( \textcolor{customlila}{\mathcal{B}} \). Wir können also sagen, dass die Matrix \( T_{\textcolor{customorange}{\mathcal{B}'} \mapsto \textcolor{customlila}{\mathcal{B}}}\) einen Vektor aus der Basis \textcolor{customorange}{\(\mathcal{B}'\)} in die Basis \textcolor{customlila}{\(\mathcal{B}\)} transformiert. Wir suchen jedoch eine Matrix die einen Vektor aus der Basis \textcolor{customlila}{\(\mathcal{B}\)} in die Basis \textcolor{customorange}{\(\mathcal{B}'\)} transformiert. Dafür können wir einfach die Inverse nehmen:
+Wir erkennen hier, dass wenn ein Vektor in der Basis \( \textcolor{customorange}{\mathcal{B'}} \) mit der Matrix \( T_{\textcolor{customorange}{\mathcal{B}'} \mapsto \textcolor{customlila}{\mathcal{B}}}\) multipliziert wird, derselbe Vektor in der Basis \( \textcolor{customlila}{\mathcal{B}} \) resultiert. Die Matrix \( T_{\textcolor{customorange}{\mathcal{B}'} \mapsto \textcolor{customlila}{\mathcal{B}}}\) transformiert also einen Vektor aus der Basis \textcolor{customorange}{\(\mathcal{B}'\)} in die Basis \textcolor{customlila}{\(\mathcal{B}\)}. Wir suchen jedoch eine Matrix die einen Vektor aus der Basis \textcolor{customlila}{\(\mathcal{B}\)} in die Basis \textcolor{customorange}{\(\mathcal{B}'\)} transformiert. Dafür können wir einfach die Inverse nehmen:
 
 \begin{equation*}
     \begin{bmatrix} \textcolor{customorange}{x_1} \\ \textcolor{customorange}{x_2} \end{bmatrix}_{\textcolor{customorange}{\mathcal{B}'}} = T_{\textcolor{customorange}{\mathcal{B}'} \mapsto \textcolor{customlila}{\mathcal{B}}}^{-1} \begin{bmatrix} -4 \\ 1 \end{bmatrix}_{\textcolor{customlila}{\mathcal{B}}} = \begin{bmatrix} \textcolor{customorange}{-1} \\ \textcolor{customorange}{2} \end{bmatrix}_{\textcolor{customorange}{\mathcal{B}'}}.
@@ -305,11 +305,11 @@ Doch warum müssen wir hier zweimal mit einer Transformationsmatrix multiplizier
         % Text Node
         \draw (270,71) node [anchor=north west][inner sep=0.75pt]   [align=left] {\( T_{\mathcal{Q} \mapsto \mathcal{W}} \ [A]_\mathcal{Q} \ T_{\mathcal{Q} \mapsto \mathcal{W}}^{-1} \ [x]_\mathcal{W} = [y]_\mathcal{W} \)};
         % Text Node
-        \draw (377,115) node [anchor=north west][inner sep=0.75pt]   [align=left] {Transformation des Eingabevektors zu Basis \( \mathcal{Q} \)};
+        \draw (377,115) node [anchor=north west][inner sep=0.75pt]   [align=left] {Transformation von \( [x]_\mathcal{W} \) zu Basis \( \mathcal{Q} \)};
         % Text Node
-        \draw (337,145) node [anchor=north west][inner sep=0.75pt]   [align=left] {Abbildung in Basis \( \mathcal{Q} \)};
+        \draw (337,145) node [anchor=north west][inner sep=0.75pt]   [align=left] {Abbildung von \( [x]_\mathcal{Q} \) in Basis \( \mathcal{Q} \)};
         % Text Node
-        \draw (297,175) node [anchor=north west][inner sep=0.75pt]   [align=left] {Rücktransformation zu Basis \( \mathcal{W} \)};
+        \draw (297,175) node [anchor=north west][inner sep=0.75pt]   [align=left] {Rücktransformation von \( [y]_\mathcal{Q} \) zu Basis \( \mathcal{W} \)};
     \end{tikzpicture}
 \end{figure}
 
@@ -336,7 +336,7 @@ Wir wissen nun wie wir von einer Basis zur anderen wechseln können, indem wir V
     T^{-1} A \ T = D = \text{diag}(d_1, d_2, \dots, d_n),
 \end{equation*}
 
-wobei \( D \) die Matrix in der neuen Basis ist. Um die Diagonalisierung durchzuführen, müssen wir demnach die Basis finden in der \( A \) diagonal ist. Dafür nehmen wir nochmals einen Schritt zurück und überlegen uns was der Effekt von diagonalen Matrizen und deren assoziierter Abbildung im zweidimensionalen Raum ist. Im folgenden Beispiel betrachten wie eine Diagonalmatrix verschiedene Vektoren im Raum abbildet.
+wobei \( D \) die Matrix in der neuen Basis ist. Um die Diagonalisierung durchzuführen, müssen wir demnach die Basis finden in der \( A \) diagonal ist. Aber wann ist das der Fall? Nehmen wir nochmals einen Schritt zurück und überlegen uns was der Effekt von diagonalen Matrizen und deren assoziierter Abbildung im zweidimensionalen Raum ist. Im folgenden Beispiel betrachten wir wie eine Diagonalmatrix verschiedene Vektoren im Raum abbildet.
 
 \newpage
 
@@ -382,7 +382,7 @@ wobei \( D \) die Matrix in der neuen Basis ist. Um die Diagonalisierung durchzu
         \draw [shift={(390,120)}, rotate = 180] [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ,fill opacity=1 ][line width=0.08]  [draw opacity=0] (5.36,-2.57) -- (0,0) -- (5.36,2.57) -- (3.56,0) -- cycle    ;
 
         % Text Node
-        \draw (305,65) node [anchor=north west][inner sep=0.75pt]   [align=left] {\( A = \begin{pmatrix} 2 & 0 \\ 0 & 0.5 \end{pmatrix} \)};
+        \draw (305,65) node [anchor=north west][inner sep=0.75pt]   [align=left] {\( A = \begin{pmatrix} 2 & 0 \\ 0 & \frac{1}{2} \end{pmatrix} \)};
     \end{tikzpicture}
 \end{figure}
 
@@ -390,9 +390,9 @@ wobei \( D \) die Matrix in der neuen Basis ist. Um die Diagonalisierung durchzu
     \begin{pmatrix} 2 & 0 \\ 0 & \frac{1}{2} \end{pmatrix} \begin{bmatrix} 1 \\ 0 \end{bmatrix} = \begin{bmatrix} 2 \\ 0 \end{bmatrix}, \quad \begin{pmatrix} 2 & 0 \\ 0 & \frac{1}{2} \end{pmatrix} \begin{bmatrix} 0 \\ 1 \end{bmatrix} = \begin{bmatrix} 0 \\ \frac{1}{2} \end{bmatrix}
 \end{equation*}
 
-\vspace{0.25\baselineskip}
+\vspace{0.5\baselineskip}
 
-Wir erkennen, dass die Basisvektoren (hier die Standardbasis in Blau und Rot) nur skaliert werden, aber nicht Ihre Richtung ändern. Das ist genau wie bei Eigenvektoren. In anderen Worten sind bei Diagonalmatrizen die Eigenvektoren auch die Basisvektoren. Indem wir also die Eigenvektoren der ursprünglichen Matrix als neue Basisvektoren wählen, garantieren wir, dass die Matrix in der neuen Basis diagonal ist. Weiterhin sehen wir, dass die Diagonaleinträge der Matrix genau die Faktoren sind mit denen die Basisvektoren skaliert werden. D.h.\ die Diagonaleinträge der diagonalisierten Matrix sind auch die Eigenwerte der ursprünglichen Matrix.
+Wir erkennen, dass die Basisvektoren (hier die Standardbasis in Blau und Rot) nur skaliert werden, aber nicht Ihre Richtung ändern, genau wie Eigenvektoren. In anderen Worten sind bei Diagonalmatrizen die Eigenvektoren auch die Basisvektoren. Indem wir also die Eigenvektoren der ursprünglichen Matrix als neue Basisvektoren wählen, garantieren wir, dass die Matrix in der neuen Basis diagonal ist. Weiterhin sehen wir, dass die Diagonaleinträge der Matrix genau die Faktoren sind mit denen die Basisvektoren skaliert werden. D.h.\ die Diagonaleinträge der diagonalisierten Matrix sind die Eigenwerte der ursprünglichen Matrix.
 
 \vspace{1\baselineskip}
 
@@ -432,103 +432,103 @@ Zusammengefasst können wir dies in einem ``Kochrezept'' aufschreiben.
     \end{enumerate}
 \end{tcolorbox}
 
-\subsection{Diagonalisierbarkeit}
+% \subsection{Diagonalisierbarkeit}
 
-Nicht alle Matrizen sind Diagonalisierbar. Um zu prüfen, ob eine Matrix diagonalisierbar ist, können wir bestimmte Kriterien überprüfen. Erinnern wir uns nochmals wie die Diagonalisierung aussieht mathematisch aussieht,
+% Nicht alle Matrizen sind Diagonalisierbar. Um zu prüfen, ob eine Matrix diagonalisierbar ist, können wir bestimmte Kriterien überprüfen. Erinnern wir uns nochmals wie die Diagonalisierung aussieht mathematisch aussieht,
 
-\begin{equation*}
-    D = T^{-1} A T.
-\end{equation*}
+% \begin{equation*}
+%     D = T^{-1} A T.
+% \end{equation*}
 
-Ein Kriterium ist damit gegeben, dass die Transformationsmatrix \( T \) regulär (invertierbar) sein muss. Ein Weg die Invertierbarkeit einer Matrix zu prüfen ist die lineare Abhängigkeit der Spalten/ Zeilen zu betrachten. Nur wenn alle Spalten linear unabhängig sind, ist die Matrix auch invertierbar. In diesem Fall sind die Spalten der Matrix \( T \) auch die Eigenvektoren von \( A \). Das bedeutet, dass wir prüfen müssen, ob die Eigenvektoren von \( A \) linear unabhängig sind. Dieses Kriterium können wir leicht umschreiben denn, wenn alle Eigenvektoren linear unabhängig sind dann bilden sie auch eine Basis. Wenn das der Fall ist, dann sagen wir das die Matrix halbeinfach ist. 
+% Ein Kriterium ist damit gegeben, dass die Transformationsmatrix \( T \) regulär (invertierbar) sein muss. Ein Weg die Invertierbarkeit einer Matrix zu prüfen ist die lineare Abhängigkeit der Spalten/ Zeilen zu betrachten. Nur wenn alle Spalten linear unabhängig sind, ist die Matrix auch invertierbar. In diesem Fall sind die Spalten der Matrix \( T \) auch die Eigenvektoren von \( A \). Das bedeutet, dass wir prüfen müssen, ob die Eigenvektoren von \( A \) linear unabhängig sind. Dieses Kriterium können wir leicht umschreiben denn, wenn alle Eigenvektoren linear unabhängig sind dann bilden sie auch eine Basis. Wenn das der Fall ist, dann sagen wir das die Matrix halbeinfach ist. 
 
-\begin{tcolorbox}[colback=gray!30, colframe=gray!80, title=Halbeinfache Matrizen]
-    Eine Matrix \( A \in \mathbb{C}^{n \times n} \) ist halbeinfach, wenn Ihre Eigenvektoren eine Basis für \( \mathbb{C}^n \) bilden. 
-\end{tcolorbox}
+% \begin{tcolorbox}[colback=gray!30, colframe=gray!80, title=Halbeinfache Matrizen]
+%     Eine Matrix \( A \in \mathbb{C}^{n \times n} \) ist halbeinfach, wenn Ihre Eigenvektoren eine Basis für \( \mathbb{C}^n \) bilden. 
+% \end{tcolorbox}
 
-Weiterhin können wir prüfen, ob eine Matrix halbeinfach ist, indem wir uns die Vielfachheiten der Eigenwerte und Eigenvektoren anschauen. Nur wenn die algebraische Vielfachheit jedes Eigenwertes gleich der geometrischen Vielfachheit ist, ist die Matrix halbeinfach. D.h. für jeden Eigenwert \( \lambda \) muss gelten:
+% Weiterhin können wir prüfen, ob eine Matrix halbeinfach ist, indem wir uns die Vielfachheiten der Eigenwerte und Eigenvektoren anschauen. Nur wenn die algebraische Vielfachheit jedes Eigenwertes gleich der geometrischen Vielfachheit ist, ist die Matrix halbeinfach. D.h. für jeden Eigenwert \( \lambda \) muss gelten:
 
-\begin{equation*}
-    \text{alg. Vfh. } \lambda = \text{geom. Vfh. } \lambda.
-\end{equation*}
+% \begin{equation*}
+%     \text{alg. Vfh. } \lambda = \text{geom. Vfh. } \lambda.
+% \end{equation*}
 
-Somit können wir das Kriterium für die Diagonalisierbarkeit einer Matrix zusammenfassen.
+% Somit können wir das Kriterium für die Diagonalisierbarkeit einer Matrix zusammenfassen.
 
-\begin{tcolorbox}[colback=gray!30, colframe=gray!80, title=Halbeinfache Matrizen]
-    Eine quadratische Matrix \( A \in \mathbb{C}^{n \times n} \) ist diagonalisierbar, falls eine reguläre Matrix \( T \) existiert, sodass \( D = T^{-1} A T \) eine Diagonalmatrix ist. 
+% \begin{tcolorbox}[colback=gray!30, colframe=gray!80, title=Halbeinfache Matrizen]
+%     Eine quadratische Matrix \( A \in \mathbb{C}^{n \times n} \) ist diagonalisierbar, falls eine reguläre Matrix \( T \) existiert, sodass \( D = T^{-1} A T \) eine Diagonalmatrix ist. 
 
-    \begin{equation*}
-        A \ \text{halbeinfach} \Leftrightarrow A \ \text{diagonalisierbar}
-    \end{equation*}
-\end{tcolorbox}
+%     \begin{equation*}
+%         A \ \text{halbeinfach} \Leftrightarrow A \ \text{diagonalisierbar}
+%     \end{equation*}
+% \end{tcolorbox}
 
-\subsubsection*{Beispiel} \( \ \)
+% \subsubsection*{Beispiel} \( \ \)
 
-Halbeinfache Matrix: \( A = \begin{pmatrix} 2 & -1 \\ 0 & 1 \end{pmatrix} \). Mit den Eigenwerten und Eigenvektoren
+% Halbeinfache Matrix: \( A = \begin{pmatrix} 2 & -1 \\ 0 & 1 \end{pmatrix} \). Mit den Eigenwerten und Eigenvektoren
 
-\vspace{1\baselineskip}
+% \vspace{1\baselineskip}
 
-\begin{equation*}
-    \lambda_1 = 2, \ \lambda_2 = 1, \quad v_1 = \begin{bmatrix} 1 \\ 0 \end{bmatrix}, \ v_2 = \begin{bmatrix} 1 \\ 1 \end{bmatrix}.
-\end{equation*}
+% \begin{equation*}
+%     \lambda_1 = 2, \ \lambda_2 = 1, \quad v_1 = \begin{bmatrix} 1 \\ 0 \end{bmatrix}, \ v_2 = \begin{bmatrix} 1 \\ 1 \end{bmatrix}.
+% \end{equation*}
 
-In diesem Fall sind alle geometrischen und algebraischen Vielfachheiten gleich 1 damit bilden die Eigenvektoren eine Basis. Die Matrix ist also halbeinfach und damit auch diagonalisierbar.
+% In diesem Fall sind alle geometrischen und algebraischen Vielfachheiten gleich 1 damit bilden die Eigenvektoren eine Basis. Die Matrix ist also halbeinfach und damit auch diagonalisierbar.
 
-\vspace{1\baselineskip}
+% \vspace{1\baselineskip}
 
-Nicht halbeinfache Matrix: \( A = \begin{pmatrix} 1 & 1 \\ -1 & 3 \end{pmatrix} \). Mit den Eigenwerten und Eigenvektoren
+% Nicht halbeinfache Matrix: \( A = \begin{pmatrix} 1 & 1 \\ -1 & 3 \end{pmatrix} \). Mit den Eigenwerten und Eigenvektoren
 
-\vspace{1\baselineskip}
+% \vspace{1\baselineskip}
 
-\begin{equation*}
-    \lambda_{1,2} = 2, \quad v_1 = \begin{bmatrix} 1 \\ 1 \end{bmatrix}.
-\end{equation*}
+% \begin{equation*}
+%     \lambda_{1,2} = 2, \quad v_1 = \begin{bmatrix} 1 \\ 1 \end{bmatrix}.
+% \end{equation*}
 
-Hier ist die algebraische Vielfachheit des Eigenwertes 2 gleich 2, aber die geometrische Vielfachheit nur gleich 1 damit bilden die Eigenvektoren keine Basis. Demnach ist die Matrix nicht halbeinfach und damit auch nicht diagonalisierbar.
+% Hier ist die algebraische Vielfachheit des Eigenwertes 2 gleich 2, aber die geometrische Vielfachheit nur gleich 1 damit bilden die Eigenvektoren keine Basis. Demnach ist die Matrix nicht halbeinfach und damit auch nicht diagonalisierbar.
 
-\subsubsection{Spezialfall: Symmetrische Matrizen} \( \ \)
+% \subsubsection{Spezialfall: Symmetrische Matrizen} \( \ \)
 
-\vspace{0.5\baselineskip}
+% \vspace{0.5\baselineskip}
 
-Wenn \( A \in \mathbb{R}^{n \times n} \)  symmetrisch ist, gilt:
+% Wenn \( A \in \mathbb{R}^{n \times n} \)  symmetrisch ist, gilt:
 
-\begin{itemize}
-    \item A ist halbeinfach, also auch diagonalisierbar.
-    \item A besitzt eine orthonormale Eigenbasis.
-    \item Es existiert eine orthogonale Matrix \( T \), sodass \( T^{-1} A T = T^\top A T \) diagonal ist.
-\end{itemize}
+% \begin{itemize}
+%     \item A ist halbeinfach, also auch diagonalisierbar.
+%     \item A besitzt eine orthonormale Eigenbasis.
+%     \item Es existiert eine orthogonale Matrix \( T \), sodass \( T^{-1} A T = T^\top A T \) diagonal ist.
+% \end{itemize}
 
-\subsubsection{Anwendung: Potenzen von Matrizen} \( \ \)
+% \subsubsection{Anwendung: Potenzen von Matrizen} \( \ \)
 
-\vspace{0.5\baselineskip}
+% \vspace{0.5\baselineskip}
 
-Sei \( A \in \mathbb{C}^{n \times n} \) diagonalisierbar. Berechne \( A^3 \). 
+% Sei \( A \in \mathbb{C}^{n \times n} \) diagonalisierbar. Berechne \( A^3 \). 
 
-\vspace{1\baselineskip}
+% \vspace{1\baselineskip}
 
-Da \( A \) diagonalisierbar ist, gilt \( A = T D T^{-1} \). Damit gilt für \( A^3 \):
+% Da \( A \) diagonalisierbar ist, gilt \( A = T D T^{-1} \). Damit gilt für \( A^3 \):
 
-\begin{equation*}
-    \begin{aligned}
-        A^3 &= (T D T^{-1})^3 = T D \underbrace{T^{-1} T}_{I} D \underbrace{T^{-1} T}_{I} D T^{-1} = T D^3 \ T^{-1}.
-    \end{aligned}
-\end{equation*} 
+% \begin{equation*}
+%     \begin{aligned}
+%         A^3 &= (T D T^{-1})^3 = T D \underbrace{T^{-1} T}_{I} D \underbrace{T^{-1} T}_{I} D T^{-1} = T D^3 \ T^{-1}.
+%     \end{aligned}
+% \end{equation*} 
 
-und weil \( D \) eine Diagonalmatrix ist, gilt
+% und weil \( D \) eine Diagonalmatrix ist, gilt
 
-\begin{equation*}
-    D^3 = T \ \text{diag}(\lambda_1^3, \lambda_2^3, \dots, \lambda_n^3) \ T^{-1}.
-\end{equation*}
+% \begin{equation*}
+%     D^3 = T \ \text{diag}(\lambda_1^3, \lambda_2^3, \dots, \lambda_n^3) \ T^{-1}.
+% \end{equation*}
 
-Allgemein gilt für jede diagonalisierbare Matrix \( A \)
+% Allgemein gilt für jede diagonalisierbare Matrix \( A \)
 
-\begin{equation*}
-    A^k = T \ \text{diag}(\lambda_1^k, \lambda_2^k, \dots, \lambda_n^k) \ T^{-1}.
-\end{equation*}
+% \begin{equation*}
+%     A^k = T \ \text{diag}(\lambda_1^k, \lambda_2^k, \dots, \lambda_n^k) \ T^{-1}.
+% \end{equation*}
 
-Insbesondere vereinfacht sich dadurch auch das Matrixexponential
+% Insbesondere vereinfacht sich dadurch auch das Matrixexponential
 
-\begin{equation*}
-    e^{At} \underset{\substack{\color{black}\uparrow \\
-                       \mathclap{e^A = \sum_{m=0}^{\infty} \frac{A^m}{m!}}}}{=}T \ \text{diag}(e^{\lambda_1 t}, e^{\lambda_2 t}, \dots, e^{\lambda_n t}) \ T^{-1}
-\end{equation*}
+% \begin{equation*}
+%     e^{At} \underset{\substack{\color{black}\uparrow \\
+%                        \mathclap{e^A = \sum_{m=0}^{\infty} \frac{A^m}{m!}}}}{=}T \ \text{diag}(e^{\lambda_1 t}, e^{\lambda_2 t}, \dots, e^{\lambda_n t}) \ T^{-1}
+% \end{equation*}
