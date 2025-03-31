@@ -3,9 +3,11 @@
 \usepackage[ngerman]{babel}
 
 % section for external compiling when using pgfplots. If not needed, comment out
+% when active use this to compile in terminal: pdflatex -shell-escape theory_sheet.tex
+% when changing chapters first delete exsisting tikz files in tikz/ folder
 
-% \usetikzlibrary{external}
-% \tikzexternalize[prefix=tikz/] % when active use this to compile in terminal: pdflatex -shell-escape theory_sheet.tex
+\usetikzlibrary{external}
+\tikzexternalize[prefix=tikz/] 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -31,6 +33,6 @@
     % \include{chapters/orthonormalbasis}
     % \include{chapters/kern_bild}
     % \include{chapters/basiswechsel_diag}
-    % \include{chapters/quadratische_formen}
+    \include{chapters/quadratische_formen}
 
 \end{document}

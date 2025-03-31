@@ -296,3 +296,6 @@ tikz/*
 
 # But do not ignore init.txt
 !tikz/init.txt
+
+# But do not ignore init.txt
+!tikz_main/init.txt

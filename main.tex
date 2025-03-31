@@ -2,6 +2,13 @@
 \usepackage{script}
 \usepackage[ngerman]{babel}
 
+% section for external compiling when using pgfplots. If not needed, comment out
+
+\usetikzlibrary{external}
+\tikzexternalize[prefix=tikz_main/] % when active use this to compile in terminal: pdflatex -shell-escape main.tex
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \setboolean{includingsolutions}{false} % true: includes solutions, % false, no solutions
 
 \begin{document}
@@ -27,8 +34,9 @@
     \include{chapters/lineare_abb}
     \include{chapters/eigenwerte}
     \include{chapters/normen_skalarprod}
-    % \include{chapters/orthonormalbasis}
-    % \include{chapters/kern_bild}
-
+    \include{chapters/orthonormalbasis}
+    \include{chapters/kern_bild}
+    \include{chapters/basiswechsel_diag}
+    \include{chapters/quadratische_formen}
 
 \end{document}
