@@ -1,32 +1,30 @@
 \setcounter{section}{6}
 \section{Quadratische Formen}
 
-Quadratische Gleichungen sind grundlegend schon seid der Schule bekannt. Allgemein haben solche Gleichung in einer Variable die Form
+Quadratische Gleichungen sind bereits aus der Schulzeit bekannt. In der Regel haben solche Gleichungen in einer Variablen die allgemeine Form:
 
 \begin{equation*}
     f(x) = ax^2 + bx + c.
 \end{equation*}
 
-Wie in der Analysis gesehen, können Gleichung auch mehrere Variablen \( x_1, \dots, x_n \) haben. Dadurch kann es auch quadratische Funktionen in mehreren Variablen geben. Zum Beispiel in zwei Variablen
+Wie bereits aus der Analysis bekannt, können Gleichungen auch mehr als eine Variable umfassen. Wir werden oft all Variablen in einem Vektor \( \mathbf{x} = (x_1, \dots, x_n) \) zusammenfassen. Nun können sich auch quadratische Funktionen in mehreren Variablen ergeben. Ein Beispiel hierfür ist eine Funktion in zwei Variablen:
 
 \begin{equation*}
     q(x_1,x_2) = x_1^2 + 4x_1x_2 + x_2^2.
 \end{equation*}
 
-Bei genauerer Betrachtung sieht man, dass diese Funktion auch mit einer Matrix beschrieben werden kann. 
+Bei genauerer Betrachtung sieht man, dass diese Funktion auch mit druch eine Matrix-Vektor Multiplikation beschrieben werden kann. 
 
 \begin{equation*}
-    q(x_1, x_2) = \begin{pmatrix} x_1 & x_2 \end{pmatrix} \begin{pmatrix} 1 & 2 \\ 2 & 1 \end{pmatrix} \begin{pmatrix} x_1 \\ x_2 \end{pmatrix}.
+    q(x_1, x_2) = \begin{pmatrix} x_1 & x_2 \end{pmatrix} \underbrace{\begin{pmatrix} 1 & 2 \\ 2 & 1 \end{pmatrix}}_{A} \begin{pmatrix} x_1 \\ x_2 \end{pmatrix} = \mathbf{x}^\top A \mathbf{x}.
 \end{equation*}
 
-In diesem Fall sagen wir das \( x_1^2 + 4x_1x_2 + x_2^2 \) die quadratische Form von \( A = \begin{pmatrix} 1 & 2 \\ 2 & 1 \end{pmatrix} \) ist.
-
-Allgemein können wir für jede symmetrische Matrix \( A \in \mathbb{R}^{n \times n} \), die dazugehörige quadratische Form finden. Sie ist allgemein wie folgt definiert:
+In diesem Fall sagen wir das \( q(\mathbf{x}) = x_1^2 + 4x_1x_2 + x_2^2 \) die quadratische Form der Matrix \( A \) ist. Allgemein können wir für jede symmetrische Matrix \( A \in \mathbb{R}^{n \times n} \), die dazugehörige quadratische Form finden. Sie ist allgemein, wie folgt definiert:
 
 \begin{equation*}
     \begin{aligned}
         q_A: \mathbb{R}^n &\longrightarrow \mathbb{R} \\
-        x &\longmapsto x^T A x = \sum_{i,j=1}^{n} a_{ij}x_i x_j.
+        \mathbf{x} &\longmapsto \mathbf{x}^\top A \mathbf{x} = \sum_{i,j=1}^{n} a_{ij}x_i x_j.
     \end{aligned}
 \end{equation*}
 
@@ -34,12 +32,14 @@ Für 2 und 3 Dimensionen können wir eine allgemeine Form explizit aufschreiben.
 
 \begin{equation*}
     \begin{aligned}
-        \mathbb{R}^2: q_A(\vec{x}) &= \begin{pmatrix} x_1 & x_2 \end{pmatrix} \begin{pmatrix} a & b \\ b & c \end{pmatrix} \begin{pmatrix} x_1 \\ x_2 \end{pmatrix} = ax_1^2 + 2bx_1x_2 + cx_2^2, \\[1em]
-        \mathbb{R}^3: q_A(\vec{x}) &= \begin{pmatrix} x_1 & x_2 & x_3 \end{pmatrix} \begin{pmatrix} a & b & c \\ b & d & e \\ c & e & f \end{pmatrix} \begin{pmatrix} x_1 \\ x_2 \\ x_3 \end{pmatrix} = ax_1^2 + 2bx_1x_2 + 2cx_1x_3 + dx_2^2 + 2ex_2x_3 + fx_3^2.
+        \mathbb{R}^2: q_A(\mathbf{x}) &= \mathbf{x}^\top \begin{pmatrix} a & b \\ b & c \end{pmatrix} \mathbf{x} = ax_1^2 + 2bx_1x_2 + cx_2^2, \\[1em]
+        \mathbb{R}^3: q_A(\mathbf{x}) &= \mathbf{x}^\top \begin{pmatrix} a & b & c \\ b & d & e \\ c & e & f \end{pmatrix} \mathbf{x} = ax_1^2 + 2bx_1x_2 + 2cx_1x_3 + dx_2^2 + 2ex_2x_3 + fx_3^2.
     \end{aligned}
 \end{equation*}
 
-Je nach Matrix kann die qudratische Form grfisch anders aussehen. Beispiele für 2 variabeln sind hier aufgeführt.
+\vspace{0.25\baselineskip}
+
+Je nach Matrix kann die quadratische Form grafisch anders aussehen. Beispiele für 2 Variabeln sind hier aufgeführt.
 
 \begin{figure}[h]
     \centering
@@ -47,6 +47,9 @@ Je nach Matrix kann die qudratische Form grfisch anders aussehen. Beispiele für
         \centering
         \begin{tikzpicture}
             \begin{axis}[
+                tick label style={font=\footnotesize},
+                xtick={-5, 0, 5}, 
+                ytick={-5, 0, 5},
                 width=5cm,
                 view={65}{50}, % Adjust the view to come more from the top
                 colormap/cool,
@@ -69,6 +72,9 @@ Je nach Matrix kann die qudratische Form grfisch anders aussehen. Beispiele für
         \begin{tikzpicture}
             \begin{axis}[
                 width=5cm,
+                tick label style={font=\footnotesize},
+                xtick={-5, 0, 5}, 
+                ytick={-5, 0, 5},
                 view={65}{50}, % Adjust the view to come more from the top
                 colormap/cool,
                 zmin=0, % Set the minimum value of the z-axis
@@ -89,6 +95,7 @@ Je nach Matrix kann die qudratische Form grfisch anders aussehen. Beispiele für
         \centering
         \begin{tikzpicture}
             \begin{axis}[
+                tick label style={font=\footnotesize},
                 width=5cm,
                 view={65}{50}, % Adjust the view to come more from the top
                 zmin=-50, % Set the minimum value of the z-axis
@@ -108,21 +115,19 @@ Je nach Matrix kann die qudratische Form grfisch anders aussehen. Beispiele für
 
 \subsection{Definitheit}
 
-Die unterschiedlichen quadratischen Formen und die assozierten symmetrischen Matrizen lassen sich wie folgt klassifieren
+Die unterschiedlichen quadratischen Formen und die assoziierten symmetrischen Matrizen lassen sich wie folgt nach Definitheit klassifizieren.
 
 \begin{tcolorbox}[colback=gray!30, colframe=gray!80, title=Definitheit quadratischer Formen]
-    Eine quadratische Form heisst:
+    Eine quadratische Form, gegeben durch \( q(\mathbf{x}) = \mathbf{x}^\top A \mathbf{x} \), heisst:
     \begin{itemize}
-        \item positiv definit: \( \qquad \quad \ q(x) > 0, \ \forall x \neq 0 \)
-        \item negativ definit: \( \qquad \quad q(x) < 0, \ \forall x \neq 0 \)
-        \item positiv semidefinit: \( \quad \ q(x) \geq 0, \ \forall x \neq 0 \)
-        \item negativ semidefinit: \( \quad q(x) \leq 0, \ \forall x \neq 0 \)
+        \item positiv definit: \( \qquad \quad \ q(\mathbf{x}) > 0, \ \forall \mathbf{x} \neq 0 \)
+        \item negativ definit: \( \qquad \quad q(\mathbf{x}) < 0, \ \forall \mathbf{x} \neq 0 \)
+        \item positiv semidefinit: \( \quad \ q(\mathbf{x}) \geq 0, \ \forall \mathbf{x} \neq 0 \)
+        \item negativ semidefinit: \( \quad q(\mathbf{x}) \leq 0, \ \forall \mathbf{x} \neq 0 \)
         \item indefinit: \( \qquad \qquad \qquad \text{sonst} \)
     \end{itemize}
-\end{tcolorbox}
 
-\begin{tcolorbox}[colback=gray!30, colframe=gray!80, title=Definitheit symmetrischer Matrizen]
-    Die Definitheit kann über die Eigenwerte bestimmt werden. Eine symmetrische Matrix heisst:
+    Die Definitheit kann auch über die Eigenwerte von \( A \) bestimmt werden. Somit ist die Matrix \( A \)
     \begin{itemize}
         \item positiv definit: \( \qquad \quad \ \text{Alle} \ \lambda > 0 \)
         \item negativ definit: \( \qquad \quad \text{Alle} \ \lambda < 0 \)
@@ -132,7 +137,11 @@ Die unterschiedlichen quadratischen Formen und die assozierten symmetrischen Mat
     \end{itemize}
 \end{tcolorbox}
 
-Nun können wir beispielsweise nochmals die oben gezeigten Beispiele betrachten und diese klassifizieren.
+\vspace{1\baselineskip}
+
+Betrachten wir nochmals die oben gezeigten Beispiele und klassifizieren diese anhand ihrer Definitheit.
+
+\vspace{0.5\baselineskip}
 
 \begin{figure}[h]
     \centering
@@ -140,6 +149,9 @@ Nun können wir beispielsweise nochmals die oben gezeigten Beispiele betrachten 
         \centering
         \begin{tikzpicture}
             \begin{axis}[
+                tick label style={font=\footnotesize},
+                xtick={-5, 0, 5}, 
+                ytick={-5, 0, 5},
                 width=6cm,
                 view={65}{50}, % Adjust the view to come more from the top
                 colormap/cool,
@@ -162,7 +174,7 @@ Nun können wir beispielsweise nochmals die oben gezeigten Beispiele betrachten 
             \begin{aligned}
                 A = \begin{pmatrix} 1 & 2 \\ 2 & 1 \end{pmatrix} \rightarrow x_1^2 + 4x_1x_2 + x_2^2 \\[0.5em]
                 \text{Eigenwerte:} \quad \lambda_1 = 3, \quad \lambda_2 = -1 \\[0.5em]
-                \text{indefinit} \qquad \qquad
+                \text{Indefinit} \qquad \qquad
             \end{aligned}
         \end{equation*}
     \end{minipage}
@@ -176,6 +188,9 @@ Nun können wir beispielsweise nochmals die oben gezeigten Beispiele betrachten 
         \centering
         \begin{tikzpicture}
             \begin{axis}[
+                tick label style={font=\footnotesize},
+                xtick={-5, 0, 5}, 
+                ytick={-5, 0, 5},
                 width=6cm,
                 view={65}{50}, % Adjust the view to come more from the top
                 colormap/cool,
@@ -210,6 +225,7 @@ Nun können wir beispielsweise nochmals die oben gezeigten Beispiele betrachten 
         \centering
         \begin{tikzpicture}
             \begin{axis}[
+                tick label style={font=\footnotesize},
                 width=6cm,
                 view={65}{50}, % Adjust the view to come more from the top
                 zmin=-50, % Set the minimum value of the z-axis
@@ -242,10 +258,10 @@ Nun können wir beispielsweise nochmals die oben gezeigten Beispiele betrachten 
 Eine rein quadratische Form hat keine Mischterme. D.h.\ die Matrix \( A \)  hat nur Diagonaleinträge. Allgemein können wir rein quadratische Formen in dieser Form schreiben
 
 \begin{equation*}
-    q_A(\vec{x}) = \begin{pmatrix} x_1 & x_2 & \dots & x_n \end{pmatrix} \begin{pmatrix} a_1 & 0 & \dots & 0 \\ 0 & a_2 & \dots & 0 \\ \vdots & \vdots & \ddots & \vdots \\ 0 & 0 & \dots & a_n \end{pmatrix} \begin{pmatrix} x_1 \\ x_2 \\ \vdots \\ x_n \end{pmatrix} = a_1x_1^2 + a_2x_2^2 + \dots + a_nx_n^2.
+    q_A(\mathbf{x}) = \begin{pmatrix} x_1 & x_2 & \dots & x_n \end{pmatrix} \begin{pmatrix} a_1 & 0 & \dots & 0 \\ 0 & a_2 & \dots & 0 \\ \vdots & \vdots & \ddots & \vdots \\ 0 & 0 & \dots & a_n \end{pmatrix} \begin{pmatrix} x_1 \\ x_2 \\ \vdots \\ x_n \end{pmatrix} = a_1x_1^2 + a_2x_2^2 + \dots + a_nx_n^2.
 \end{equation*}
 
-Wie unterscheiden sich rein quadratische Formen von allgemeinen quadratischen Formen? Betrachten wir zwei Beispiele. In einem Fall gibt es Mischterme welche durch Elemnte neben der Diagonalen beschrieben werden. Im anderen Fall ist die Matrix diagonal und es gibt keine Mischterme.
+Wie unterscheiden sich rein quadratische Formen von allgemeinen quadratischen Formen? Betrachten wir zwei Beispiele. In einem Fall gibt es Mischterme welche durch Elemente neben der Diagonalen beschrieben werden. Im anderen Fall ist die Matrix diagonal und es gibt keine Mischterme.
 
 \begin{figure}[h]
     \centering
@@ -253,6 +269,9 @@ Wie unterscheiden sich rein quadratische Formen von allgemeinen quadratischen Fo
         \centering
         \begin{tikzpicture}
             \begin{axis}[
+                tick label style={font=\footnotesize},
+                xtick={-5, 0, 5}, 
+                ytick={-5, 0, 5},
                 width=6cm,
                 view={65}{50}, % Adjust the view to come more from the top
                 xlabel={$x_1$},
@@ -277,6 +296,9 @@ Wie unterscheiden sich rein quadratische Formen von allgemeinen quadratischen Fo
         \centering
         \begin{tikzpicture}
             \begin{axis}[
+                tick label style={font=\footnotesize},
+                xtick={-5, 0, 5}, 
+                ytick={-5, 0, 5},
                 width=6cm,
                 view={65}{50}, % Adjust the view to come more from the top
                 xlabel={$x_1$},
@@ -285,6 +307,8 @@ Wie unterscheiden sich rein quadratische Formen von allgemeinen quadratischen Fo
                 colormap/cool,
                 zmin=-50, % Set the minimum value of the z-axis
                 zmax=50,  % Set the maximum value of the z-axis
+                xmax=10,
+                xmin=-10,
                 ]
                 \addplot3[
                     surf,
@@ -357,4 +381,4 @@ Wie unterscheiden sich rein quadratische Formen von allgemeinen quadratischen Fo
 
 \vspace{0.5\baselineskip}
 
-Es scheint hier als ob die beiden Formen dieselbe Fläche beschreiben mit dem einzigen Unterschied, dass sie rotiert sind. In folgenden Kapiteln werden wir sehen wie wir durch eine Basistransformation die nicht reine Form in eine rein quadratische Form umwandeln können. Dafür werden wir das Konzept der Diagonalisierung verwenden.
+Es scheint hier als ob die beiden Formen dieselbe Fläche beschreiben mit dem einzigen Unterschied, dass sie rotiert sind. In folgenden Kapiteln werden wir sehen wie wir durch eine Basistransformation eine nicht reine Form in eine rein quadratische Form umwandeln können. Dafür werden wir das Konzept der Diagonalisierung verwenden.
