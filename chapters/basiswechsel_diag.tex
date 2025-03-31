@@ -432,103 +432,103 @@ Zusammengefasst können wir dies in einem ``Kochrezept'' aufschreiben.
     \end{enumerate}
 \end{tcolorbox}
 
-% \subsection{Diagonalisierbarkeit}
+\subsection{Diagonalisierbarkeit}
 
-% Nicht alle Matrizen sind Diagonalisierbar. Um zu prüfen, ob eine Matrix diagonalisierbar ist, können wir bestimmte Kriterien überprüfen. Erinnern wir uns nochmals wie die Diagonalisierung aussieht mathematisch aussieht,
+Nicht alle Matrizen sind Diagonalisierbar. Es kann also sein das keine Transformationsmatrix \( T \) existiert, sodass
 
-% \begin{equation*}
-%     D = T^{-1} A T.
-% \end{equation*}
+\begin{equation*}
+    D = T^{-1} A T.
+\end{equation*}
 
-% Ein Kriterium ist damit gegeben, dass die Transformationsmatrix \( T \) regulär (invertierbar) sein muss. Ein Weg die Invertierbarkeit einer Matrix zu prüfen ist die lineare Abhängigkeit der Spalten/ Zeilen zu betrachten. Nur wenn alle Spalten linear unabhängig sind, ist die Matrix auch invertierbar. In diesem Fall sind die Spalten der Matrix \( T \) auch die Eigenvektoren von \( A \). Das bedeutet, dass wir prüfen müssen, ob die Eigenvektoren von \( A \) linear unabhängig sind. Dieses Kriterium können wir leicht umschreiben denn, wenn alle Eigenvektoren linear unabhängig sind dann bilden sie auch eine Basis. Wenn das der Fall ist, dann sagen wir das die Matrix halbeinfach ist. 
+Ein Kriterium für die Diagonalisierbarkeit einer Matrix \( A \) ist dadurch, dass die Transformationsmatrix \( T \) regulär (invertierbar) sein muss. Ein Weg dies zu Überprüfen ist die lineare Abhängigkeit der Spalten/ Zeilen zu betrachten. Nur wenn alle Spalten linear unabhängig sind, ist die Matrix auch invertierbar. In diesem Fall sind die Spalten der Matrix \( T \) auch die Eigenvektoren von \( A \). Das bedeutet, dass wir prüfen müssen, ob die Eigenvektoren von \( A \) linear unabhängig sind. Dieses Kriterium können wir umschreiben denn, wenn alle Eigenvektoren linear unabhängig sind dann bilden sie eine Basis. Eine solche Matrix nennen wir dann halbeinfach. 
 
-% \begin{tcolorbox}[colback=gray!30, colframe=gray!80, title=Halbeinfache Matrizen]
-%     Eine Matrix \( A \in \mathbb{C}^{n \times n} \) ist halbeinfach, wenn Ihre Eigenvektoren eine Basis für \( \mathbb{C}^n \) bilden. 
-% \end{tcolorbox}
+\begin{tcolorbox}[colback=gray!30, colframe=gray!80, title=Halbeinfache Matrizen]
+    Eine Matrix \( A \in \mathbb{C}^{n \times n} \) ist halbeinfach, wenn Ihre Eigenvektoren eine Basis für \( \mathbb{C}^n \) bilden. 
+\end{tcolorbox}
 
-% Weiterhin können wir prüfen, ob eine Matrix halbeinfach ist, indem wir uns die Vielfachheiten der Eigenwerte und Eigenvektoren anschauen. Nur wenn die algebraische Vielfachheit jedes Eigenwertes gleich der geometrischen Vielfachheit ist, ist die Matrix halbeinfach. D.h. für jeden Eigenwert \( \lambda \) muss gelten:
+Ein Kriterium zur Diagonalisierbarkeit einer Matrix ist daruch das sie halbeinfach ist. Wir können prüfen ob eine Matrix halbeinfach ist, indem wir uns die Vielfachheiten der Eigenwerte und Eigenvektoren anschauen. Denn wir wissen das Eigenvektoren von unterschiedlichen Eigenwerten jeweils linear unabhänig sind und die Eigenvektoren deselben Eigenwerts auch linear unabhänig sein müssen. Das beduetet dass, nur wenn die algebraische Vielfachheit jedes Eigenwertes gleich der geometrischen Vielfachheit ist, ist die Matrix halbeinfach. D.h. für jeden Eigenwert \( \lambda \) muss gelten:
 
-% \begin{equation*}
-%     \text{alg. Vfh. } \lambda = \text{geom. Vfh. } \lambda.
-% \end{equation*}
+\begin{equation*}
+    \text{alg. Vfh. } \lambda = \text{geom. Vfh. } \lambda.
+\end{equation*}
 
-% Somit können wir das Kriterium für die Diagonalisierbarkeit einer Matrix zusammenfassen.
+Somit können wir das Kriterium für die Diagonalisierbarkeit einer Matrix zusammenfassen.
 
-% \begin{tcolorbox}[colback=gray!30, colframe=gray!80, title=Halbeinfache Matrizen]
-%     Eine quadratische Matrix \( A \in \mathbb{C}^{n \times n} \) ist diagonalisierbar, falls eine reguläre Matrix \( T \) existiert, sodass \( D = T^{-1} A T \) eine Diagonalmatrix ist. 
+\begin{tcolorbox}[colback=gray!30, colframe=gray!80, title=Halbeinfache Matrizen]
+    Eine quadratische Matrix \( A \in \mathbb{C}^{n \times n} \) ist diagonalisierbar, falls eine reguläre Matrix \( T \) existiert, sodass \( D = T^{-1} A T \) eine Diagonalmatrix ist. 
 
-%     \begin{equation*}
-%         A \ \text{halbeinfach} \Leftrightarrow A \ \text{diagonalisierbar}
-%     \end{equation*}
-% \end{tcolorbox}
+    \begin{equation*}
+        A \ \text{halbeinfach} \Leftrightarrow A \ \text{diagonalisierbar}
+    \end{equation*}
+\end{tcolorbox}
 
-% \subsubsection*{Beispiel} \( \ \)
+\subsubsection*{Beispiel} \( \ \)
 
-% Halbeinfache Matrix: \( A = \begin{pmatrix} 2 & -1 \\ 0 & 1 \end{pmatrix} \). Mit den Eigenwerten und Eigenvektoren
+Halbeinfache Matrix: \( A = \begin{pmatrix} 2 & -1 \\ 0 & 1 \end{pmatrix} \). Mit den Eigenwerten und Eigenvektoren
 
-% \vspace{1\baselineskip}
+\vspace{1\baselineskip}
 
-% \begin{equation*}
-%     \lambda_1 = 2, \ \lambda_2 = 1, \quad v_1 = \begin{bmatrix} 1 \\ 0 \end{bmatrix}, \ v_2 = \begin{bmatrix} 1 \\ 1 \end{bmatrix}.
-% \end{equation*}
+\begin{equation*}
+    \lambda_1 = 2, \ \lambda_2 = 1, \quad v_1 = \begin{bmatrix} 1 \\ 0 \end{bmatrix}, \ v_2 = \begin{bmatrix} 1 \\ 1 \end{bmatrix}.
+\end{equation*}
 
-% In diesem Fall sind alle geometrischen und algebraischen Vielfachheiten gleich 1 damit bilden die Eigenvektoren eine Basis. Die Matrix ist also halbeinfach und damit auch diagonalisierbar.
+In diesem Fall sind alle geometrischen und algebraischen Vielfachheiten gleich 1 damit bilden die Eigenvektoren eine Basis. Die Matrix ist also halbeinfach und damit auch diagonalisierbar.
 
-% \vspace{1\baselineskip}
+\vspace{1\baselineskip}
 
-% Nicht halbeinfache Matrix: \( A = \begin{pmatrix} 1 & 1 \\ -1 & 3 \end{pmatrix} \). Mit den Eigenwerten und Eigenvektoren
+Nicht halbeinfache Matrix: \( A = \begin{pmatrix} 1 & 1 \\ -1 & 3 \end{pmatrix} \). Mit den Eigenwerten und Eigenvektoren
 
-% \vspace{1\baselineskip}
+\vspace{1\baselineskip}
 
-% \begin{equation*}
-%     \lambda_{1,2} = 2, \quad v_1 = \begin{bmatrix} 1 \\ 1 \end{bmatrix}.
-% \end{equation*}
+\begin{equation*}
+    \lambda_{1,2} = 2, \quad v_1 = \begin{bmatrix} 1 \\ 1 \end{bmatrix}.
+\end{equation*}
 
-% Hier ist die algebraische Vielfachheit des Eigenwertes 2 gleich 2, aber die geometrische Vielfachheit nur gleich 1 damit bilden die Eigenvektoren keine Basis. Demnach ist die Matrix nicht halbeinfach und damit auch nicht diagonalisierbar.
+Hier ist die algebraische Vielfachheit des Eigenwertes 2 gleich 2, aber die geometrische Vielfachheit nur gleich 1 damit bilden die Eigenvektoren keine Basis. Demnach ist die Matrix nicht halbeinfach und damit auch nicht diagonalisierbar.
 
-% \subsubsection{Spezialfall: Symmetrische Matrizen} \( \ \)
+\subsubsection{Spezialfall: Symmetrische Matrizen} \( \ \)
 
-% \vspace{0.5\baselineskip}
+\vspace{0.5\baselineskip}
 
-% Wenn \( A \in \mathbb{R}^{n \times n} \)  symmetrisch ist, gilt:
+Wenn \( A \in \mathbb{R}^{n \times n} \)  symmetrisch ist, gilt:
 
-% \begin{itemize}
-%     \item A ist halbeinfach, also auch diagonalisierbar.
-%     \item A besitzt eine orthonormale Eigenbasis.
-%     \item Es existiert eine orthogonale Matrix \( T \), sodass \( T^{-1} A T = T^\top A T \) diagonal ist.
-% \end{itemize}
+\begin{itemize}
+    \item A ist halbeinfach, also auch diagonalisierbar.
+    \item A besitzt eine orthonormale Eigenbasis.
+    \item Es existiert eine orthogonale Matrix \( T \), sodass \( T^{-1} A T = T^\top A T \) diagonal ist.
+\end{itemize}
 
-% \subsubsection{Anwendung: Potenzen von Matrizen} \( \ \)
+\subsubsection{Anwendung: Potenzen von Matrizen} \( \ \)
 
-% \vspace{0.5\baselineskip}
+\vspace{0.5\baselineskip}
 
-% Sei \( A \in \mathbb{C}^{n \times n} \) diagonalisierbar. Berechne \( A^3 \). 
+Sei \( A \in \mathbb{C}^{n \times n} \) diagonalisierbar. Berechne \( A^3 \). 
 
-% \vspace{1\baselineskip}
+\vspace{1\baselineskip}
 
-% Da \( A \) diagonalisierbar ist, gilt \( A = T D T^{-1} \). Damit gilt für \( A^3 \):
+Da \( A \) diagonalisierbar ist, gilt \( A = T D T^{-1} \). Damit gilt für \( A^3 \):
 
-% \begin{equation*}
-%     \begin{aligned}
-%         A^3 &= (T D T^{-1})^3 = T D \underbrace{T^{-1} T}_{I} D \underbrace{T^{-1} T}_{I} D T^{-1} = T D^3 \ T^{-1}.
-%     \end{aligned}
-% \end{equation*} 
+\begin{equation*}
+    \begin{aligned}
+        A^3 &= (T D T^{-1})^3 = (T D \underbrace{T^{-1}) (T}_{I} D \underbrace{T^{-1}) (T}_{I} D T^{-1}) = T D^3 \ T^{-1}.
+    \end{aligned}
+\end{equation*} 
 
-% und weil \( D \) eine Diagonalmatrix ist, gilt
+und weil \( D \) eine Diagonalmatrix ist, gilt
 
-% \begin{equation*}
-%     D^3 = T \ \text{diag}(\lambda_1^3, \lambda_2^3, \dots, \lambda_n^3) \ T^{-1}.
-% \end{equation*}
+\begin{equation*}
+    A^3 = T \ \underbrace{ \text{diag}(\lambda_1^3, \lambda_2^3, \dots, \lambda_n^3)}_{D^3} \ T^{-1}.
+\end{equation*}
 
-% Allgemein gilt für jede diagonalisierbare Matrix \( A \)
+Allgemein gilt für jede diagonalisierbare Matrix \( A \)
 
-% \begin{equation*}
-%     A^k = T \ \text{diag}(\lambda_1^k, \lambda_2^k, \dots, \lambda_n^k) \ T^{-1}.
-% \end{equation*}
+\begin{equation*}
+    A^k = T \ \text{diag}(\lambda_1^k, \lambda_2^k, \dots, \lambda_n^k) \ T^{-1}.
+\end{equation*}
 
-% Insbesondere vereinfacht sich dadurch auch das Matrixexponential
+Insbesondere vereinfacht sich dadurch auch das Matrixexponential
 
-% \begin{equation*}
-%     e^{At} \underset{\substack{\color{black}\uparrow \\
-%                        \mathclap{e^A = \sum_{m=0}^{\infty} \frac{A^m}{m!}}}}{=}T \ \text{diag}(e^{\lambda_1 t}, e^{\lambda_2 t}, \dots, e^{\lambda_n t}) \ T^{-1}
-% \end{equation*}
+\begin{equation*}
+    e^{At} \underset{\substack{\color{black}\uparrow \\
+                       \mathclap{e^A = \sum_{m=0}^{\infty} \frac{A^m}{m!}}}}{=}T \ \text{diag}(e^{\lambda_1 t}, e^{\lambda_2 t}, \dots, e^{\lambda_n t}) \ T^{-1}.
+\end{equation*}
