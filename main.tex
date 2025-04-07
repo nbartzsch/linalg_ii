@@ -2,12 +2,8 @@
 \usepackage{script}
 \usepackage[ngerman]{babel}
 
-% section for external compiling when using pgfplots. If not needed, comment out
-
 \usetikzlibrary{external}
 \tikzexternalize[prefix=tikz_main/] % when active use this to compile in terminal: pdflatex -shell-escape main.tex
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \setboolean{includingsolutions}{false} % true: includes solutions, % false, no solutions
 
@@ -38,5 +34,6 @@
     \include{chapters/kern_bild}
     \include{chapters/basiswechsel_diag}
     \include{chapters/quadratische_formen}
+    \include{chapters/hauptachsentrans}
 
 \end{document}
