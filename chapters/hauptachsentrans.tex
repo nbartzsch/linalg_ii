@@ -37,34 +37,53 @@ Die resultierenden Niveaumengen einer quadratischen Funktion, mit zwei Variablen
 
 \vspace{\baselineskip}
 
-Zum Beispiel gibt die quadratische Form \( q(\mathbf{x}) = x_1^2 + 4xy + y^2 \), aus der letzten Woche, einen hyperbolischen Kegelschnitt wie wir in der Abbildung sehen können.
+Zum Beispiel gibt die quadratische Form \( q(\mathbf{x}) = x_1^2 + 4xy + y^2 \), aus der letzten Woche, einen hyperbolischen Kegelschnitt, wenn wir die quadratische Form bei \( z = 1 \) anschauen. Dies kann einfach in einer Abbildung gesehen werden, ist aber schwer direkt aus der quadratischen Form abzulesen. 
 
-\vspace{\baselineskip}
+\vspace{2\baselineskip}
 
 \begin{figure*}[h]
-    \centering     
-    \begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
-        %Image [id:dp2813816070099763] 
-        \draw (215.5,90.5) node  {\includegraphics[width=143.25pt,height=120.75pt]{media/kegelschnitt_01.png}};
-        %Image [id:dp5757356529933187] 
-        \draw (444.75,89.5) node  {\includegraphics[width=142.13pt,height=120.75pt]{media/kegelschnitt_02.png}};
-        %Curve Lines [id:da8140648409741053] 
-        \draw    (521.5,53.5) .. controls (514.49,70.33) and (518.4,70.55) .. (507.91,77.46) ;
-        \draw [shift={(505.5,79)}, rotate = 327.8] [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.08]  [draw opacity=0] (5.36,-2.57) -- (0,0) -- (5.36,2.57) -- (3.56,0) -- cycle    ;
-        %Curve Lines [id:da8764701448468978] 
-        \draw    (390,150) .. controls (437.82,150.32) and (439.91,168.38) .. (440,187.05) ;
-        \draw [shift={(440,190)}, rotate = 270] [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.08]  [draw opacity=0] (5.36,-2.57) -- (0,0) -- (5.36,2.57) -- (3.56,0) -- cycle    ;
-        %Curve Lines [id:da6145373626255732] 
-        \draw    (500,150) .. controls (452.82,150) and (450.76,168.35) .. (450.1,187.05) ;
-        \draw [shift={(450,190)}, rotate = 271.94] [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.08]  [draw opacity=0] (5.36,-2.57) -- (0,0) -- (5.36,2.57) -- (3.56,0) -- cycle    ;
-        % Text Node
-        \draw (501.5,36) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\displaystyle z=1$};
-        % Text Node
-        \draw (406,192) node [anchor=north west][inner sep=0.75pt]   [align=left] {Kegelschnitt};
+    \centering
+    \begin{tikzpicture}
+        \begin{axis}[
+            tick label style={font=\footnotesize},
+            width=8cm,
+            xmax=8,
+            xmin=-8, 
+            ymax=8,
+            ymin=-8, 
+            zmin=-50, 
+            zmax=150,  
+        ]
+        \addplot3[
+            surf,
+            fill=white,
+            domain=-5:5,
+            domain y=-5:5,
+            samples=50,
+            z buffer=sort
+        ]
+        {x^2 + 4*x*y + y^2};
+        \addplot3[
+            contour gnuplot={
+                levels={1},
+                labels=false,
+                draw color=red
+            },
+            ultra thick, 
+            samples=50,
+            domain=-5:5,
+            domain y=-5:5,
+        ]
+        {x^2 + 4*x*y + y^2};
+        
+        % Add arrow and label
+        \node[pin={[pin edge={<-, ultra thick, red}]above right:{\( z=1 \)}}] at (axis cs:5,-1,0) {};
+        
+        \end{axis}
     \end{tikzpicture}
 \end{figure*}
 
-\vspace{\baselineskip}
+\newpage
 
 Ein besonderer Fall ergibt sich, wenn die Matrix \( A \) diagonal ist, dann sind die Hauptachsen des Kegelschnitts parallel zu den Koordinatenachsen. Ein Kegelschnitt im Hauptachsensystem kann in Normalform geschrieben werden. Die Normalformen aller möglichen Kegelschnitte sind in der folgenden Liste gegeben.
 
@@ -95,7 +114,7 @@ Rang(\( A \)) = 1:
 
 \subsection{Quadriken}
 
-Im allgemeinen Fall, wenn \( A \in \mathbb{R}^{n \times n} \) ist, kann die Lösungsmenge der quadratischen Form nicht mehr durch Kegelschnitte beschrieben werden. Im Allgemeinen nennen wir also die Lösungsmenge einer quadratischen Form eine Quadrik. Für den Fall \( n = 3 \) können wir die resultierenden Quadriken noch grafisch als Flächen 2.\ Grades darstellen. Auch hier können wir die Normalformen der Quadriken in einem Hauptachsensystem finden. Einige Beispiele sind:
+Im allgemeinen Fall, wenn \( A \in \mathbb{R}^{n \times n} \) und \( n > 2 \) ist, kann die Lösungsmenge der quadratischen Form nicht mehr durch Kegelschnitte beschrieben werden. Im Allgemeinen nennen wir dann die Lösungsmenge einer quadratischen Form eine Quadrik. Für den Fall \( n = 3 \) können wir die resultierenden Quadriken noch grafisch als Flächen 2.\ Grades darstellen. Auch hier können wir die Normalformen der Quadriken in einem Hauptachsensystem finden. Einige Beispiele sind:
 
 \vspace{0.5\baselineskip}
 
@@ -192,7 +211,7 @@ Aufgabe aus der Prüfung Winter 2018.
 
 \end{itemize}
 
-Betrachten wir zunächst einmal die gegebene quadratische Form \( q(\mathbf{x}) \). Diese lässt sich im 3D Raum darstellen und kann durch eine Matrix \( A \in \mathbb{R}^{2 \times 2} \) beschreiben werden. 
+Betrachten wir zunächst einmal die gegebene quadratische Form \( q(\mathbf{x}) \). Diese lässt sich im 3D Raum darstellen und kann durch eine symmetrische Matrix \( A \in \mathbb{R}^{2 \times 2} \) beschreiben werden. 
 
 \begin{figure*}[h]
     \centering
@@ -206,8 +225,30 @@ Betrachten wir zunächst einmal die gegebene quadratische Form \( q(\mathbf{x}) 
         \end{equation*}
     \end{minipage}
     \begin{minipage}{0.45\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{media/hauptachsen_01.png}
+        \begin{tikzpicture}
+                \begin{axis}[
+                    xlabel={$x_1$},
+                    ylabel={$x_2$},
+                    tick label style={font=\footnotesize},
+                    width=6.5cm,
+                    xmax=8,
+                    xmin=-8, 
+                    ymax=8,
+                    ymin=-8, 
+                    zmin=-150, 
+                    zmax=50,  
+                ]
+                \addplot3[
+                    surf,
+                    fill=white,
+                    domain=-5:5,
+                    domain y=-5:5,
+                    samples=40,
+                    z buffer=sort
+                ]
+                {-x^2 + 4*x*y - y^2};
+            \end{axis}
+        \end{tikzpicture}
     \end{minipage}
 \end{figure*}
 
@@ -251,7 +292,7 @@ Der Kegelschnitt \( Q \) beschreibt die Schnittmenge von \( q(\mathbf{x}) \) mit
 Zuerst rotieren wir den Kegelschnitt damit die Hauptachsen mit den Koordinatenachsen übereinstimmen. Dazu führen wir einen Basiswechsel \( x = Ty \) durch. In der neuen Basis muss die Matrix \( A \) eine Diagonalmatrix sein. Demnach muss \( A \) diagonalisiert werden. Die dafür benötigten Eigenwerte und Eigenvektoren sind mit 
 
 \begin{equation*}
-    \lambda_1 = -3, \quad v_1 = \begin{pmatrix} 1 \\ -1 \end{pmatrix}, \quad \lambda_2 = 1, \quad v_2 = \begin{pmatrix} 1 \\ 1 \end{pmatrix}
+    \lambda_1 = -3, \quad v_1 = \begin{pmatrix} 1 \\ -1 \end{pmatrix}, \quad \lambda_2 = 1, \quad v_2 = \begin{pmatrix} 1 \\ 1 \end{pmatrix},
 \end{equation*}
 
 gegeben. Da wir den Kegelschnitt nur rotieren wollen, ohne seine Form zu verändern, müssen wir unsere Transformationsmatrix \( T \) orthogonal wählen. Dadurch ergibt sich 
@@ -275,7 +316,7 @@ Nun setzen wir \( \mathbf{x} = T\mathbf{y} \) ein und erhalten
     \mathbf{x}^\top A \ \mathbf{x} + a^\top \mathbf{x} = \underbrace{(T \mathbf{y})^\top A  \ (T \mathbf{y})}_{\mathbf{y}^\top T^\top A \ T \mathbf{y}} + a^\top T \mathbf{y} = 0
 \end{equation*}
 
-Da wir die Matrix \( A \) diagonalisieren und \( T \) orthogonal ist, gilt \( T^\top A T = D \). Der Kegelschnitt vereinfacht sich weiterhin zu 
+Da wir die Matrix \( A \) diagonalisieren und \( T \) orthogonal ist, gilt \( T^\top A \ T = D \). Der Kegelschnitt vereinfacht sich weiterhin zu 
 
 \begin{equation*}
     \mathbf{y}^\top D \ \mathbf{y} + a^\top T \mathbf{y} = -3y_1^2 + y_2^2 + 6 \sqrt{2} y_1 = 0.
@@ -332,7 +373,7 @@ Was grafisch, wie erwartet, eine Rotation des Kegelschnitts darstellt.
     \end{tikzpicture}
 \end{figure*}
 
-Um die Normalform zu erhalten, müssen wir nur noch durch eine Translation den \( y_1-\)Term loswerden. Dafür ergänzen wir quadratisch und erhalten
+Um die Normalform zu erhalten, müssen wir nur noch, durch eine Translation, den \( y_1-\)Term loswerden. Dafür ergänzen wir quadratisch und erhalten
 
 \begin{equation*}
     \begin{aligned}
@@ -343,7 +384,7 @@ Um die Normalform zu erhalten, müssen wir nur noch durch eine Translation den \
     \end{aligned}
 \end{equation*}
 
-Nun wird eine Translation \( \mathbf{z} = \mathbf{y} + \mathbf{c} \) durchgeführt, wobei \( \mathbf{c} \) die Verschiebung in \( y_1 \) Richtung korrigiert. In diesem Fall gilt
+Nun wird eine Translation \( \mathbf{z} = \mathbf{y} + \mathbf{c} \) durchgeführt, wobei der Vektor \( \mathbf{c} \) die Verschiebung in \( y_1 \) Richtung korrigiert. In diesem Fall gilt
 
 \begin{equation*}
     \mathbf{z} = \mathbf{y} + \mathbf{c} = \mathbf{y} + \begin{pmatrix} - \sqrt{2} \\ 0 \end{pmatrix}.
@@ -415,6 +456,6 @@ Wenn wir nun alle Formen vergleichen, ist zu erkennen, dass die Normalform am ei
     \begin{aligned}
         Q : & -x_1^2 + 4x_1x_2 - x_2^2 + 6x_1 - 6x_2 = 0 \\[0.5em]
         & -3y_1^2 + y_2^2 + 6\sqrt{2}y_1 = 0 \\[0.5em]
-        & \frac{z_1^2}{2} - \frac{z_2^2}{6} - 1 = 0
+        & \frac{z_1^2}{2} - \frac{z_2^2}{6} - 1 = 0.
     \end{aligned}
 \end{equation*}

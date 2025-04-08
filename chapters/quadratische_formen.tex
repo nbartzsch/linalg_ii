@@ -42,25 +42,27 @@ F√ºr 2 und 3 Dimensionen k√∂nnen wir eine allgemeine Form explizit aufschreiben.
 Je nach Matrix kann die quadratische Form grafisch anders aussehen. Beispiele f√ºr 2 Variablen sind zum Beispiel.
 
 \begin{figure}[h]
-    \centering
+    \centering        
     \begin{minipage}{0.32\textwidth}
         \centering
         \begin{tikzpicture}
-            \begin{axis}[
-                tick label style={font=\footnotesize},
-                xtick={-5, 0, 5}, 
-                ytick={-5, 0, 5},
-                width=5cm,
-                view={65}{50}, % Adjust the view to come more from the top
-                colormap/cool,
-                zmin=-50, % Set the minimum value of the z-axis
-                zmax=50,  % Set the maximum value of the z-axis
+                \begin{axis}[
+                    tick label style={font=\footnotesize},
+                    width=5.5cm,
+                    xmax=8,
+                    xmin=-8, 
+                    ymax=8,
+                    ymin=-8, 
+                    zmin=-50, 
+                    zmax=150,  
                 ]
                 \addplot3[
                     surf,
-                    domain=-10:10,
-                    domain y=-10:10,
-                    samples=50,
+                    fill=white,
+                    domain=-5:5,
+                    domain y=-5:5,
+                    samples=40,
+                    z buffer=sort
                 ]
                 {x^2 + 4*x*y + y^2};
             \end{axis}
@@ -70,21 +72,23 @@ Je nach Matrix kann die quadratische Form grafisch anders aussehen. Beispiele f√
     \begin{minipage}{0.32\textwidth}
         \centering
         \begin{tikzpicture}
-            \begin{axis}[
-                width=5cm,
-                tick label style={font=\footnotesize},
-                xtick={-5, 0, 5}, 
-                ytick={-5, 0, 5},
-                view={65}{50}, % Adjust the view to come more from the top
-                colormap/cool,
-                zmin=0, % Set the minimum value of the z-axis
-                zmax=50,  % Set the maximum value of the z-axis
+                \begin{axis}[
+                    tick label style={font=\footnotesize},
+                    width=5.5cm,
+                    xmax=8,
+                    xmin=-8, 
+                    ymax=8,
+                    ymin=-8, 
+                    zmin=0, 
+                    zmax=100,  
                 ]
                 \addplot3[
                     surf,
-                    domain=-10:10,
-                    domain y=-10:10,
-                    samples=50,
+                    fill=white,
+                    domain=-5:5,
+                    domain y=-5:5,
+                    samples=40,
+                    z buffer=sort
                 ]
                 {x^2 + 2*x*y + y^2};
             \end{axis}
@@ -94,18 +98,23 @@ Je nach Matrix kann die quadratische Form grafisch anders aussehen. Beispiele f√
     \begin{minipage}{0.32\textwidth}
         \centering
         \begin{tikzpicture}
-            \begin{axis}[
-                tick label style={font=\footnotesize},
-                width=5cm,
-                view={65}{50}, % Adjust the view to come more from the top
-                zmin=-50, % Set the minimum value of the z-axis
-                zmax=0,  % Set the maximum value of the z-axis
+                \begin{axis}[
+                    tick label style={font=\footnotesize},
+                    width=5.5cm,                    
+                    xmax=8,
+                    xmin=-8, 
+                    ymax=8,
+                    ymin=-8, 
+                    zmin=-75, 
+                    zmax=10,  
                 ]
                 \addplot3[
                     surf,
-                    domain=-10:10,
-                    domain y=-10:10,
-                    samples=50,
+                    fill=white,
+                    domain=-5:5,
+                    domain y=-5:5,
+                    samples=40,
+                    z buffer=sort
                 ]
                 {-x^2 + x*y - y^2};
             \end{axis}
@@ -150,21 +159,23 @@ Betrachten wir nochmals die oben gezeigten Beispiele und klassifizieren diese an
         \begin{tikzpicture}
             \begin{axis}[
                 tick label style={font=\footnotesize},
-                xtick={-5, 0, 5}, 
-                ytick={-5, 0, 5},
-                width=6cm,
-                view={65}{50}, % Adjust the view to come more from the top
-                colormap/cool,
-                zmin=-50, % Set the minimum value of the z-axis
-                zmax=50,  % Set the maximum value of the z-axis
-                ]
-                \addplot3[
-                    surf,
-                    domain=-10:10,
-                    domain y=-10:10,
-                    samples=50,
-                ]
-                {x^2 + 4*x*y + y^2};
+                width=5.5cm,
+                xmax=8,
+                xmin=-8, 
+                ymax=8,
+                ymin=-8, 
+                zmin=-50, 
+                zmax=150,  
+            ]
+            \addplot3[
+                surf,
+                fill=white,
+                domain=-5:5,
+                domain y=-5:5,
+                samples=40,
+                z buffer=sort
+            ]
+            {x^2 + 4*x*y + y^2};
             \end{axis}
         \end{tikzpicture}
     \end{minipage}
@@ -189,23 +200,25 @@ Betrachten wir nochmals die oben gezeigten Beispiele und klassifizieren diese an
         \begin{tikzpicture}
             \begin{axis}[
                 tick label style={font=\footnotesize},
-                xtick={-5, 0, 5}, 
-                ytick={-5, 0, 5},
-                width=6cm,
-                view={65}{50}, % Adjust the view to come more from the top
-                colormap/cool,
-                zmin=0, % Set the minimum value of the z-axis
-                zmax=50,  % Set the maximum value of the z-axis
-                ]
-                \addplot3[
-                    surf,
-                    domain=-10:10,
-                    domain y=-10:10,
-                    samples=50,
-                ]
-                {x^2 + 2*x*y + y^2};
-            \end{axis}
-        \end{tikzpicture}
+                width=5.5cm,
+                xmax=8,
+                xmin=-8, 
+                ymax=8,
+                ymin=-8, 
+                zmin=0, 
+                zmax=100,  
+            ]
+            \addplot3[
+                surf,
+                fill=white,
+                domain=-5:5,
+                domain y=-5:5,
+                samples=40,
+                z buffer=sort
+            ]
+            {x^2 + 2*x*y + y^2};
+        \end{axis}
+    \end{tikzpicture}
     \end{minipage}
     \hfill
     \begin{minipage}{0.6\textwidth}
@@ -226,20 +239,25 @@ Betrachten wir nochmals die oben gezeigten Beispiele und klassifizieren diese an
         \begin{tikzpicture}
             \begin{axis}[
                 tick label style={font=\footnotesize},
-                width=6cm,
-                view={65}{50}, % Adjust the view to come more from the top
-                zmin=-50, % Set the minimum value of the z-axis
-                zmax=0,  % Set the maximum value of the z-axis
-                ]
-                \addplot3[
-                    surf,
-                    domain=-10:10,
-                    domain y=-10:10,
-                    samples=50,
-                ]
-                {-x^2 + x*y - y^2};
-            \end{axis}
-        \end{tikzpicture}
+                width=5.5cm,                    
+                xmax=8,
+                xmin=-8, 
+                ymax=8,
+                ymin=-8, 
+                zmin=-75, 
+                zmax=10,  
+            ]
+            \addplot3[
+                surf,
+                fill=white,
+                domain=-5:5,
+                domain y=-5:5,
+                samples=40,
+                z buffer=sort
+            ]
+            {-x^2 + x*y - y^2};
+        \end{axis}
+    \end{tikzpicture}
     \end{minipage}
     \hfill
     \begin{minipage}{0.6\textwidth}
@@ -270,24 +288,26 @@ Wie unterscheiden sich rein quadratische Formen von allgemeinen quadratischen Fo
         \begin{tikzpicture}
             \begin{axis}[
                 tick label style={font=\footnotesize},
-                xtick={-5, 0, 5}, 
-                ytick={-5, 0, 5},
-                width=6cm,
-                view={65}{50}, % Adjust the view to come more from the top
                 xlabel={$x_1$},
                 ylabel={$x_2$},
                 zlabel={$q(x_1, x_2)$},
-                colormap/cool,
-                zmin=-50, % Set the minimum value of the z-axis
-                zmax=50,  % Set the maximum value of the z-axis
-                ]
-                \addplot3[
-                    surf,
-                    domain=-10:10,
-                    domain y=-10:10,
-                    samples=50,
-                ]
-                {x^2 + 4*x*y + y^2};
+                width=6.5cm,
+                xmax=8,
+                xmin=-8, 
+                ymax=8,
+                ymin=-8, 
+                zmin=-50, 
+                zmax=150,  
+            ]
+            \addplot3[
+                surf,
+                fill=white,
+                domain=-5:5,
+                domain y=-5:5,
+                samples=40,
+                z buffer=sort
+            ]
+            {x^2 + 4*x*y + y^2};
             \end{axis}
         \end{tikzpicture}
     \end{minipage}
@@ -297,25 +317,25 @@ Wie unterscheiden sich rein quadratische Formen von allgemeinen quadratischen Fo
         \begin{tikzpicture}
             \begin{axis}[
                 tick label style={font=\footnotesize},
-                xtick={-5, 0, 5}, 
-                ytick={-5, 0, 5},
-                width=6cm,
-                view={65}{50}, % Adjust the view to come more from the top
                 xlabel={$x_1$},
                 ylabel={$x_2$},
                 zlabel={$q(x_1, x_2)$},
-                colormap/cool,
-                zmin=-50, % Set the minimum value of the z-axis
-                zmax=50,  % Set the maximum value of the z-axis
-                xmax=10,
-                xmin=-10,
-                ]
-                \addplot3[
-                    surf,
-                    domain=-10:10,
-                    domain y=-10:10,
-                    samples=50,
-                ]
+                width=6.5cm,
+                xmax=8,
+                xmin=-8, 
+                ymax=8,
+                ymin=-8, 
+                zmin=-25, 
+                zmax=75,  
+            ]
+            \addplot3[
+                surf,
+                fill=white,
+                domain=-5:5,
+                domain y=-5:5,
+                samples=40,
+                z buffer=sort
+            ]
                 {3*x^2 - y^2};
             \end{axis}
         \end{tikzpicture}
@@ -330,15 +350,14 @@ Wie unterscheiden sich rein quadratische Formen von allgemeinen quadratischen Fo
         \centering
         \begin{tikzpicture}
             \begin{axis}[
-                width=6cm,
+                width=6.5cm,
                 xlabel={$x_1$},
                 ylabel={$x_2$},
-                colormap/cool,
                 view={0}{90},
                 ]
                 \addplot3[
                     contour filled={
-                        number=30, % Number of contour levels
+                        number=50, % Number of contour levels
                     },
                     domain=-5:5,
                     domain y=-5:5,
@@ -353,15 +372,14 @@ Wie unterscheiden sich rein quadratische Formen von allgemeinen quadratischen Fo
         \centering
         \begin{tikzpicture}
             \begin{axis}[
-                width=6cm,
+                width=6.5cm,
                 xlabel={$x_1$},
                 ylabel={$x_2$},
-                colormap/cool,
                 view={0}{90},
                 ]
                 \addplot3[
                     contour filled={
-                        number=30, % Number of contour levels
+                        number=50, % Number of contour levels
                     },
                     domain=-5:5,
                     domain y=-5:5,
@@ -375,7 +393,7 @@ Wie unterscheiden sich rein quadratische Formen von allgemeinen quadratischen Fo
 
 \begin{equation*}
     \begin{aligned}
-        A = \begin{pmatrix} 1 & 2 \\ 2 & 1 \end{pmatrix} \qquad \qquad \qquad \qquad \qquad \qquad \qquad A = \begin{pmatrix} 3 & 0 \\ 0 & -1 \end{pmatrix}
+        \qquad A = \begin{pmatrix} 1 & 2 \\ 2 & 1 \end{pmatrix} \qquad \qquad \qquad \qquad \qquad \qquad \qquad \qquad \qquad A = \begin{pmatrix} 3 & 0 \\ 0 & -1 \end{pmatrix}
     \end{aligned}
 \end{equation*}
 
