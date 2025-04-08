@@ -302,3 +302,12 @@ tikz_main/*
 
 # But do not ignore init.txt
 !tikz_main/init.txt
+
+# Ignore all files in the tikz folder
+tikz_test/*
+
+# But do not ignore init.txt
+!tikz_test/init.txt
+
+*.dat
+*.script
