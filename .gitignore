@@ -302,3 +302,5 @@ tikz_test/*
 
 # Include all files in the tikz folder
 !tikz/*
+
+tikztest.*
