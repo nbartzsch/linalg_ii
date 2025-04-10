@@ -21,6 +21,7 @@ Die resultierenden Niveaumengen einer quadratischen Funktion, mit zwei Variablen
 
 \begin{figure*}[h]
     \centering
+    \tikzsetnextfilename{kegelschnitte}
     \begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
     
     \draw (329.5,59) node  {\includegraphics[width=350pt,height=100pt]{media/kegelschnitte.jpeg}};
@@ -43,6 +44,7 @@ Zum Beispiel gibt die quadratische Form \( q(\mathbf{x}) = x_1^2 + 4xy + y^2 \),
 
 \begin{figure*}[h]
     \centering
+    \tikzsetnextfilename{kegelschnitt_visualisierung}
     \begin{tikzpicture}
         \begin{axis}[
             tick label style={font=\footnotesize},
@@ -122,6 +124,7 @@ Im allgemeinen Fall, wenn \( A \in \mathbb{R}^{n \times n} \) und \( n > 2 \) is
     \centering
     \begin{minipage}{0.32\textwidth}
         \centering
+        \tikzsetnextfilename{quadrik_01}
         \begin{tikzpicture}
             \begin{axis}[
                 width = 5.5cm
@@ -142,6 +145,7 @@ Im allgemeinen Fall, wenn \( A \in \mathbb{R}^{n \times n} \) und \( n > 2 \) is
     \hfill
     \begin{minipage}{0.32\textwidth}
         \centering
+        \tikzsetnextfilename{quadrik_02}
         \begin{tikzpicture}
             \begin{axis}[
                 width = 5.5cm,
@@ -164,6 +168,7 @@ Im allgemeinen Fall, wenn \( A \in \mathbb{R}^{n \times n} \) und \( n > 2 \) is
     \hfill
     \begin{minipage}{0.32\textwidth}
         \centering
+        \tikzsetnextfilename{quadrik_03}
         \begin{tikzpicture}
             \begin{axis}[
                 width = 5.5cm,
@@ -204,7 +209,7 @@ Aufgabe aus der Prüfung Winter 2018.
     Ein Kegelschnitt \( Q \) ist gegeben durch 
 
     \begin{equation*}
-        q(\mathbf{x}) + a^\top \mathbf{x} = 0, \ \text{wobei} \ a^\top = \begin{pmatrix} 6 & -6 \end{pmatrix}.
+        q(\mathbf{x}) + \mathbf{a}^\top \mathbf{x} = 0, \ \text{wobei} \ \mathbf{a}^\top = \begin{pmatrix} 6 & -6 \end{pmatrix}.
     \end{equation*}
 
     Bringen Sie den Kegelschnitt durch eine Hauptachsentransformation \( x = Ty \) und eine Translation auf Normalform, und geben Sie dabei auch \( T \) explizit an. 
@@ -225,6 +230,7 @@ Betrachten wir zunächst einmal die gegebene quadratische Form \( q(\mathbf{x}) 
         \end{equation*}
     \end{minipage}
     \begin{minipage}{0.45\textwidth}
+        \tikzsetnextfilename{hauptachsentrans_01}
         \begin{tikzpicture}
                 \begin{axis}[
                     xlabel={$x_1$},
@@ -256,6 +262,7 @@ Der Kegelschnitt \( Q \) beschreibt die Schnittmenge von \( q(\mathbf{x}) \) mit
 
 \begin{figure*}[h]
     \centering
+    \tikzsetnextfilename{hauptachsentrans_02}
     \begin{tikzpicture}[x=0.75pt,y=0.75pt]
         \begin{axis}[
                 width = 6cm,
@@ -289,7 +296,7 @@ Der Kegelschnitt \( Q \) beschreibt die Schnittmenge von \( q(\mathbf{x}) \) mit
     \end{tikzpicture}
 \end{figure*}
 
-Zuerst rotieren wir den Kegelschnitt damit die Hauptachsen mit den Koordinatenachsen übereinstimmen. Dazu führen wir einen Basiswechsel \( x = Ty \) durch. In der neuen Basis muss die Matrix \( A \) eine Diagonalmatrix sein. Demnach muss \( A \) diagonalisiert werden. Die dafür benötigten Eigenwerte und Eigenvektoren sind mit 
+Zuerst rotieren wir den Kegelschnitt damit die Hauptachsen mit den Koordinatenachsen übereinstimmen. Dazu führen wir einen Basiswechsel \( \mathbf{x} = T \mathbf{y} \) durch. In der neuen Basis muss die Matrix \( A \) eine Diagonalmatrix sein. Demnach muss \( A \) diagonalisiert werden. Die dafür benötigten Eigenwerte und Eigenvektoren sind mit 
 
 \begin{equation*}
     \lambda_1 = -3, \quad v_1 = \begin{pmatrix} 1 \\ -1 \end{pmatrix}, \quad \lambda_2 = 1, \quad v_2 = \begin{pmatrix} 1 \\ 1 \end{pmatrix},
@@ -307,25 +314,26 @@ gegeben. Da wir den Kegelschnitt nur rotieren wollen, ohne seine Form zu veränd
 Nun können wir die Koordinatentransformation durchführen und den Kegelschnitt in der neuen Basis ausdrücken. Per Definition ist \( q(\mathbf{x}) = \mathbf{x}^\top A \mathbf{x} \) wodurch wir \( Q \) umschreiben können.
 
 \begin{equation*}
-    Q: q(\mathbf{x}) + a^\top \mathbf{x} = \mathbf{x}^\top A \ \mathbf{x} + a^\top \mathbf{x} = 0
+    Q: q(\mathbf{x}) + \mathbf{a}^\top \mathbf{x} = \mathbf{x}^\top A \ \mathbf{x} + \mathbf{a}^\top \mathbf{x} = 0
 \end{equation*}
 
 Nun setzen wir \( \mathbf{x} = T\mathbf{y} \) ein und erhalten
 
 \begin{equation*}
-    \mathbf{x}^\top A \ \mathbf{x} + a^\top \mathbf{x} = \underbrace{(T \mathbf{y})^\top A  \ (T \mathbf{y})}_{\mathbf{y}^\top T^\top A \ T \mathbf{y}} + a^\top T \mathbf{y} = 0
+    \mathbf{x}^\top A \ \mathbf{x} + \mathbf{a}^\top \mathbf{x} = \underbrace{(T \mathbf{y})^\top A  \ (T \mathbf{y})}_{\mathbf{y}^\top T^\top A \ T \mathbf{y}} + \mathbf{a}^\top T \mathbf{y} = 0
 \end{equation*}
 
 Da wir die Matrix \( A \) diagonalisieren und \( T \) orthogonal ist, gilt \( T^\top A \ T = D \). Der Kegelschnitt vereinfacht sich weiterhin zu 
 
 \begin{equation*}
-    \mathbf{y}^\top D \ \mathbf{y} + a^\top T \mathbf{y} = -3y_1^2 + y_2^2 + 6 \sqrt{2} y_1 = 0.
+    \mathbf{y}^\top D \ \mathbf{y} + \mathbf{a}^\top T \mathbf{y} = -3y_1^2 + y_2^2 + 6 \sqrt{2} y_1 = 0.
 \end{equation*}
 
 Was grafisch, wie erwartet, eine Rotation des Kegelschnitts darstellt.
     
 \begin{figure*}[h]
     \centering
+    \tikzsetnextfilename{hauptachsentrans_03}
     \begin{tikzpicture}[x=0.75pt,y=0.75pt]
         \begin{axis}[
                 width = 6cm,
@@ -403,6 +411,7 @@ In der Normalform sehen wir nun eindeutig, dass es sich bei dem Kegelschnitt um 
 
 \begin{figure*}[h]
     \centering
+    \tikzsetnextfilename{hauptachsentrans_04}
     \begin{tikzpicture}[x=0.75pt,y=0.75pt]
         \begin{axis}[
                 width = 6cm,
@@ -459,3 +468,17 @@ Wenn wir nun alle Formen vergleichen, ist zu erkennen, dass die Normalform am ei
         & \frac{z_1^2}{2} - \frac{z_2^2}{6} - 1 = 0.
     \end{aligned}
 \end{equation*}
+
+Das allgemeine Vorgehen können wir in einem Kochrezept zusammenfassen. 
+
+\begin{tcolorbox}[colback=gray!30, colframe=gray!80, title=Quadriken in Normalform bringen]
+    Durch zwei Koordinatentransformationen (Drehung \( \mathbf{y} = T\mathbf{x} \) und Verschiebung \( \mathbf{z} = \mathbf{y} + \mathbf{c} \)) können wir jede Quadrik \( Q: \mathbf{x}^\top A \ \mathbf{x} + \mathbf{a}^\top \mathbf{x} + b = 1 \) in eine Normalform bringen. Falls nur nach der Hauptachstransformation der quadratischen Form gefragt ist, kann die Verschiebung weglassen werden.
+    \begin{enumerate}
+        \item Bestimme die Matrix \( A \in \mathbb{R}^{n \times n} \) sodass \( q(\mathbf{x}) = \mathbf{x}^\top A \ \mathbf{x} \).
+        \item Diagonalisiere \( A \) und wähle die normierten Eigenvektoren als Spalten für \( T \), sodass \( T \) orthogonal ist. 
+        \item Setze \( \mathbf{x} = T \mathbf{y} \) ein und vereinfache so weit wie möglich. (Hauptachsentransformation ist hier fertig)
+        \item Bestimme den Vektor \( \mathbf{a} \in \mathbb{R}^n \) und die Konstante \( b \in \mathbb{R} \) und multipliziere alles aus um \( \mathbf{y}^\top D \ \mathbf{y} + \mathbf{a}^\top T \mathbf{y} + b = 0 \) zu erhalten.
+        \item Ergänze quadratisch, um die Verschiebung \( \mathbf{c} \) zu bestimmen. 
+        \item Setze \( \mathbf{z} = \mathbf{y} + \mathbf{c} \) ein und vereinfache so weit wie möglich. 
+    \end{enumerate}
+\end{tcolorbox}

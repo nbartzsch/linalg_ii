@@ -6,8 +6,14 @@
 % when active use this to compile in terminal: pdflatex -shell-escape theory_sheet.tex
 % when changing chapters first delete exsisting tikz files in tikz/ folder
 
+% Ensure TikZ externalization works with -shell-escape
 \usetikzlibrary{external}
-\tikzexternalize[prefix=tikz/] 
+\tikzexternalize[prefix=tikz/]
+% \tikzexternalize[prefix=tikz/, mode=only graphics] % Use 'only graphics' mode for externalization
+
+% Instructions for compiling with -shell-escape
+% To compile with externalized TikZ graphics, use:
+% pdflatex -shell-escape "\def\chaptername{<chapter_name>}\input{theory_sheet.tex}"
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -22,18 +28,28 @@
 
 \setboolean{includingsolutions}{false} % true: includes solutions, % false, no solutions
 
+% Dynamically include only the desired chapter
+\providecommand{\selectedchapter}{}
+\includeonly{
+    chapters/\selectedchapter
+}
+
 \begin{document}
-    
+
+    % Prompt for chapter selection
+    % To compile a specific chapter, set the chapter name using:
+    % pdflatex -shell-escape '\def\selectedchapter{<chapter_name>}\input{theory_sheet.tex}'
+
     %Inhalt
     \pagenumbering{arabic}
-     
-    % \include{chapters/lineare_abb}
-    % \include{chapters/eigenwerte}
-    % \include{chapters/normen_skalarprod}
-    % \include{chapters/orthonormalbasis}
-    % \include{chapters/kern_bild}
-    % \include{chapters/basiswechsel_diag}
-    % \include{chapters/quadratische_formen}
+    
+    \include{chapters/lineare_abb}
+    \include{chapters/eigenwerte}
+    \include{chapters/normen_skalarprod}
+    \include{chapters/orthonormalbasis}
+    \include{chapters/kern_bild}
+    \include{chapters/basiswechsel_diag}
+    \include{chapters/quadratische_formen}
     \include{chapters/hauptachsentrans}
 
 \end{document}
