@@ -13,6 +13,7 @@ CHAPTERS=(
   "basiswechsel_diag"
   "quadratische_formen"
   "hauptachsentrans"
+  "kleinste_quadrate_qr"
 )
 
 # Function to display available chapters with numbers

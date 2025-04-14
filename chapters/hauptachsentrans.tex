@@ -38,7 +38,7 @@ Die resultierenden Niveaumengen einer quadratischen Funktion, mit zwei Variablen
 
 \vspace{\baselineskip}
 
-Zum Beispiel gibt die quadratische Form \( q(\mathbf{x}) = x_1^2 + 4xy + y^2 \), aus der letzten Woche, einen hyperbolischen Kegelschnitt, wenn wir die quadratische Form bei \( z = 1 \) anschauen. Dies kann einfach in einer Abbildung gesehen werden, ist aber schwer direkt aus der quadratischen Form abzulesen. 
+Zum Beispiel gibt die quadratische Form \( q(\mathbf{x}) = x_1^2 + 4xy + y^2 \), aus dem vorherigen Kapitel, einen hyperbolischen Kegelschnitt, wenn wir die quadratische Form bei \( z = 1 \) anschauen. Dies kann einfach in einer Abbildung gesehen werden, ist aber schwer direkt aus der quadratischen Form abzulesen. 
 
 \vspace{2\baselineskip}
 
@@ -192,9 +192,9 @@ Im allgemeinen Fall, wenn \( A \in \mathbb{R}^{n \times n} \) und \( n > 2 \) is
 
 Aber wie genau bringen wir quadratische Formen in die entsprechende Normalform?
 
-\subsection{Hauptachsentransformation}
+\subsection{Hauptachsentransformation und Normalformen}
 
-Bei einer Hauptachsentransformation wird ein Kegelschnitt bzw.\ eine Quadrik in die entsprechende Normalform gebracht. Betrachten wir dieses Verfahren an einem Beispiel. 
+Bei einer Hauptachsentransformation wird eine quadratische Form in ihr Hauptachsensystem gebracht, wobei \( A \) dann diagonal ist. Zusätzlich, können wir Kegelschnitte bzw.\ Quadriken in Normalform schreiben. Wie das genau funktioniert, schauen wir uns in einem Beispiel an.
 
 \vspace{1\baselineskip}
 
@@ -475,7 +475,7 @@ Das allgemeine Vorgehen können wir in einem Kochrezept zusammenfassen.
     Durch zwei Koordinatentransformationen (Drehung \( \mathbf{y} = T\mathbf{x} \) und Verschiebung \( \mathbf{z} = \mathbf{y} + \mathbf{c} \)) können wir jede Quadrik \( Q: \mathbf{x}^\top A \ \mathbf{x} + \mathbf{a}^\top \mathbf{x} + b = 1 \) in eine Normalform bringen. Falls nur nach der Hauptachstransformation der quadratischen Form gefragt ist, kann die Verschiebung weglassen werden.
     \begin{enumerate}
         \item Bestimme die Matrix \( A \in \mathbb{R}^{n \times n} \) sodass \( q(\mathbf{x}) = \mathbf{x}^\top A \ \mathbf{x} \).
-        \item Diagonalisiere \( A \) und wähle die normierten Eigenvektoren als Spalten für \( T \), sodass \( T \) orthogonal ist. 
+        \item Diagonalisiere \( A \) und wähle \( T \) orthogonal. 
         \item Setze \( \mathbf{x} = T \mathbf{y} \) ein und vereinfache so weit wie möglich. (Hauptachsentransformation ist hier fertig)
         \item Bestimme den Vektor \( \mathbf{a} \in \mathbb{R}^n \) und die Konstante \( b \in \mathbb{R} \) und multipliziere alles aus um \( \mathbf{y}^\top D \ \mathbf{y} + \mathbf{a}^\top T \mathbf{y} + b = 0 \) zu erhalten.
         \item Ergänze quadratisch, um die Verschiebung \( \mathbf{c} \) zu bestimmen. 
