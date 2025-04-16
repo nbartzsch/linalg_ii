@@ -34,10 +34,12 @@ read -r CHOICE
 if [[ -z "$CHOICE" ]]; then
   echo "Compiling the full document (main.tex)..."
   pdflatex -shell-escape main.tex
+  open main.pdf
 elif [[ "$CHOICE" =~ ^[0-9]+$ ]] && ((CHOICE >= 1 && CHOICE <= ${#CHAPTERS[@]})); then
   CHAPTER=${CHAPTERS[CHOICE-1]}
   echo "Compiling chapter: $CHAPTER"
   pdflatex -shell-escape "\\def\\selectedchapter{$CHAPTER}\\input{theory_sheet.tex}"
+  open theory_sheet.pdf
 else
   echo "Error: Invalid choice. Please select a valid chapter number."
   display_chapters
