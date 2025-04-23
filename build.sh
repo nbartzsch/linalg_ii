@@ -14,6 +14,7 @@ CHAPTERS=(
   "quadratische_formen"
   "hauptachsentrans"
   "kleinste_quadrate_qr"
+  "lin_diff_sys"
 )
 
 # Function to display available chapters with numbers
@@ -33,11 +34,13 @@ read -r CHOICE
 # Check if the input is valid
 if [[ -z "$CHOICE" ]]; then
   echo "Compiling the full document (main.tex)..."
+  rm -f main.aux main.auxlock main.log main.out
   pdflatex -shell-escape main.tex
   open main.pdf
 elif [[ "$CHOICE" =~ ^[0-9]+$ ]] && ((CHOICE >= 1 && CHOICE <= ${#CHAPTERS[@]})); then
   CHAPTER=${CHAPTERS[CHOICE-1]}
   echo "Compiling chapter: $CHAPTER"
+  rm -f theory_sheet.aux theory_sheet.auxlock theory_sheet.log theory_sheet.out
   pdflatex -shell-escape "\\def\\selectedchapter{$CHAPTER}\\input{theory_sheet.tex}"
   open theory_sheet.pdf
 else

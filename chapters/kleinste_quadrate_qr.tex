@@ -3,7 +3,7 @@
 
 \subsection{Methode der kleinsten Quadrate}
 
-Die Methode der kleinsten Quadrate wird immer dann angewendet, wenn wir eine möglichst \textit{gute} Lösung für ein überbestimmtes Gleichungssystem \( Ax = c\) finden wollen. Ein Gleichungssystem ist überbestimmt, wenn es mehr Gleichungen als Unbekannte hat. Für die Matrix \( A \in \mathbb{R}^{m \times n} \) gilt dann \(m > n \). In realen Anwendungen sind Gleichungssysteme eigentlich immer Überbestimmt, weswegen es wichtig ist für solche Systeme möglichst \textit{gute} Lösungen zu finden. Was dabei eine \textit{gute} Lösung ausmacht, betrachten wir im folgenden Beispiel. 
+Die Methode der kleinsten Quadrate wird immer dann angewendet, wenn wir eine möglichst \textit{gute} Lösung für ein überbestimmtes Gleichungssystem \( Ax = c\) finden wollen, für welches es keine exakte Lösung gibt. Ein Gleichungssystem ist überbestimmt, wenn es mehr Gleichungen als Unbekannte hat. Für die Matrix \( A \in \mathbb{R}^{m \times n} \) gilt dann \(m > n \). In realen Anwendungen sind Gleichungssysteme sehr oft Überbestimmt, weswegen es wichtig ist für solche Systeme möglichst \textit{gute} Lösungen zu finden. Was dabei eine \textit{gute} Lösung ausmacht, betrachten wir im folgenden Beispiel. 
 
 \vspace{1\baselineskip}
 
@@ -12,10 +12,11 @@ Bei einer Umfrage werden Menschen bezüglich Körpergrösse und Schuhgrösse bef
 \begin{figure*}[h]
     \centering
     \begin{minipage}
-        {0.45\textwidth}
-        \begin{equation*}
+        {0.5\textwidth}
+        \begin{equation}
             \text{Körpergrösse} = x_1\cdot \text{Schuhgrösse} + x_2,
-        \end{equation*}        
+            \label{eq:korpergroesse}
+        \end{equation}        
     \end{minipage}
     \hfill
     \begin{minipage}
@@ -51,7 +52,7 @@ Bei einer Umfrage werden Menschen bezüglich Körpergrösse und Schuhgrösse bef
     
 
 
-wobei die Koeffizienten \( x_1, x_2\) unbekannt sind und experimentell durch eine Umfrage ermittelt werden. In einer Umfrage werden nun 8 Menschen befragt, wodurch wir für zwei Unbekannte \( x_1\) und \( x_2\), 8 Gleichungen erhalten. Wir werden also keine eindeutige Lösung für \( x_1\) und \( x_2\) finden können. Wie wählen wir nun die besten Werte für \( x_1\) und \( x_2\) damit das Modell möglichst gut die Realität repräsentiert? Betrachten wir zunächst die Werte der Umfrage. Aus einer Tabelle mit allen Werten können wir ein überstimmtes LGS aufstellen. 
+wobei die Koeffizienten \( x_1, x_2\) unbekannt sind und experimentell durch eine Umfrage ermittelt werden. In einer Umfrage werden nun 8 Menschen befragt, wodurch wir für zwei Unbekannte \( x_1\) und \( x_2\), 8 Gleichungen erhalten. Wir werden also keine eindeutige Lösung für \( x_1\) und \( x_2\) finden können. Wie wählen wir nun die besten Werte für \( x_1\) und \( x_2\) damit die Gleichung~\eqref{eq:korpergroesse} möglichst gut die Realität repräsentiert? Betrachten wir zunächst die Werte der Umfrage. Aus einer Tabelle mit allen Umfragewerten können wir ein überstimmtes LGS aufstellen. 
 
 \vspace{1\baselineskip}
 
@@ -110,7 +111,7 @@ Die Matrix \( A \in \mathbb{R}^{8 \times 2} \) und der Vektor \( c \in \mathbb{R
 
 \vspace{1\baselineskip}
 
-Wir können nun alle Messwerte in einem Koordinatensystem auftragen um zu sehen, wie der Zusammenhang zwischen Schuhgrösse und Körpergrösse aussieht. Dabei wollen wir eine Gerade finden, die möglichst nah an allen Messpunkten ist. Ein Weg dies zu erreichen ist es den quadratischen Fehler zu minimieren. Das entspricht der Minimierung aller Abstände \( r_i \) der Geraden zu den Messwerten. 
+Wir können nun alle Messwerte in einem Koordinatensystem auftragen um zu sehen, wie der Zusammenhang zwischen Schuhgrösse und Körpergrösse aussieht. Als Nächstes wollen wir eine Gerade der Form~\eqref{eq:korpergroesse} finden, die möglichst nah an allen Messpunkten ist. Ein Weg dies zu erreichen ist es alle Abstände \( r_i \) von der Geraden zu den Messwerten zu minimieren. 
 
 \vspace{1\baselineskip}
 
@@ -220,26 +221,26 @@ Wir können nun alle Messwerte in einem Koordinatensystem auftragen um zu sehen,
         \centering
         \begin{equation*}
             \begin{aligned}
-                r_1 &= (x_1\cdot 41 + b) - 172 \\
-                r_2 &= (x_1\cdot 45 + b) - 190 \\
-                r_3 &= (x_1\cdot 42 + b) - 180 \\
-                r_4 &= (x_1\cdot 43 + b) - 183 \\
-                r_5 &= (x_1\cdot 43 + b) - 178 \\
-                r_6 &= (x_1\cdot 38 + b) - 163 \\
-                r_7 &= (x_1\cdot 44 + b) - 180 \\
-                r_8 &= (x_1\cdot 40 + b) - 178 \\
+                r_1 &= (x_1\cdot 41 + x_2) - 172 \\
+                r_2 &= (x_1\cdot 45 + x_2) - 190 \\
+                r_3 &= (x_1\cdot 42 + x_2) - 180 \\
+                r_4 &= (x_1\cdot 43 + x_2) - 183 \\
+                r_5 &= (x_1\cdot 43 + x_2) - 178 \\
+                r_6 &= (x_1\cdot 38 + x_2) - 163 \\
+                r_7 &= (x_1\cdot 44 + x_2) - 180 \\
+                r_8 &= (x_1\cdot 40 + x_2) - 178 \\
             \end{aligned}
         \end{equation*}
     \end{minipage}
 \end{figure*}
 
-Da alle Abstände gleichzeitig minimiert werden sollen, fassen wir alle \( r_i \) im sogenannten Residuenvektor \( r = (r_1, \dots, r_n)^\top \) zusammen und minimieren dann die gesamte Länge von \( r \). Wir suchen also das \( x \) sodass
+Da alle Abstände gleichzeitig minimiert werden sollen, fassen wir alle \( r_i \) im sogenannten Residuenvektor \( r = (r_1, \dots, r_m)^\top \) zusammen und minimieren dann die gesamte Länge von \( r \), das entspricht der quadratischen Minimierung des Fehlers \( r \). Wir suchen also das \( x \) sodass
 
 \begin{equation*}
     \lVert r \rVert_2 = \lVert A x - c \rVert_2,
 \end{equation*}
 
-minimal wird. In unserem Fall suchen wir ein Paar \( (\textcolor{customred}{x_1^{opt}, x_2^{opt}}) \)  welches die Länge von \( \textcolor{customorange}{r} \) minimiert. Aber wie können wir dieses Problem lösen? Betrachten wir dafür ein reduziertes Gleichungssystem mit nur drei Gleichungen und zwei Unbekannten, dafür nehmen wir einfach die ersten drei Messwerte von oben. 
+minimal wird. In unserem Fall suchen wir \( x^{opt} = (x_1^{opt} \ \ \ x_2^{opt})^\top\) welches die Länge von \( r \) minimiert. Aber wie können wir dieses Problem lösen? Betrachten wir dafür ein reduziertes Gleichungssystem mit nur drei Gleichungen und zwei Unbekannten, dafür nehmen wir einfach die ersten drei Messwerte von oben. 
 
 \begin{equation*}
     \begin{aligned}
@@ -261,11 +262,11 @@ minimal wird. In unserem Fall suchen wir ein Paar \( (\textcolor{customred}{x_1^
         \underbrace{
         \begin{pmatrix}
             172 \\ 190 \\ 180
-        \end{pmatrix}}_{\textcolor{customblue}{c}} \\
+        \end{pmatrix}}_{c} \\
     \end{aligned}
 \end{equation*}
 
-Genau wie oben ist dieses LGS überbestimmt und in dieser Form nicht exakt lösbar. Grafisch können wir uns das Problem wie folgt vorstellen. 
+Genau wie oben, ist dieses LGS überbestimmt und in dieser Form nicht exakt lösbar. Grafisch können wir uns das Problem wie folgt vorstellen. 
 
 \newpage
 
@@ -319,20 +320,20 @@ Genau wie oben ist dieses LGS überbestimmt und in dieser Form nicht exakt lösb
         % Text Node
         \draw (223,112) node [anchor=north west][inner sep=0.75pt]  [color={rgb, 255:red, 126; green, 211; blue, 33 }  ,opacity=1 ] [align=left] {\( a^{(2)} \)};
         % Text Node
-        \draw (365,200) node [anchor=west][inner sep=0.75pt]  [color={rgb, 255:red, 0; green, 0; blue, 0 }  ,opacity=1 ] [align=left] {\( A \begin{pmatrix} \textcolor{customred}{x_1^{opt}} \\ \textcolor{customred}{x_2^{opt}} \end{pmatrix} \in \textcolor{customgreen}{\text{Bild}A} \) };
+        \draw (365,200) node [anchor=west][inner sep=0.75pt]  [color={rgb, 255:red, 0; green, 0; blue, 0 }  ,opacity=1 ] [align=left] {\( A \textcolor{customred}{x^{opt}} \in \textcolor{customgreen}{\text{Bild}A} \) };
         % Text Node
         \draw (270,42) node [anchor=north west][inner sep=0.75pt]  [color={rgb, 255:red, 0; green, 0; blue, 0 }  ,opacity=1 ] [align=left] {\( \textcolor{customblue}{c} \notin \textcolor{customgreen}{\text{Bild}A} \)};
         % Text Node
-        \draw (375,90) node [anchor=west][inner sep=0.75pt]  [color={rgb, 255:red, 0; green, 0; blue, 0 }  ,opacity=1 ] [align=left] {\( \textcolor{customorange}{r} =  A \begin{pmatrix} \textcolor{customred}{x_1^{opt}} \\ \textcolor{customred}{x_2^{opt}} \end{pmatrix} - \textcolor{customblue}{c} \)};
+        \draw (375,90) node [anchor=west][inner sep=0.75pt]  [color={rgb, 255:red, 0; green, 0; blue, 0 }  ,opacity=1 ] [align=left] {\( \textcolor{customorange}{r} =  A \textcolor{customred}{x^{opt}} - \textcolor{customblue}{c} \)};
         % Text Node
         \draw (200,282) node [anchor=north][inner sep=0.75pt]  [font=\scriptsize,color={rgb, 255:red, 0; green, 0; blue, 0 }  ,opacity=1 ] [align=center] {nicht Massstäblich};
     \end{tikzpicture}
 \end{figure*}
 
-Der rote Vektor \( \textcolor{customred}{x^{opt}} \) repräsentiert hier die optimale Lösung, welche den kürzesten Residuenvektor \( \textcolor{customorange}{r} \) hat und im Bild von \( A \) liegt. Grafisch können wir hier auch sehen, dass der Vektor \( \textcolor{customorange}{r} \) minimal ist, wenn er orthogonal zum \( \textcolor{customgreen}{\text{Bild}A} \) ist. Für die optimale Lösung muss also gelten:
+Der Vektor \( x^{opt} \) repräsentiert hier die optimale Lösung, welche den kürzesten Residuenvektor \( r \) hat und im Bild von \( A \) liegt. Grafisch können wir hier auch sehen, dass der Vektor \( r \) minimal ist, wenn er orthogonal zum \( \text{Bild}A \) ist. Für die optimale Lösung muss also gelten:
 
 \begin{equation*}
-    A y \ \perp \ r \ , \quad \forall y.
+    \underbrace{A y}_{\text{Bild}A} \ \perp \ r \ , \quad \forall y \in \mathbb{R}^n.
 \end{equation*}
 
 Mit dem Skalarprodukt können wir das umformulieren zu
@@ -348,29 +349,23 @@ Mit dem Skalarprodukt können wir das umformulieren zu
 Nun können wir unsere Definition für \( r \) einsetzen
 
 \begin{equation*}
-    y^\top A^\top \left( A \begin{pmatrix}
-        x_1^{opt} \\ x_2^{opt}
-    \end{pmatrix} -c \right) = 0, 
+    y^\top A^\top \left( A x^{opt} -c \right) = 0, 
 \end{equation*}
 
 und alles ausmultiplizieren
 
 \begin{equation*}
-    y^\top A^\top A \begin{pmatrix}
-        x_1^{opt} \\ x_2^{opt}
-    \end{pmatrix} - y^\top A^\top c  = 0.
+    y^\top A^\top A x^{opt} - y^\top A^\top c  = 0.
 \end{equation*}
 
-Schliesslich können wir noch umstellen und nach \( x_1^{opt} \) und \( x_2^{opt} \) auflösen
+Schliesslich können wir noch umstellen und nach \( x^{opt} \) auflösen
 
 \begin{equation*}
-    A^\top c = A^\top A \begin{pmatrix}
-        x_1^{opt} \\ x_2^{opt} \end{pmatrix},
+    A^\top c = A^\top A x^{opt},
 \end{equation*}
 
 \begin{equation*}
-    (A^\top A)^{-1} A^\top c = \begin{pmatrix}
-        x_1^{opt} \\ x_2^{opt} \end{pmatrix}.
+    (A^\top A)^{-1} A^\top c = x^{opt}.
 \end{equation*}
 
 Dieser Ausdruck gibt uns nun die optimale Lösung, indem der quadratische Fehler (Länge des Residuenvektors) minimiert wird. Oft wollen wir jedoch nicht die inverse von \( A^\top A \) berechnen und können alternativ das folgende LGS lösen
@@ -474,7 +469,7 @@ Anschliessend berechnen wir den Wert einer Zwischenvariable \( \omega \) gegeben
     \omega = \sqrt{a_{jj}^2 + a_{ij}^2} = \sqrt{1^2 + 1^2} = \sqrt{2}.
 \end{equation*}
 
-Als Nächstes suchen wir eine Rotationsmatrix \( Q'^\top \). Dafür fangen wir mit einer Identitätsmatrix \( I \in \mathbb{R}^{m \times m} \) an und setzen die füllen die Einträge wie folgt ein
+Als Nächstes suchen wir eine Rotationsmatrix \( Q'^\top \). Dafür fangen wir mit einer Identitätsmatrix \( I \in \mathbb{R}^{m \times m} \) an und füllen die Einträge wie folgt ein
 
 \begin{equation*}
     i_{ii} = \cos(\alpha), \ i_{ij} = -\sin(\alpha), \ i_{ji} = \sin(\alpha), \ i_{jj} = \cos(\alpha).
@@ -528,7 +523,7 @@ Falls, wie in unserem Fall, \( A' \) keine obere Dreiecksmatrix ist, wiederholen
     a'_{jj} = 1, \ a'_{ij} = \frac{1}{\sqrt{2}}, \ \omega = \sqrt{\frac{3}{2}}.
 \end{equation*}
 
-Dadurch wird unsere Rotationsmatrix \( Q''^\top \) folgende Form annehmen
+Weiter konstruieren wir wie oben eine Rotationsmatrix \( Q''^\top \) welche die folgende Form annimmt
 
 \begin{equation*}
     Q''^\top = \begin{pmatrix}

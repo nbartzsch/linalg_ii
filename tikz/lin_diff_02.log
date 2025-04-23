@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.9.8)  17 APR 2025 16:17
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.9.8)  22 APR 2025 17:30
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1055,7 +1055,7 @@ File: l3backend-pdftex.def 2024-02-20 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count365
 \l__pdf_internal_box=\box131
 )
-No file tikz/kleinste_quadrate_schuhe_03.aux.
+No file tikz/lin_diff_02.aux.
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 37.
 LaTeX Font Info:    ... okay on input line 37.
 LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 37.
@@ -1154,83 +1154,52 @@ Package pgfplots notification 'compat/show suggested version=true': document ha
 s been generated with the most recent feature set (\pgfplotsset{compat=1.18}).
 
 \providecommand\hyper@newdestlabel[2]{}
-(./chapters/kleinste_quadrate_qr.tex
-Overfull \hbox (13.03984pt too wide) in paragraph at lines 2--2
-|[]\OT1/cmr/bx/n/17.28 Methode der Kleins-ten Qua-dra-te und QR-Zerlegung| 
- []
-
-LaTeX Font Info:    Trying to load font information for U+msa on input line 6.
+(./chapters/lin_diff_sys.tex
+LaTeX Font Info:    Trying to load font information for U+msa on input line 8.
 (/usr/local/texlive/2024/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 6.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 8.
 (/usr/local/texlive/2024/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for U+rsfs on input line 6.
+LaTeX Font Info:    Trying to load font information for U+rsfs on input line 8.
 
 (/usr/local/texlive/2024/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
-Overfull \hbox (6.54532pt too wide) in paragraph at lines 6--7
-\OT1/cmr/m/n/12 Die Me-tho-de der kleins-ten Qua-dra-te wird im-mer dann an-ge-
-wen-det, wenn wir ei-ne m[]oglichst
- []
-
 A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to d
 isable this.
+\openout4 = `tikz/lin_diff_02.dpth'.
 
-LaTeX Warning: Reference `eq:korpergroesse' on page 1 undefined on input line 5
-5.
-
-
-LaTeX Warning: Reference `eq:korpergroesse' on page 1 undefined on input line 1
-14.
-
-A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to d
-isable this.
-\openout4 = `tikz/kleinste_quadrate_schuhe_03.dpth'.
-
-[3
+[2
 
 {/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
 A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to d
 isable this.
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-
-Overfull \hbox (20.73553pt too wide) in paragraph at lines 577--578
-\OT1/cmr/m/n/12 In ge-wis-sen F[]allen kann es sein das die oben ge-zeig-te Me-
-tho-de zur L[]osung von []uberbestimmten
- []
-
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to d
+isable this.
 )
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
  ***********
-
-LaTeX Warning: There were undefined references.
-
  ) 
 Here is how much of TeX's memory you used:
- 43712 strings out of 474116
- 1016421 string characters out of 5743683
- 1945187 words of memory out of 5000000
- 65393 multiletter control sequences out of 15000+600000
- 565374 words of font info for 64 fonts, out of 8000000 for 9000
+ 44051 strings out of 474116
+ 1026321 string characters out of 5743683
+ 1947187 words of memory out of 5000000
+ 65733 multiletter control sequences out of 15000+600000
+ 564720 words of font info for 62 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 103i,20n,113p,809b,795s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 103i,15n,113p,799b,2224s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb
-></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><
-/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></u
-sr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/
-local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on tikz/kleinste_quadrate_schuhe_03.pdf (1 page, 51823 bytes).
+></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><
+/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb>
+Output written on tikz/lin_diff_02.pdf (1 page, 29791 bytes).
 PDF statistics:
- 77 PDF objects out of 1000 (max. 8388607)
- 39 compressed objects within 1 object stream
+ 67 PDF objects out of 1000 (max. 8388607)
+ 33 compressed objects within 1 object stream
  2 named destinations out of 1000 (max. 500000)
  157 words of extra memory for PDF output out of 10000 (max. 10000000)
 
