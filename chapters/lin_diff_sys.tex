@@ -738,4 +738,207 @@ Damit die Information über die Substitution nicht verloren geht, schreiben wir 
     \end{pmatrix} 
 \end{equation*}
 
-Nun können wir dieses System wie oben beschrieben lösen. Das Resultat \( y \) der orignialen Gleichung ist dann durch die Lösung für \( y_0 \) des Systems gegeben. 
+Nun können wir dieses System wie oben beschrieben lösen. Das Resultat \( y \) der originalen Gleichung ist dann durch die Lösung für \( y_0 \) des Systems gegeben. 
+
+\subsection{Spezialfall: Differentialgleichungssysteme mit komplexen Eigenwerten}
+
+Nehmen wir Beispielsweise die Gleichung 
+
+\begin{equation*}
+    x'' = -8x + 4x',
+    \label{eq:lin_diff}
+\end{equation*}
+
+welche sich durch die Substitution
+
+\begin{equation*}
+    \begin{aligned}
+        y_0 &:= x \\
+        y_1 &:= x' \\
+        y_2 &:= x''         
+    \end{aligned} \qquad \longrightarrow \qquad
+    \begin{aligned}
+        y_1 = y_0' \\
+        y_2 = y_1' 
+    \end{aligned}
+\end{equation*}
+
+in das System 
+
+\begin{equation*}
+    \left\{ \begin{aligned}
+        y_0' &= y_1 \\
+        y_1' &= -8y_0 + 4y_1
+    \end{aligned} \right. \qquad \text{oder} \qquad
+    \begin{pmatrix}
+        y_0' \\
+        y_1'
+    \end{pmatrix} =
+    \underbrace{\begin{pmatrix}
+        0 & 1 \\
+        -8 & 4
+    \end{pmatrix}}_{A}
+    \begin{pmatrix}
+        y_0 \\
+        y_1
+    \end{pmatrix}
+\end{equation*}
+
+umgewandelt werden kann. Beachte, dass die Gleichung \( x(t) \) 2.\ Ordnung ist, weswegen der Lösungsraum von \( x(t) \) die Dimension 2 haben muss (Intuitiv: Wir müssen zweimal integrieren und haben deswegen zwei Integrationskonstanten). Um die allgemeine Lösung zu finden, können wir wie oben beschrieben vorgehen.  Zuerst bestimmen wir die Eigenwerte
+
+\begin{equation*}
+    \text{det} \begin{pmatrix}
+        -\lambda & 1 \\
+        -8 & 4 - \lambda
+    \end{pmatrix} = \lambda^2 - 4\lambda + 8 = 0 \quad \rightarrow \quad
+    \lambda_{1,2} = 2 \pm 2i,
+\end{equation*}
+
+und Eigenvektoren
+
+\begin{equation*}
+    E_{2+2i} : \begin{gmatrix}[p]
+        -2-2i & 1 \\
+        -8 & 2-2i
+        \rowops
+        \add[\cdot\frac{-8}{2+2i}]{0}{1}
+    \end{gmatrix} \rightarrow \quad
+    \begin{pmatrix}
+        -2-2i & 1 \\
+        0 & 0
+    \end{pmatrix} \begin{pmatrix}
+        y_0 \\
+        y_1
+    \end{pmatrix} = \begin{pmatrix}
+        0 \\
+        0
+    \end{pmatrix} 
+\end{equation*}
+
+\vspace{1\baselineskip}
+
+\begin{equation*}
+    \left\{ \begin{aligned}
+        y_1 &= s \in \mathbb{R} \\[0.5em]
+        y_0 &= \frac{s}{2+2i}
+    \end{aligned} \right. \qquad \text{für} \ s = 4 \quad y_0 = \frac{4}{2+2i} \cdot \underbrace{\frac{2-2i}{2-2i}}_{=1} = \frac{4(2-2i)}{4+4} = 1-i
+\end{equation*}
+
+\vspace{1\baselineskip}
+
+\begin{equation*}
+    v_1 = \begin{pmatrix}
+        1-i \\ 4
+    \end{pmatrix} \ , \quad 
+    v_2 = \begin{pmatrix}
+        1+i \\ 4
+    \end{pmatrix}.
+\end{equation*}
+
+Wodurch sich die folgende allgemeine Lösung ergibt
+
+\begin{equation*}
+    y(t) = e^{(2+2i)t} \begin{pmatrix}
+        1-i \\ 4
+    \end{pmatrix} + e^{(2-2i)t} \begin{pmatrix}
+        1+i \\ 4
+    \end{pmatrix}.
+\end{equation*}
+
+Diese Lösung ist komplex jedoch wollen wir eine reelle Lösung. Um diese Umwandlung zu machen, benutzten wir die Euler Formel \( e^{ix} = \cos(x) + i \sin(x) \). Die Notation kann stark vereinfacht werden, indem wir nur einen der beiden Eigenvektoren der Lösung betrachten (wenn man beide betrachtet kommt man auf das gleiche Ergebnis nur mit mehr Notation, am Ende findest du die Alternative mit beiden). 
+
+\begin{equation*}
+    \begin{aligned}
+        y(t) &= e^{(2+2i)t} \begin{pmatrix}
+            1-i \\ 4
+        \end{pmatrix} = e^{2t} e^{2it} \begin{pmatrix}
+            1-i \\ 4
+        \end{pmatrix} = e^{2t} \left( \cos(2t) + i \sin(2t) \right) \begin{pmatrix}
+            1-i \\ 4
+        \end{pmatrix} \\[0.5em]
+        &= e^{2t} \left\{ \begin{pmatrix}
+            \cos(2t) + i \sin(2t) - i \cos(2t) - \sin(2t) \\
+            4 \cos(2t) + 4i \sin(2t)
+        \end{pmatrix} \right\} \\[0.5em]
+        &= e^{2t} \left\{ \begin{pmatrix}
+            \cos(2t) + \sin(2t) \\
+            4 \cos(2t)
+        \end{pmatrix} + i \begin{pmatrix}
+            \sin(2t) - \cos(2t) \\
+            4 \sin(2t)
+        \end{pmatrix} \right\} 
+    \end{aligned}
+\end{equation*}
+
+Für den letzten Schritt benutzten wir ein Korollar aus der Vorlesung welches besagt, dass wenn \( y \) eine komplexe Lösung eines homogenen linearen Differentialgleichungssystems \( y'=Ay \) ist, so sind Re(\(y\)) und Im(\(y\)) ebenfalls Lösungen des Systems. Re(\(y\)) und Im(\(y\)) sind hier weiterhin linear unabhängig und bilden dadurch eine Basis des Lösungsraums. So lässt sich die \( y(t) \) auch als Linearkombination von Re(\(y\)) und Im(\(y\)) schreiben
+
+\begin{equation*}
+    y(t) = e^{2t} \left\{ a \begin{pmatrix}
+        \cos(2t) + \sin(2t) \\
+        4 \cos(2t)
+    \end{pmatrix} + b \begin{pmatrix}
+        \sin(2t) - \cos(2t) \\
+        4 \sin(2t)
+    \end{pmatrix} \right\}.
+\end{equation*}
+
+Da wir eigentlich eine Lösung für \( x(t) \) suchen und durch die Substitution \( x = y_0 \) substituiert wurde, nehmen wir nur die erste Zeile des Vektors \( y(t) \). 
+
+\begin{equation*}
+    \begin{aligned}
+    x(t) = y_0(t) &= e^{2t} \left\{ a ( \cos(2t) + \sin(2t) ) + b ( \sin(2t) - \cos(2t) ) \right\} \\[0.5em]
+    &= e^{2t} \left\{ (a-b) \cos(2t) + (a+b) \sin(2t) \right\} \\[0.5em]
+    &= e^{2t} \left\{ c_1 \cos(2t) + c_2 \sin(2t) \right\} 
+    \end{aligned}
+\end{equation*}
+
+\subsubsection{Alternative Lösung mit beiden Eigenvektoren}
+
+Anstatt nur einen der beiden Eigenvektoren zu benutzen, können wir auch beide benutzen. Das Resultat ist das gleiche, jedoch mit mehr Notationsaufwand.
+
+\begin{equation*}
+    \begin{aligned}
+        y(t) &= c_1 \cdot e^{(2+2i)t} \begin{pmatrix}
+            1-i \\ 4
+        \end{pmatrix} + c_2  \cdot e^{(2-2i)t} \begin{pmatrix}
+            1+i \\ 4
+        \end{pmatrix} \\[0.5em] 
+        &= e^{2t} \left\{
+            c_1 \left( 
+                \cos(2t) + i \sin(2t) \right) \begin{pmatrix}
+                    1-i \\ 4
+                \end{pmatrix} + c_2  \left( 
+                \cos(2t) - i \sin(2t) \right) \begin{pmatrix}
+                    1+i \\ 4
+                \end{pmatrix}
+        \right\} \\[0.5em]
+        &= \text{\footnotesize $e^{2t} \begin{pmatrix}
+            c_1 \cos(2t) + c_1 i \sin(2t) - c_1 i \cos(2t) - c_1 \sin(2t) + c_2  \cos(2t) - c_2  i \sin(2t) + c_2  i \cos(2t) - c_2  \sin(2t) \\[0.5em]
+            4 c_1 \cos(2t) + 4 c_1 i \sin(2t) + 4 c_2  \cos(2t) - 4 c_2  i \sin(2t)
+        \end{pmatrix}$} \\[0.5em]
+        &= e^{2t} \begin{pmatrix}
+            ( c_1 + c_2  ) \cos(2t) + ( c_1 - c_2  ) i \sin(2t) - ( c_1 - c_2  ) i \cos(2t) + ( c_1 + c_2  ) \sin(2t) \\[0.5em]
+            4 ( c_1 + c_2  ) \cos(2t) + 4 ( c_1 - c_2  ) i \sin(2t)
+        \end{pmatrix} \\[0.5em]
+        &= e^{2t} \left\{ \begin{pmatrix}
+            ( c_1 + c_2  ) \cos(2t) + ( c_1 + c_2  ) \sin(2t) \\[0.5em]
+            4 ( c_1 + c_2  ) \cos(2t)
+        \end{pmatrix} + i \begin{pmatrix}
+            ( c_1 - c_2  ) \sin(2t) - ( c_1 - c_2  ) \cos(2t) \\[0.5em]
+            4 ( c_1 - c_2  ) \sin(2t)
+        \end{pmatrix} \right\} \\[0.5em]
+        &= e^{2t} \left\{ a \begin{pmatrix}
+            \cos(2t) + \sin(2t) \\
+            4 \cos(2t)
+        \end{pmatrix} + b i \begin{pmatrix}
+            \sin(2t) - \cos(2t) \\
+            4 \sin(2t)
+        \end{pmatrix} \right\} 
+    \end{aligned}
+\end{equation*}
+
+womit wir schliesslich durch dieselbe Argumentation von oben die Lösung für \( x(t) \) finden
+
+\begin{equation*}
+    x(t) = y_0(t) = e^{2t} \left\{ a ( \cos(2t) + \sin(2t) ) + b ( \sin(2t) - \cos(2t) ) \right\}.
+\end{equation*}
