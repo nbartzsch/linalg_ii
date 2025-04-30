@@ -3,7 +3,7 @@
 
 \subsection{Methode der kleinsten Quadrate}
 
-Die Methode der kleinsten Quadrate wird immer dann angewendet, wenn wir eine möglichst \textit{gute} Lösung für ein überbestimmtes Gleichungssystem \( Ax = c\) finden wollen, für welches es keine exakte Lösung gibt. Ein Gleichungssystem ist überbestimmt, wenn es mehr Gleichungen als Unbekannte hat. Für die Matrix \( A \in \mathbb{R}^{m \times n} \) gilt dann \(m > n \). In realen Anwendungen sind Gleichungssysteme sehr oft Überbestimmt, weswegen es wichtig ist für solche Systeme möglichst \textit{gute} Lösungen zu finden. Was dabei eine \textit{gute} Lösung ausmacht, betrachten wir im folgenden Beispiel. 
+Die Methode der kleinsten Quadrate wird immer dann angewendet, wenn wir eine möglichst \textit{gute} Lösung für ein überbestimmtes Gleichungssystem \( Ax = c\) finden wollen, für welches es keine eindeutige Lösung gibt. Ein Gleichungssystem ist überbestimmt, wenn es mehr Gleichungen als Unbekannte hat. Für die Matrix \( A \in \mathbb{R}^{m \times n} \) gilt dann \(m > n \). In realen Anwendungen sind Gleichungssysteme sehr oft Überbestimmt, weswegen es wichtig ist für solche Systeme möglichst \textit{gute} Lösungen zu finden. Was dabei eine \textit{gute} Lösung ausmacht, betrachten wir im folgenden Beispiel. 
 
 \vspace{1\baselineskip}
 
@@ -13,10 +13,9 @@ Bei einer Umfrage werden Menschen bezüglich Körpergrösse und Schuhgrösse bef
     \centering
     \begin{minipage}
         {0.5\textwidth}
-        \begin{equation}
-            \text{Körpergrösse} = x_1\cdot \text{Schuhgrösse} + x_2,
-            \label{eq:korpergroesse}
-        \end{equation}        
+        \begin{equation*}
+            \text{Körpergrösse} = x_1\cdot \text{Schuhgrösse} + x_2, \quad (\ddagger)
+        \end{equation*}        
     \end{minipage}
     \hfill
     \begin{minipage}
@@ -52,7 +51,7 @@ Bei einer Umfrage werden Menschen bezüglich Körpergrösse und Schuhgrösse bef
     
 
 
-wobei die Koeffizienten \( x_1, x_2\) unbekannt sind und experimentell durch eine Umfrage ermittelt werden. In einer Umfrage werden nun 8 Menschen befragt, wodurch wir für zwei Unbekannte \( x_1\) und \( x_2\), 8 Gleichungen erhalten. Wir werden also keine eindeutige Lösung für \( x_1\) und \( x_2\) finden können. Wie wählen wir nun die besten Werte für \( x_1\) und \( x_2\) damit die Gleichung~\eqref{eq:korpergroesse} möglichst gut die Realität repräsentiert? Betrachten wir zunächst die Werte der Umfrage. Aus einer Tabelle mit allen Umfragewerten können wir ein überstimmtes LGS aufstellen. 
+wobei die Koeffizienten \( x_1, x_2\) unbekannt sind und experimentell durch eine Umfrage ermittelt werden. In einer Umfrage werden nun 8 Menschen befragt, wodurch wir für zwei Unbekannte \( x_1\) und \( x_2\), 8 Gleichungen erhalten. Wir werden also keine eindeutige Lösung für \( x_1\) und \( x_2\) finden können. Wie wählen wir nun die besten Werte für \( x_1\) und \( x_2\) damit die Gleichung \( (\ddagger) \) möglichst gut die Realität repräsentiert? Betrachten wir zunächst die Werte der Umfrage. Aus einer Tabelle mit allen Umfragewerten können wir das überstimmte LGS \( Ax = c \) aufstellen. 
 
 \vspace{1\baselineskip}
 
@@ -111,7 +110,7 @@ Die Matrix \( A \in \mathbb{R}^{8 \times 2} \) und der Vektor \( c \in \mathbb{R
 
 \vspace{1\baselineskip}
 
-Wir können nun alle Messwerte in einem Koordinatensystem auftragen um zu sehen, wie der Zusammenhang zwischen Schuhgrösse und Körpergrösse aussieht. Als Nächstes wollen wir eine Gerade der Form~\eqref{eq:korpergroesse} finden, die möglichst nah an allen Messpunkten ist. Ein Weg dies zu erreichen ist es alle Abstände \( r_i \) von der Geraden zu den Messwerten zu minimieren. 
+Wir können nun alle Messwerte in einem Koordinatensystem auftragen um zu sehen, wie der Zusammenhang zwischen Schuhgrösse und Körpergrösse aussieht. Als Nächstes wollen wir eine Gerade der Form~\( (\ddagger) \) finden, die möglichst nah an allen Messpunkten ist. Ein Weg dies zu erreichen ist es alle Abstände \( r_i \) von der Geraden zu den Messwerten zu minimieren. 
 
 \vspace{1\baselineskip}
 
@@ -240,6 +239,8 @@ Da alle Abstände gleichzeitig minimiert werden sollen, fassen wir alle \( r_i \
     \lVert r \rVert_2 = \lVert A x - c \rVert_2,
 \end{equation*}
 
+\vspace{0.25\baselineskip}
+
 minimal wird. In unserem Fall suchen wir \( x^{opt} = (x_1^{opt} \ \ \ x_2^{opt})^\top\) welches die Länge von \( r \) minimiert. Aber wie können wir dieses Problem lösen? Betrachten wir dafür ein reduziertes Gleichungssystem mit nur drei Gleichungen und zwei Unbekannten, dafür nehmen wir einfach die ersten drei Messwerte von oben. 
 
 \begin{equation*}
@@ -266,7 +267,7 @@ minimal wird. In unserem Fall suchen wir \( x^{opt} = (x_1^{opt} \ \ \ x_2^{opt}
     \end{aligned}
 \end{equation*}
 
-Genau wie oben, ist dieses LGS überbestimmt und in dieser Form nicht exakt lösbar. Grafisch können wir uns das Problem wie folgt vorstellen. 
+Genau wie oben ist dieses LGS überbestimmt und in dieser Form nicht exakt lösbar. Grafisch können wir uns das Problem wie folgt vorstellen. 
 
 \newpage
 
@@ -469,7 +470,7 @@ Anschliessend berechnen wir den Wert einer Zwischenvariable \( \omega \) gegeben
     \omega = \sqrt{a_{jj}^2 + a_{ij}^2} = \sqrt{1^2 + 1^2} = \sqrt{2}.
 \end{equation*}
 
-Als Nächstes suchen wir eine Rotationsmatrix \( Q'^\top \). Dafür fangen wir mit einer Identitätsmatrix \( I \in \mathbb{R}^{m \times m} \) an und füllen die Einträge wie folgt ein
+Als Nächstes suchen wir eine Rotationsmatrix \( Q^{\prime \top} \). Dafür fangen wir mit einer Identitätsmatrix \( I \in \mathbb{R}^{m \times m} \) an und füllen die Einträge wie folgt ein
 
 \begin{equation*}
     i_{ii} = \cos(\alpha), \ i_{ij} = -\sin(\alpha), \ i_{ji} = \sin(\alpha), \ i_{jj} = \cos(\alpha).
@@ -517,7 +518,7 @@ Nun Berechnen wir die Matrix \( A' = Q'^\top A \) und überprüfen ob \( A' \) e
     \end{pmatrix}.
 \end{equation*}
 
-Falls, wie in unserem Fall, \( A' \) keine obere Dreiecksmatrix ist, wiederholen wir den Prozess und nehmen nun den Eintrag \( a'_{32} \) und setzen \( i = 3, j = 2 \). Wir lesen wieder die Einträge \( a'_{ij}, a'_{jj} \) und \( \omega \) ab
+Falls, wie in unserem Fall, \( A' \) keine obere Dreiecksmatrix ist, wiederholen wir den Prozess und nehmen den nächsten Eintrag unterhalb der Hauptdiagonalen von \( A ^\prime \). Hier wäre das der Eintrag \( a^\prime_{32} \) dadurch werden \( i = 3, j = 2 \). Wir lesen wieder die Einträge \( a'_{ij}, a'_{jj} \) und \( \omega \) ab
 
 \begin{equation*}
     a'_{jj} = 1, \ a'_{ij} = \frac{1}{\sqrt{2}}, \ \omega = \sqrt{\frac{3}{2}}.
@@ -560,7 +561,7 @@ Somit ist die QR-Zerlegung vollendet. Zusammengefasst müssen also folgende Schr
 \begin{tcolorbox}[colback=gray!30, colframe=gray!80, title=QR-Zerlegung]
     Bei der QR-Zerlegung Zerlegen wir eine Matrix \( A \in \mathbb{R}^{m \times n} \) in das Produkt einer orthogonalen Matrix \( Q \in \mathbb{R}^{m \times m} \) und einer oberen Dreiecksmatrix \( R \in \mathbb{R}^{m \times n} \). Nach und nach eliminieren wir die Einträge unterhalb der Hauptdiagonalen von \( A \). 
     \begin{enumerate}
-        \item Wähle das zu eliminierende Element \( a_{ij} \)
+        \item Wähle das zu eliminierende Element \( a_{ij} \) unter der Hauptdiagonalen
         \item Notiere die Werte \( i, j, a_{ij}, a_{jj} \)
         \item Berechne \( \omega = \sqrt{a_{ij}^2 + a_{jj}^2} \)
         \item Finde die Rotationsmatrix \( Q'^\top \) basierend auf einer Identitätsmatrix \( I \in \mathbb{R}^{m \times m} \) und setze \( i_{ii} = \cos(\alpha), i_{ij} = -\sin(\alpha), i_{ji} = \sin(\alpha), i_{jj} = \cos(\alpha) \)
