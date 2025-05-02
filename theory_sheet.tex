@@ -1,5 +1,6 @@
 \documentclass[12pt, a4paper]{article}
 \usepackage{script}
+\usepackage{gauss}
 \usepackage[ngerman]{babel}
 
 % section for external compiling when using pgfplots. If not needed, comment out
@@ -33,6 +34,10 @@
 \includeonly{
     chapters/\selectedchapter
 }
+
+\newmatrix{(}{|}{L}
+\newmatrix{.}{)}{R}
+\newmatrix{(}{.}{m}
 
 \begin{document}
 

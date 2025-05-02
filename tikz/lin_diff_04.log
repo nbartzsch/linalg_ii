@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.9.8)  22 APR 2025 16:57
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.9.8)  25 APR 2025 14:34
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1035,7 +1035,43 @@ File: tikzlibraryarrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
 code.tex
 File: pgflibraryarrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \arrowsize=\dimen331
-)))
+))) (./gauss.sty
+Package: gauss 2003/01/14
+\g@trash=\box131
+\g@matrixbox=\box132
+\g@eastbox=\box133
+\g@northbox=\box134
+\g@label=\box135
+\g@b@tmp=\box136
+\g@b@tmpa=\box137
+\g@b@tmpb=\box138
+\g@maxrow=\count365
+\g@maxcol=\count366
+\g@maxrow@old=\count367
+\g@maxcol@old=\count368
+\g@c@tmp=\count369
+\g@c@tmpa=\count370
+\g@axisHeight=\dimen332
+\g@linethickness=\dimen333
+\g@tab=\dimen334
+\g@arrowht=\dimen335
+\g@arrowwd=\dimen336
+\g@d@tmp=\dimen337
+\g@d@tmpa=\dimen338
+\g@d@tmpb=\dimen339
+\g@d@tmpc=\dimen340
+\g@d@tmpd=\dimen341
+\g@d@tmpe=\dimen342
+\g@loopCount=\count371
+\g@loopEnd=\count372
+\g@loopStep=\count373
+\colarrowsep=\dimen343
+\rowarrowsep=\dimen344
+\opskip=\dimen345
+\labelskip=\dimen346
+\colopminsize=\dimen347
+\rowopminsize=\dimen348
+)
 (/usr/local/texlive/2024/texmf-dist/tex/latex/pgf/frontendlayer/libraries/tikzl
 ibraryexternal.code.tex
 (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
@@ -1052,40 +1088,40 @@ Package csquotes Info: Adjusting default style.
 Package csquotes Info: Redefining alias 'default' -> 'ngerman'.
 (/usr/local/texlive/2024/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2024-02-20 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count365
-\l__pdf_internal_box=\box131
+\l__color_backend_stack_int=\count374
+\l__pdf_internal_box=\box139
 )
 No file tikz/lin_diff_04.aux.
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
 (/usr/local/texlive/2024/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count366
-\scratchdimen=\dimen332
-\scratchbox=\box132
-\nofMPsegments=\count367
-\nofMParguments=\count368
+\scratchcounter=\count375
+\scratchdimen=\dimen349
+\scratchbox=\box140
+\nofMPsegments=\count376
+\nofMParguments=\count377
 \everyMPshowfont=\toks52
-\MPscratchCnt=\count369
-\MPscratchDim=\dimen333
-\MPnumerator=\count370
-\makeMPintoPDFobject=\count371
+\MPscratchCnt=\count378
+\MPscratchDim=\dimen350
+\MPnumerator=\count379
+\makeMPintoPDFobject=\count380
 \everyMPtoPDFconversion=\toks53
 ) (/usr/local/texlive/2024/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
@@ -1140,11 +1176,11 @@ Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 \providecommand\hyper@newdestlabel[2]{}
-Package hyperref Info: Link coloring OFF on input line 37.
+Package hyperref Info: Link coloring OFF on input line 41.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
-\c@lstlisting=\count372
+\c@lstlisting=\count381
 (/usr/local/texlive/2024/texmf-dist/tex/latex/base/inputenc.sty
 Package: inputenc 2021/02/14 v1.3d Input encoding file
 \inpenc@prehook=\toks54
@@ -1170,6 +1206,12 @@ File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
 A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to d
 isable this.
+
+Overfull \hbox (7.20488pt too wide) in paragraph at lines 68--68
+|[]\OT1/cmr/bx/n/14.4 Systeme ho-mo-ge-ner li-nea-rer Dif-fe-ren-ti-al-glei-chu
+n-gen 1. Ord-
+ []
+
 A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to d
 isable this.
 A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to d
@@ -1178,26 +1220,35 @@ isable this.
 
 [2
 
-{/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map}])
+{/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to d
+isable this.
+
+Overfull \hbox (28.99843pt too wide) detected at line 945
+[][]
+ []
+
+)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 43660 strings out of 474116
- 1014902 string characters out of 5743683
- 1944187 words of memory out of 5000000
- 65342 multiletter control sequences out of 15000+600000
- 564720 words of font info for 62 fonts, out of 8000000 for 9000
+ 43881 strings out of 474116
+ 1017853 string characters out of 5743683
+ 1950187 words of memory out of 5000000
+ 65556 multiletter control sequences out of 15000+600000
+ 567558 words of font info for 75 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 103i,11n,113p,799b,753s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 103i,20n,113p,790b,753s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb
-></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb>
-Output written on tikz/lin_diff_04.pdf (1 page, 22826 bytes).
+></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><
+/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb>
+Output written on tikz/lin_diff_04.pdf (1 page, 31134 bytes).
 PDF statistics:
- 62 PDF objects out of 1000 (max. 8388607)
- 30 compressed objects within 1 object stream
+ 67 PDF objects out of 1000 (max. 8388607)
+ 33 compressed objects within 1 object stream
  2 named destinations out of 1000 (max. 500000)
  157 words of extra memory for PDF output out of 10000 (max. 10000000)
 

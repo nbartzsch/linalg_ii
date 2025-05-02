@@ -6,10 +6,10 @@
 Solche Gleichungen sind bereits aus der Analysis bekannt. Allgemein ist eine solche Differentialgleichung gegeben durch
 
 \begin{equation*}
-    y'(t)=ay(t), \quad a \in \mathbb{R}.
+    y'(t)=ay(t), \quad a \in \mathbb{R},
 \end{equation*}
 
-Mit der Lösung
+und der Lösung
 
 \begin{equation*}
     y(t)= y(0) \ e^{at}.
@@ -68,8 +68,6 @@ Die Lösungsmenge dieser Differentialgleichung \( \left\{ y \in C^1(\mathbb{R}):
 \subsection{Systeme homogener linearer Differentialgleichungen 1.\ Ordnung mit konstanten Koeffizienten}
 
 In der linearen Algebra I haben wir bereits gesehen wie wir Systeme von Gleichungen lösen und manipulieren können. Das geht auch mit Differentialgleichungen. Ein Beispiel dafür wäre zum Beispiel das Gleichungssystem gegeben durch
-
-\vspace{1\baselineskip}
 
 \begin{equation*}
     \left\{ 
@@ -196,22 +194,25 @@ Wie bei den herkömmlichen LGS der Form \( Ax = b \), können wir auch dieses Sy
 Die Lösung dieses Systems lässt sich dann als Vektor schreiben:
 
 \begin{equation*}
-    y(t) = 
-    e^{-2t}
+    y(t) = \begin{pmatrix}
+        e^{-2t} \\
+        3 e^{-4t}
+    \end{pmatrix} = 
+     1 \cdot e^{-2t}
     \begin{pmatrix}
         1 \\
         0
     \end{pmatrix} +
-    e^{-4t}
+    3 \cdot e^{-4t}
     \begin{pmatrix}
         0 \\
-        3
+        1
     \end{pmatrix}.
 \end{equation*}
 
 \vspace{0.25\baselineskip}
 
-Grafisch können wir uns die zusammengesetzte Lösung von \( y_1 \) und \( y_2 \) wie eine Linearkombination vorstellen, bloss das jetzt alles noch von \( t \) abhängt. 
+Grafisch können wir uns die zusammengesetzte Lösung \( y \) wie eine Linearkombination von \( y_1 \) und \( y_2 \) vorstellen, bloss das jetzt alles noch von \( t \) abhängt. 
 
 \begin{figure}[h]
     \centering
@@ -298,6 +299,12 @@ Grafisch können wir uns die zusammengesetzte Lösung von \( y_1 \) und \( y_2 \
         \draw (192,41) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\displaystyle y_{2}$};
         % Text Node
         \draw (479,151) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\displaystyle t$};
+        % Text Node
+        \draw (360,150) node [anchor=north west][inner sep=0.75pt]   [align=left] {\textcolor{customred}{\(y_2(t)\)}};
+        % Text Node
+        \draw (360,215) node [anchor=north west][inner sep=0.75pt]   [align=left] {\textcolor{customblue}{\(y_1(t)\)}};
+        % Text Node
+        \draw (290,105) node [anchor=north west][inner sep=0.75pt]   [align=left] {\textcolor{customgreen}{\(y(t)\)}};
 
     \end{tikzpicture}
 \end{figure}
@@ -311,7 +318,7 @@ Es kann aber auch sein, dass die Differentialgleichungen nicht entkoppelt sind. 
             y_2'(t) &= -2 y_1(t) - 3 y_2(t)
         \end{aligned}
     \right. \quad \longrightarrow \quad
-    \underbrace{\begin{pmatrix}
+    \begin{pmatrix}
         y_1'(t) \\
         y_2'(t)
     \end{pmatrix} =
@@ -322,14 +329,14 @@ Es kann aber auch sein, dass die Differentialgleichungen nicht entkoppelt sind. 
     \begin{pmatrix}
         y_1(t) \\
         y_2(t)
-    \end{pmatrix}}_{\text{nicht direkt lösbar}}, \quad y(0)=
+    \end{pmatrix}, \quad y(0)=
     \begin{pmatrix}
         1 \\
         3
     \end{pmatrix}.
 \end{equation*}
 
-Es stellt sich nun die Frage wie wir ein solches System dennoch lösen können. Betrachten wir dafür nochmals genauer die Matrizen \( A_1\) und \( A_2 \) der beiden Systeme.
+Es stellt sich nun die Frage wie wir ein solches System dennoch lösen können. Betrachten wir dafür nochmals genauer die Matrizen \( A_1\) und \( A_2 \) der beiden Systeme
 
 \begin{equation*}
     A_1 = \begin{pmatrix}
@@ -342,7 +349,7 @@ Es stellt sich nun die Frage wie wir ein solches System dennoch lösen können. 
     \end{pmatrix}.
 \end{equation*}
 
-Wir erkennen, dass die Matrix \( A_1 \) des entkoppelten Systems diagonal ist. Im Rückschluss können wir also für das zweite System eine Lösung finden, indem wir einen Basiswechsel \( y = Tz \) durchführen und dadurch die Matrix \( A_2 \) diagonalisieren. Wir transformieren also das gesamte Gleichungssystem in die Eigenbasis von \( A_2 \). Dafür benötigen wir die Eigenwerte und Eigenvektoren, welche die Spalten unserer Transformationsmatrix \( T \) bilden.   
+Wir erkennen, dass die Matrix \( A_1 \), des entkoppelten Systems, diagonal ist und die andere nicht. Um nun eine Lösung für das zweite System zu finden, können wir einen Basiswechsel \( y = Tz \) durchführen und dadurch die Matrix \( A_2 \) diagonalisieren, wodurch das System entkoppelt gelöst werden kann. Wir transformieren also das gesamte Gleichungssystem in die Eigenbasis von \( A_2 \). Dafür benötigen wir zunächst die Eigenwerte und Eigenvektoren von \( A_2 \). Die Spalten der Transformationsmatrix \( T \) sind dann durch die Eigenvektoren gegeben.
 
 \begin{equation*}
     \lambda_1 = -2, \quad \lambda_2 = -5, \quad T = \begin{pmatrix}
@@ -369,7 +376,7 @@ Nun können wir die Transformation durchführen.
             \begin{pmatrix}
                 y_1(t) \\
                 y_2(t)
-            \end{pmatrix} \\[0.5em]
+            \end{pmatrix} \\[0.75em]
             y(0)&= \begin{pmatrix}
                 y_1(0) \\
                 y_2(0)
@@ -378,7 +385,7 @@ Nun können wir die Transformation durchführen.
                 1 \\
                 3
             \end{pmatrix} 
-        \end{aligned} \quad \xRightarrow{y = Tz} \quad
+        \end{aligned} \quad \xRightarrow{z = T^{-1}y} \quad
         \begin{aligned}
             \begin{pmatrix}
                 z_1'(t) \\
@@ -406,43 +413,43 @@ Nun können wir die Transformation durchführen.
 In der Basis \( z \) können wir das Problem nun wie oben entkoppelt lösen 
 
 \begin{equation*}
-    z(t) = 
+    z(t) = \frac{4}{3} \cdot e^{-2t}
     \begin{pmatrix}
-        \frac{4}{3} \\
+        1 \\
         0
-    \end{pmatrix} e^{-2t} +
+    \end{pmatrix} + \frac{5}{3} \cdot e^{-5t}
     \begin{pmatrix}
         0 \\
-        \frac{5}{3}
-    \end{pmatrix} e^{-5t} ,
+        1
+    \end{pmatrix} ,
 \end{equation*}
 
 und danach wieder mit \( y = Tz \) zurücktransformieren.
 
 \begin{equation*}
     \begin{aligned}
-        y(t) &= 
-        \underbrace{\begin{pmatrix}
+        y(t) &= \frac{4}{3} \cdot e^{-2t}
+        \begin{pmatrix}
             -\frac{1}{2} & 1 \\
             1 & 1
         \end{pmatrix}
         \begin{pmatrix}
-            \frac{4}{3} \\
+            1 \\
             0
-        \end{pmatrix}}_{z_1(0) t^{(1)}} e^{-2t} + 
-        \underbrace{\begin{pmatrix}
+        \end{pmatrix} + \frac{5}{3} \cdot e^{-5t}
+        \begin{pmatrix}
             -\frac{1}{2} & 1 \\
             1 & 1
         \end{pmatrix}
         \begin{pmatrix}
             0 \\
-            \frac{5}{3}
-        \end{pmatrix}}_{z_2(0) t^{(2)}} e^{-5t} \\[0.5em]
-        &= \frac{4}{3} \begin{pmatrix}
+            1
+        \end{pmatrix} \\[0.5em]
+        &= \frac{4}{3} \cdot e^{-2t} \begin{pmatrix}
             -\frac{1}{2} \\ 1
-        \end{pmatrix} e^{-2t} + \frac{5}{3} \begin{pmatrix}
+        \end{pmatrix} + \frac{5}{3} \cdot e^{-5t} \begin{pmatrix}
             1 \\ 1
-        \end{pmatrix} e^{-5t} \\[0.5em]
+        \end{pmatrix} \quad (\dagger) \\[0.5em]
         &= \frac{1}{3} \begin{pmatrix}
             -2 e^{-2t} + 5 e^{-5t} \\
             4 e^{-2t} + 5 e^{-5t}
@@ -450,7 +457,13 @@ und danach wieder mit \( y = Tz \) zurücktransformieren.
     \end{aligned}
 \end{equation*}
 
-\newpage
+In der Gleichung \( (\dagger) \) erkennen wir, dass die Lösung die Form \( y (t) = z_1(0) \cdot e^{\lambda_1 t} v_1 + z_2(0) \cdot e^{\lambda_2 t} v_2 \) annimmt, wobei \( v_1 \) und \( v_2 \) die Eigenvektoren von \( A_2 \) sind. Das ist bei Systemen, in denen \( A \) diagonalisierbar ist, immer der Fall weswegen wir die allgemeine Lösung immer direkt in der folgenden Form schreiben können: 
+
+\begin{equation*}
+    y(t) = z_1(0) v_1 e^{\lambda_1 t} + z_2(0) v_2 e^{\lambda_1 t} + \ldots + z_n(0) v_n e^{\lambda_n t} \quad (*)
+\end{equation*}
+
+Grafisch kann man sich diese Transformation wie folgt vorstellen. 
 
 \begin{figure*}[h]
     \centering
@@ -624,9 +637,9 @@ und danach wieder mit \( y = Tz \) zurücktransformieren.
     \end{tikzpicture}        
 \end{figure*}
 
-\vspace{1\baselineskip}
+\subsubsection{Allgemeine Form}
 
-Allgemein lassen sich alle Differentialgleichungssysteme von homogenen linearen Differentialgleichungen 1.\ Ordnung mit konstanten Koeffizienten mithilfe von Matrizen schreiben und auf die gerade beschriebene Weise lösen. Die allgemeine Form und Lösung sind gegeben durch
+Alle Differentialgleichungssysteme von homogenen linearen Differentialgleichungen 1.\ Ordnung mit konstanten Koeffizienten lassen sich mithilfe von Matrizen schreiben und auf die gerade beschriebene Weise lösen. Die allgemeine Form und Lösung sind gegeben durch
 
 \begin{equation*}
     \left\{ \begin{aligned}
@@ -662,14 +675,14 @@ Weiterhin ist die Anfangsbedingung \( y(0) = y_0 \in \mathbb{R}^n \) und damit d
     y(t) = e^{At} y_0.
 \end{equation*}
 
-Um ein solches System zu lösen, müssen wir das Matrixexponential \( e^{At} \) berechnen. Das ist im Allgemeinen über die Taylorreihe definiert und ist oft nicht einfach zu berechnen. Jedoch können wir die Matrix \( A \) diagonalisieren, wodurch sich das Matrixexponential vereinfacht. Die allgemeine Form für eine diagonalisierbare Matrix \( A \) ist daher 
+Um ein solches System zu lösen, müssen wir das Matrixexponential \( e^{At} \) auswerten. Das ist im Allgemeinen über die Taylorreihe definiert und ist oft nicht einfach zu berechnen. Jedoch können wir, falls die Matrix \( A \) diagonalisierbar ist, das Matrixexponential vereinfachen und auf (\(*\)) rückschliessen
 
 \begin{equation*}
-    y(t) = e^{At} y_0 = T \ \text{diag}(e^{\lambda_1 t}, e^{\lambda_2 t}, \ldots, e^{\lambda_n t}) \ T^{-1} y_0.
+    y(t) = e^{At} y_0 = \underbrace{T \ \text{diag}(e^{\lambda_1 t}, e^{\lambda_2 t}, \ldots, e^{\lambda_n t})}_{v_i \cdot e^{\lambda_i}} \ \underbrace{T^{-1} y_0}_{z_i(0)}.
 \end{equation*}
 
 \begin{tcolorbox}[colback=gray!30, colframe=gray!80, title=Lösen von homogenen linearen Differentialgleichungssystemen]
-    Für die Lösung eines homogenen linearen Differentialgleichungssystems 1.\ Ordnung in der Standardform \( y' = A y \) und den Anfangsbedingungen \( y(0) = y_0 \) gehen wir wie folgt vor:
+    Für die Lösung eines homogenen linearen Differentialgleichungssystems 1.\ Ordnung in der Standardform \( y' = A y \) und den Anfangsbedingungen \( y(0) = y_0 \) gehen wir wie folgt vor: (\(A\) muss diagonalisierbar sein)
     \begin{itemize}
         \item Diagonalisiere die Matrix \( A = TDT^{-1} \) und bestimme die Transformationsmatrix \( T \), sodass  \( y =Tz \).  
         \item Berechne die Anfangswerte \(z(0)\) durch \( z(0) = T^{-1} y_0 \) oder mit dem LGS \( T z(0) = y_0  \). 
@@ -683,7 +696,7 @@ Um ein solches System zu lösen, müssen wir das Matrixexponential \( e^{At} \) 
 
 \subsection{Lineare Differentialgleichungen höherer Ordnung}
 
-Bis jetzt haben wir nur Differentialgleichungen 1.\ Ordnung betrachtet, also Gleichungen in denen maximal die erste Ableitung vorkommt. Wie lösen wir jedoch Differentialgleichungen höherer Ordnung? Betrachten wir hierfür die Differentialgleichung
+Bis jetzt haben wir nur Differentialgleichungen 1.\ Ordnung betrachtet, also Gleichungen in denen maximal die erste Ableitung vorkommt. Wie lösen wir jedoch Differentialgleichungen höherer Ordnung? Betrachten wir hierfür die Differentialgleichung 3.\ Ordnung
 
 \begin{equation*}
     y''' + 4 y'' + 2y' - 3 y = 0.
@@ -707,7 +720,7 @@ Durch eine Substitution können wir die Differentialgleichung in ein homogenes l
 
 \vspace{0.25\baselineskip}
 
-und schreiben die originale Gleichung mit den neuen Variablen, wobei die höchste Ableitung durch, hier \( y''' \), durch eine erste Ableitung, hier \( y_2' \), ersetzt wird. 
+und schreiben die originale Gleichung mit den neuen Variablen \(y_i\), wobei die höchste Ableitung, hier \( y''' \), durch eine erste Ableitung, hier \( y_2' \), ersetzt wird. 
 
 \begin{equation*}
     y_2' + 4y_2 + 2y_1 - 3y_0 = 0.
@@ -738,4 +751,222 @@ Damit die Information über die Substitution nicht verloren geht, schreiben wir 
     \end{pmatrix} 
 \end{equation*}
 
-Nun können wir dieses System wie oben beschrieben lösen. Das Resultat \( y \) der orignialen Gleichung ist dann durch die Lösung für \( y_0 \) des Systems gegeben. 
+Nun können wir dieses System wie oben beschrieben lösen. Das Resultat \( y \) der originalen Gleichung ist dann durch die Lösung für \( y_0 \) des Systems gegeben. 
+
+\subsection{Spezialfall: Differentialgleichungssysteme mit komplexen Eigenwerten}
+
+Nehmen wir Beispielsweise die Gleichung 
+
+\begin{equation*}
+    x''(t) = -8x(t) + 4x'(t), \quad (\star)
+    \label{eq:lin_diff}
+\end{equation*}
+
+welche durch die Substitution
+
+\begin{equation*}
+    \begin{aligned}
+        y_0 &:= x \\
+        y_1 &:= x' \\
+        y_2 &:= x''         
+    \end{aligned} \qquad \longrightarrow \qquad
+    \begin{aligned}
+        y_1 = y_0' \\
+        y_2 = y_1' 
+    \end{aligned}
+\end{equation*}
+
+in das System 
+
+\begin{equation*}
+    \left\{ \begin{aligned}
+        y_0' &= y_1 \\
+        y_1' &= -8y_0 + 4y_1
+    \end{aligned} \right. \qquad \text{bzw.} \qquad
+    \begin{pmatrix}
+        y_0' \\
+        y_1'
+    \end{pmatrix} =
+    \underbrace{\begin{pmatrix}
+        0 & 1 \\
+        -8 & 4
+    \end{pmatrix}}_{A}
+    \begin{pmatrix}
+        y_0 \\
+        y_1
+    \end{pmatrix},
+\end{equation*}
+
+umgewandelt werden kann. Beachte, dass die Gleichung \((\star)\) 2.\ Ordnung ist, weswegen der Lösungsraum von \((\star)\) die Dimension 2 haben muss (Intuitiv: Wir müssen zweimal integrieren und haben deswegen zwei Integrationskonstanten bzw. Freiheitsgrade). Um die allgemeine Lösung zu finden, können wir wie oben beschrieben vorgehen. Zuerst bestimmen wir die Eigenwerte
+
+\begin{equation*}
+    \text{det} \begin{pmatrix}
+        -\lambda & 1 \\
+        -8 & 4 - \lambda
+    \end{pmatrix} = \lambda^2 - 4\lambda + 8 = 0 \quad \rightarrow \quad
+    \lambda_{1,2} = 2 \pm 2i,
+\end{equation*}
+
+und Eigenvektoren
+
+\begin{equation*}
+    E_{2+2i} : \begin{gmatrix}[L]
+        -2-2i & 1 \\
+        -8 & 2-2i
+    \end{gmatrix} \hspace{-0.75em}
+    \begin{gmatrix}[R]
+        0 \\ 0
+        \rowops
+        \add[\cdot\frac{-8}{2+2i}]{0}{1}
+    \end{gmatrix} \rightarrow \quad
+    \begin{gmatrix}[L]
+        -2-2i & 1 \\
+        0 & 0
+    \end{gmatrix} \hspace{-0.75em}
+    \begin{gmatrix}[R]
+        0 \\ 0
+    \end{gmatrix} \quad \left\{ \begin{aligned}
+        y_0 &= \frac{s}{2+2i} \\[0.5em]
+        y_1 &= s \in \mathbb{R} 
+    \end{aligned} \right.
+\end{equation*}
+
+\vspace{1\baselineskip}
+
+\begin{equation*}
+    \text{für} \ s = 4 \quad \left\{ \begin{aligned}
+        y_0 &= \frac{4}{2+2i} \cdot \underbrace{\frac{2-2i}{2-2i}}_{=1} = \frac{4(2-2i)}{4+4} = 1-i \\
+        y_1 &= 4 
+    \end{aligned} \right.
+\end{equation*}
+
+\vspace{1\baselineskip}
+
+\begin{equation*}
+    E_{2+2i} : \ \text{span} \left\{ \begin{pmatrix}
+        1-i \\ 4
+    \end{pmatrix} \right\} \ , \quad 
+    E_{2-2i} : \ \text{span} \left\{ \begin{pmatrix}
+        1+i \\ 4
+    \end{pmatrix} \right\}.
+\end{equation*}
+
+Wodurch sich die folgende allgemeine Lösung des Systems ergibt
+
+\begin{equation*}
+    y(t) = e^{(2+2i)t} \begin{pmatrix}
+        1-i \\ 4
+    \end{pmatrix} + e^{(2-2i)t} \begin{pmatrix}
+        1+i \\ 4
+    \end{pmatrix}.
+\end{equation*}
+
+Diese Lösung ist jedoch komplex. Normalerweise wollen wir aber eine reelle Lösung. Um eine reelle Lösung zu erhalten, benutzten wir die Eulersche Formel \( r e^{i \phi} = r \cos(\phi) + i \ r \sin(\phi) \). Um die Notation folgend zu vereinfachen betrachten, wir nur einen der beiden Eigenvektoren der Lösung (wenn man beide betrachtet kommt man auf das gleiche Ergebnis nur mit mehr Notation, am Ende findest du die Alternative mit beiden). 
+
+\begin{equation*}
+    \begin{aligned}
+        y(t) &= e^{(2+2i)t} \begin{pmatrix}
+            1-i \\ 4
+        \end{pmatrix} =
+        e^{2t} e^{2it} \begin{pmatrix}
+            1-i \\ 4
+        \end{pmatrix} \\[0.5em]
+        &= e^{2t} \left( \cos(2t) + i \sin(2t) \right) \begin{pmatrix}
+            1-i \\ 4
+        \end{pmatrix} \\[0.5em]
+        &= e^{2t} \left\{ \begin{pmatrix}
+            \cos(2t) + i \sin(2t) - i \cos(2t) - \sin(2t) \\
+            4 \cos(2t) + 4i \sin(2t)
+        \end{pmatrix} \right\} \\[0.5em]
+        &= e^{2t} \left\{ \begin{pmatrix}
+            \cos(2t) + \sin(2t) \\
+            4 \cos(2t)
+        \end{pmatrix} + i \begin{pmatrix}
+            \sin(2t) - \cos(2t) \\
+            4 \sin(2t)
+        \end{pmatrix} \right\} 
+    \end{aligned}
+\end{equation*}
+
+\vspace{0.5\baselineskip}
+
+Für den letzten Schritt benutzten wir ein Korollar aus der Vorlesung welches besagt, dass wenn \( y \) eine komplexe Lösung eines homogenen linearen Differentialgleichungssystems \( y'=Ay \) ist, so sind Re(\(y\)) und Im(\(y\)) ebenfalls Lösungen des Systems. Re(\(y\)) und Im(\(y\)) sind hier weiterhin linear unabhängig und bilden dadurch eine Basis des Lösungsraums von \( y \). So lässt sich eine allgemeine Lösung auch als Linearkombination von Re(\(y\)) und Im(\(y\)) schreiben
+
+\begin{equation*}
+    y(t) = e^{2t} \left\{ a \begin{pmatrix}
+        \cos(2t) + \sin(2t) \\
+        4 \cos(2t)
+    \end{pmatrix} + b \begin{pmatrix}
+        \sin(2t) - \cos(2t) \\
+        4 \sin(2t)
+    \end{pmatrix} \right\}.
+\end{equation*}
+
+\vspace{0.5\baselineskip}
+
+Da wir eigentlich eine Lösung für \( (\star) \) suchen und durch die Substitution \( x = y_0 \) substituiert wurde, nehmen wir nur die erste Zeile des Vektors \( y(t) \). 
+
+\begin{equation*}
+    \begin{aligned}
+    x(t) = y_0(t) &= e^{2t} \left\{ a ( \cos(2t) + \sin(2t) ) + b ( \sin(2t) - \cos(2t) ) \right\} \\[0.5em]
+    &= e^{2t} \left\{ (a-b) \cos(2t) + (a+b) \sin(2t) \right\} \\[0.5em]
+    &= e^{2t} \left\{ c_1 \cos(2t) + c_2 \sin(2t) \right\}.
+    \end{aligned}
+\end{equation*}
+
+\newpage
+
+\subsubsection{Alternative Lösung mit beiden Eigenvektoren:}
+
+Anstatt nur einen der beiden Eigenvektoren zu benutzen, können wir auch beide benutzen. Das Resultat ist das gleiche, jedoch mit mehr Notationsaufwand.
+
+\begin{equation*}
+    \begin{aligned}
+        y(t) &= c_3 \cdot e^{(2+2i)t} \begin{pmatrix}
+            1-i \\ 4
+        \end{pmatrix} + c_4  \cdot e^{(2-2i)t} \begin{pmatrix}
+            1+i \\ 4
+        \end{pmatrix} \\[0.5em] 
+        &= e^{2t} \left\{
+            c_3 \left( 
+                \cos(2t) + i \sin(2t) \right) \begin{pmatrix}
+                    1-i \\ 4
+                \end{pmatrix} + c_4  \left( 
+                \cos(2t) - i \sin(2t) \right) \begin{pmatrix}
+                    1+i \\ 4
+                \end{pmatrix}
+        \right\} \\[0.5em]
+        &= e^{2t} \left( \text{\scriptsize $ \begin{matrix}
+            c_3 \cos(2t) + c_3 i \sin(2t) - c_3 i \cos(2t) - c_3 \sin(2t) + c_4  \cos(2t) - c_4  i \sin(2t) + c_4  i \cos(2t) - c_4  \sin(2t) \\[0.5em]
+            4 c_3 \cos(2t) + 4 c_3 i \sin(2t) + 4 c_4  \cos(2t) - 4 c_4  i \sin(2t)
+        \end{matrix}$} \right) \\[0.5em]
+        &= e^{2t} \left( \text{\scriptsize $ \begin{matrix}
+            ( c_3 + c_4  ) \cos(2t) + ( c_3 - c_4  ) i \sin(2t) - ( c_3 - c_4  ) i \cos(2t) + ( c_3 + c_4  ) \sin(2t) \\
+            4 ( c_3 + c_4  ) \cos(2t) + 4 ( c_3 - c_4  ) i \sin(2t)
+        \end{matrix}$} \right) \\[0.5em]
+        &= e^{2t} \left\{ \left( \text{\scriptsize $ \begin{gmatrix}[R]
+            ( c_3 + c_4  ) \cos(2t) + ( c_3 + c_4  ) \sin(2t) \\
+            4 ( c_3 + c_4  ) \cos(2t)
+        \end{gmatrix} + i \begin{gmatrix}[m]   
+            ( c_3 - c_4  ) \sin(2t) - ( c_3 - c_4  ) \cos(2t) \\
+            4 ( c_3 - c_4  ) \sin(2t)
+        \end{gmatrix}$} \right) \right\} \\[0.5em]
+        &= e^{2t} \left\{ a \begin{pmatrix}
+            \cos(2t) + \sin(2t) \\
+            4 \cos(2t)
+        \end{pmatrix} + i \ b \begin{pmatrix}
+            \sin(2t) - \cos(2t) \\
+            4 \sin(2t)
+        \end{pmatrix} \right\} 
+    \end{aligned}
+\end{equation*}
+
+womit wir schliesslich durch dieselbe Argumentation von oben die Lösung für \((\star)\) finden
+
+\begin{equation*}
+    \begin{aligned}
+    x(t) = y_0(t) &= e^{2t} \left\{ a ( \cos(2t) + \sin(2t) ) + b ( \sin(2t) - \cos(2t) ) \right\} \\[0.5em]
+    &= e^{2t} \left\{ (a-b) \cos(2t) + (a+b) \sin(2t) \right\} \\[0.5em]
+    &= e^{2t} \left\{ c_1 \cos(2t) + c_2 \sin(2t) \right\}.
+    \end{aligned}
+\end{equation*}
