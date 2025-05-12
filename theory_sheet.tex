@@ -3,20 +3,8 @@
 \usepackage{gauss}
 \usepackage[ngerman]{babel}
 
-% section for external compiling when using pgfplots. If not needed, comment out
-% when active use this to compile in terminal: pdflatex -shell-escape theory_sheet.tex
-% when changing chapters first delete exsisting tikz files in tikz/ folder
-
-% Ensure TikZ externalization works with -shell-escape
-\usetikzlibrary{external}
-\tikzexternalize[prefix=tikz/]
-% \tikzexternalize[prefix=tikz/, mode=only graphics] % Use 'only graphics' mode for externalization
-
-% Instructions for compiling with -shell-escape
-% To compile with externalized TikZ graphics, use:
-% pdflatex -shell-escape "\def\chaptername{<chapter_name>}\input{theory_sheet.tex}"
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usetikzlibrary{external} % for faster compilation externalization of the tikz figures is used
+\tikzexternalize[prefix=tikz/] % when active use this to compile in terminal: pdflatex -shell-escape theory_sheet.tex (not needed when using build.sh)
 
 \setlength{\headheight}{14.49998pt}
 \addtolength{\topmargin}{-2.49998pt}
@@ -27,7 +15,7 @@
 \fancyhead[R]{Nicolas Bartzsch}
 \fancyfoot[C]{\thepage}
 
-\setboolean{includingsolutions}{false} % true: includes solutions, % false, no solutions
+\setboolean{includingsolutions}{false} % true: includes solutions, % false, no solutions (not used here) 
 
 % Dynamically include only the desired chapter
 \providecommand{\selectedchapter}{}
@@ -35,17 +23,13 @@
     chapters/\selectedchapter
 }
 
+% Custom matrices for the guass.sty package. Has to be the same as in main.tex
 \newmatrix{(}{|}{L}
 \newmatrix{.}{)}{R}
 \newmatrix{(}{.}{m}
 
 \begin{document}
 
-    % Prompt for chapter selection
-    % To compile a specific chapter, set the chapter name using:
-    % pdflatex -shell-escape '\def\selectedchapter{<chapter_name>}\input{theory_sheet.tex}'
-
-    %Inhalt
     \pagenumbering{arabic}
     
     \include{chapters/lineare_abb}

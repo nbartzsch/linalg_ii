@@ -3,11 +3,12 @@
 \usepackage{gauss}
 \usepackage[ngerman]{babel}
 
-\usetikzlibrary{external}
-\tikzexternalize[prefix=tikz/] % when active use this to compile in terminal: pdflatex -shell-escape main.tex
+\usetikzlibrary{external} % for faster compilation externalization of the tikz figures is used
+\tikzexternalize[prefix=tikz/] % when active use this to compile in terminal: pdflatex -shell-escape main.tex (not needed when using build.sh)
 
-\setboolean{includingsolutions}{false} % true: includes solutions, % false, no solutions
+\setboolean{includingsolutions}{false} % true: includes solutions, % false, no solutions (not used here)
 
+% Custom matrices for the guass.sty package. Has to be the same as in main.tex
 \newmatrix{(}{|}{L}
 \newmatrix{.}{)}{R}
 \newmatrix{(}{.}{m}
