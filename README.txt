@@ -20,10 +20,8 @@ Directory Structure
 - chapters/        : Individual chapter files
 - media/           : External images
 - tikz/            : Compiled tikz figures
-- tikz_test/       : Folder for experimenting with tikz figures in tikztest file
 - script.sty       : Style sheet for the overall document
 - gauss.sty        : Style sheet for notation when using the gauss algorithm
-- tikztest.tex     : File for experimenting with tikz figures
 
 Requirements
 -----------
